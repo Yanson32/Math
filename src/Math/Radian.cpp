@@ -1,14 +1,20 @@
 #include "Math/Radian.h"
+#include "Math/Constants.h"
 
 namespace Math
 {
-    float Radian::GetRadians() const
+    Radian::Radian(const Degree &degree):
+    m_Radians(degree * pie / 180)
     {
-        return m_radian;
     }
 
-    void Radian::SetRadians(const float radians)
+    float Radian::GetRadians() const noexcept
     {
-        m_radian = radians;
+        return m_Radians;
+    }
+
+    void Radian::SetRadians(const float radians) noexcept
+    {
+        m_Radians = radians;
     }
 }

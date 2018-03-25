@@ -1,4 +1,5 @@
 #include "Math/Line.h"
+#include <cmath>
 
 namespace Math
 {
@@ -31,6 +32,8 @@ namespace Math
 
     unsigned Line::Magnitude() const
     {
-        return 0;
+        auto a = std::abs(m_End.m_x - m_Start.m_x);
+        auto b = std::abs(m_End.m_y - m_Start.m_y);
+        return std::sqrt(a * a + b * b);
     }
 }

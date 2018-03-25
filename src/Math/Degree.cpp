@@ -3,7 +3,7 @@
 namespace Math
 {
     Degree::Degree(const float degree):
-    m_degree(degree)
+    m_Degrees(degree)
     {
 
     }

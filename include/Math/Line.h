@@ -4,7 +4,6 @@
 
 namespace Math
 {
-
     class Line final
     {
         public:
@@ -17,6 +16,5 @@ namespace Math
             Point m_Start;
             Point m_End;
     };
-
 }
 #endif // MATH_LINE_H

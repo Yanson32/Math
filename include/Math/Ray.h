@@ -10,7 +10,6 @@ namespace Math
     {
         public:
             Ray() = default;
-        protected:
         private:
             Radian m_Radian;
             Point m_Point;

@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/include/Math/Degree.h;/usr/local/include/Math/Radian.h;/usr/local/include/Math/Point.h;/usr/local/include/Math/Line.h;/usr/local/include/Math/Ray.h;/usr/local/include/Math/Vector.h")
+   "/usr/local/include/Math/Degree.h;/usr/local/include/Math/Radian.h;/usr/local/include/Math/Point.h;/usr/local/include/Math/Line.h;/usr/local/include/Math/Ray.h;/usr/local/include/Math/Vector.h;/usr/local/include/Math/Constants.h")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
@@ -48,6 +48,7 @@ file(INSTALL DESTINATION "/usr/local/include/Math" TYPE FILE FILES
     "/home/me/Desktop/Math/include/Math/Line.h"
     "/home/me/Desktop/Math/include/Math/Ray.h"
     "/home/me/Desktop/Math/include/Math/Vector.h"
+    "/home/me/Desktop/Math/include/Math/Constants.h"
     )
 endif()
 

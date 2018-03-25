@@ -1,5 +1,6 @@
 #ifndef MATH_RADIAN_H
 #define MATH_RADIAN_H
+#include "Math/Degree.h"
 
 namespace Math
 {
@@ -7,11 +8,12 @@ namespace Math
     {
         public:
             Radian() = default;
-            float GetRadians() const;
-            void SetRadians(const float radians);
-        protected:
+            explicit Radian(const Degree &degree);
+            float GetRadians() const noexcept;
+            void SetRadians(const float radians) noexcept;
         private:
-            float m_radian;
+            float m_Radians = 0;
+            friend class Degree;
     };
 }
 #endif // MATH_RADIAN_H

@@ -8,8 +8,20 @@ namespace Math
         public:
             Degree() = default;
             Degree(const float degree);
+
+            template <class T>
+            T operator * (const T param) const;
         private:
-            float m_degree = 0;
+            float m_Degrees = 0;
+            friend class Radian;
     };
+
+
+    template <class T>
+    T Degree::operator * (const T param) const
+    {
+        return m_Degrees * param;
+    }
+
 }
 #endif

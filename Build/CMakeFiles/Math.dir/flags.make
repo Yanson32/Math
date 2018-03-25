@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -std=gnu++11
 
-CXX_DEFINES = 
+CXX_DEFINES = -DBUILD_TESTING
 
 CXX_INCLUDES = -I/home/me/Desktop/Math/include -I/home/me/Desktop/Math/Build 
 

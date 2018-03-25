@@ -5,23 +5,13 @@
       <Option title="Math" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\Math\;CMake Files\src\;CMake Files\src\Math\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\Modules\;CMake Files\include\;CMake Files\include\Math\;CMake Files\src\;CMake Files\src\Math\;CMake Files\test\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/me/Desktop/Math/Build" />
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="install">
-         <Option working_dir="/home/me/Desktop/Math/Build" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 install" />
             <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
@@ -37,11 +27,41 @@
             <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="install">
+         <Option working_dir="/home/me/Desktop/Math/Build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="rebuild_cache">
          <Option working_dir="/home/me/Desktop/Math/Build" />
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/me/Desktop/Math/Build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/home/me/Desktop/Math/Build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 install/strip" />
             <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
@@ -54,6 +74,7 @@
          <Option type="2" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add option="-DBUILD_TESTING" />
             <Add directory="/home/me/Desktop/Math/Build" />
             <Add directory="/home/me/Desktop/Math/include" />
             <Add directory="/usr/include" />
@@ -79,6 +100,7 @@
          <Option type="2" />
          <Option compiler="gcc" />
          <Compiler>
+            <Add option="-DBUILD_TESTING" />
             <Add directory="/home/me/Desktop/Math/Build" />
             <Add directory="/home/me/Desktop/Math/include" />
             <Add directory="/usr/include" />
@@ -97,16 +119,6 @@
             <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="install/strip">
-         <Option working_dir="/home/me/Desktop/Math/Build" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 install/strip" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
       <Target title="install/local">
          <Option working_dir="/home/me/Desktop/Math/Build" />
          <Option type="4" />
@@ -117,17 +129,50 @@
             <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="edit_cache">
+      <Target title="Continuous">
          <Option working_dir="/home/me/Desktop/Math/Build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 Continuous" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Nightly">
+         <Option working_dir="/home/me/Desktop/Math/Build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 Nightly" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test">
+         <Option working_dir="/home/me/Desktop/Math/Build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 test" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Experimental">
+         <Option working_dir="/home/me/Desktop/Math/Build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 Experimental" />
             <CompileFile command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/me/Desktop/Math/Build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
+      <Unit filename="/home/me/Desktop/Math/include/Math/Constants.h">
+         <Option target="Math"/>
+      </Unit>
       <Unit filename="/home/me/Desktop/Math/include/Math/Degree.h">
          <Option target="Math"/>
       </Unit>
@@ -167,6 +212,9 @@
       <Unit filename="/home/me/Desktop/Math/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>
+      <Unit filename="/home/me/Desktop/Math/cmake/Modules/BoostTestHelpers.cmake">
+          <Option virtualFolder="CMake Files\cmake\Modules\" />
+      </Unit>
       <Unit filename="/home/me/Desktop/Math/include/CMakeLists.txt">
           <Option virtualFolder="CMake Files\include\" />
       </Unit>
@@ -178,6 +226,9 @@
       </Unit>
       <Unit filename="/home/me/Desktop/Math/src/Math/CMakeLists.txt">
           <Option virtualFolder="CMake Files\src\Math\" />
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/test/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\test\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>

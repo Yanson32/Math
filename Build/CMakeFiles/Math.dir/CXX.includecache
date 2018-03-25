@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/Math/Constants.h
+
 ../include/Math/Degree.h
 
 ../include/Math/Line.h
@@ -15,6 +17,8 @@ Math/Point.h
 ../include/Math/Point.h
 
 ../include/Math/Radian.h
+Math/Degree.h
+../include/Math/Math/Degree.h
 
 ../include/Math/Ray.h
 Math/Radian.h
@@ -23,6 +27,10 @@ Math/Point.h
 ../include/Math/Math/Point.h
 
 ../include/Math/Vector.h
+Math/Point.h
+../include/Math/Math/Point.h
+Math/Radian.h
+../include/Math/Math/Radian.h
 
 /home/me/Desktop/Math/src/Math/Degree.cpp
 Math/Degree.h
@@ -31,6 +39,8 @@ Math/Degree.h
 /home/me/Desktop/Math/src/Math/Line.cpp
 Math/Line.h
 /home/me/Desktop/Math/src/Math/Math/Line.h
+cmath
+-
 
 /home/me/Desktop/Math/src/Math/Point.cpp
 Math/Point.h
@@ -39,6 +49,8 @@ Math/Point.h
 /home/me/Desktop/Math/src/Math/Radian.cpp
 Math/Radian.h
 /home/me/Desktop/Math/src/Math/Math/Radian.h
+Math/Constants.h
+/home/me/Desktop/Math/src/Math/Math/Constants.h
 
 /home/me/Desktop/Math/src/Math/Ray.cpp
 Math/Ray.h
