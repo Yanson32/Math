@@ -8,7 +8,43 @@
 
 ../include/Math/Degree.h
 
+../include/Math/Line.h
+Math/Point.h
+../include/Math/Math/Point.h
+
+../include/Math/Point.h
+
+../include/Math/Radian.h
+
+../include/Math/Ray.h
+Math/Radian.h
+../include/Math/Math/Radian.h
+Math/Point.h
+../include/Math/Math/Point.h
+
+../include/Math/Vector.h
+
 /home/me/Desktop/Math/src/Math/Degree.cpp
 Math/Degree.h
 /home/me/Desktop/Math/src/Math/Math/Degree.h
+
+/home/me/Desktop/Math/src/Math/Line.cpp
+Math/Line.h
+/home/me/Desktop/Math/src/Math/Math/Line.h
+
+/home/me/Desktop/Math/src/Math/Point.cpp
+Math/Point.h
+/home/me/Desktop/Math/src/Math/Math/Point.h
+
+/home/me/Desktop/Math/src/Math/Radian.cpp
+Math/Radian.h
+/home/me/Desktop/Math/src/Math/Math/Radian.h
+
+/home/me/Desktop/Math/src/Math/Ray.cpp
+Math/Ray.h
+/home/me/Desktop/Math/src/Math/Math/Ray.h
+
+/home/me/Desktop/Math/src/Math/Vector.cpp
+Math/Vector.h
+/home/me/Desktop/Math/src/Math/Math/Vector.h
 

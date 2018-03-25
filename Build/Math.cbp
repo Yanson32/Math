@@ -131,7 +131,37 @@
       <Unit filename="/home/me/Desktop/Math/include/Math/Degree.h">
          <Option target="Math"/>
       </Unit>
+      <Unit filename="/home/me/Desktop/Math/include/Math/Line.h">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/include/Math/Point.h">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/include/Math/Radian.h">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/include/Math/Ray.h">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/include/Math/Vector.h">
+         <Option target="Math"/>
+      </Unit>
       <Unit filename="/home/me/Desktop/Math/src/Math/Degree.cpp">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/src/Math/Line.cpp">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/src/Math/Point.cpp">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/src/Math/Radian.cpp">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/src/Math/Ray.cpp">
+         <Option target="Math"/>
+      </Unit>
+      <Unit filename="/home/me/Desktop/Math/src/Math/Vector.cpp">
          <Option target="Math"/>
       </Unit>
       <Unit filename="/home/me/Desktop/Math/CMakeLists.txt">

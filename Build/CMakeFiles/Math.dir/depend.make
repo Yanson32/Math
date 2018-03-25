@@ -4,3 +4,21 @@
 CMakeFiles/Math.dir/src/Math/Degree.cpp.o: ../include/Math/Degree.h
 CMakeFiles/Math.dir/src/Math/Degree.cpp.o: ../src/Math/Degree.cpp
 
+CMakeFiles/Math.dir/src/Math/Line.cpp.o: ../include/Math/Line.h
+CMakeFiles/Math.dir/src/Math/Line.cpp.o: ../include/Math/Point.h
+CMakeFiles/Math.dir/src/Math/Line.cpp.o: ../src/Math/Line.cpp
+
+CMakeFiles/Math.dir/src/Math/Point.cpp.o: ../include/Math/Point.h
+CMakeFiles/Math.dir/src/Math/Point.cpp.o: ../src/Math/Point.cpp
+
+CMakeFiles/Math.dir/src/Math/Radian.cpp.o: ../include/Math/Radian.h
+CMakeFiles/Math.dir/src/Math/Radian.cpp.o: ../src/Math/Radian.cpp
+
+CMakeFiles/Math.dir/src/Math/Ray.cpp.o: ../include/Math/Point.h
+CMakeFiles/Math.dir/src/Math/Ray.cpp.o: ../include/Math/Radian.h
+CMakeFiles/Math.dir/src/Math/Ray.cpp.o: ../include/Math/Ray.h
+CMakeFiles/Math.dir/src/Math/Ray.cpp.o: ../src/Math/Ray.cpp
+
+CMakeFiles/Math.dir/src/Math/Vector.cpp.o: ../include/Math/Vector.h
+CMakeFiles/Math.dir/src/Math/Vector.cpp.o: ../src/Math/Vector.cpp
+

@@ -1,7 +1,10 @@
 #include "Math/Degree.h"
 
-Degree::Degree(const float newDegree):
-degree(newDegree)
+namespace Math
 {
+    Degree::Degree(const float degree):
+    m_degree(degree)
+    {
 
+    }
 }

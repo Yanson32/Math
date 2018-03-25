@@ -1,13 +1,15 @@
 #ifndef MATH_DEGREE_H
 #define	MATH_DEGREE_H
 
-class Degree
+namespace Math
 {
-	public:
-		Degree() = default;
-		Degree(const float newDegree);
-    private:
-        float degree = 0;
-};
-
+    class Degree final
+    {
+        public:
+            Degree() = default;
+            Degree(const float degree);
+        private:
+            float m_degree = 0;
+    };
+}
 #endif

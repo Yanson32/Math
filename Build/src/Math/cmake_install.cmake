@@ -34,13 +34,20 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/src/Math/Degree.cpp")
+   "/usr/local/src/Math/Degree.cpp;/usr/local/src/Math/Radian.cpp;/usr/local/src/Math/Point.cpp;/usr/local/src/Math/Line.cpp;/usr/local/src/Math/Ray.cpp;/usr/local/src/Math/Vector.cpp")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/src/Math" TYPE FILE FILES "/home/me/Desktop/Math/src/Math/Degree.cpp")
+file(INSTALL DESTINATION "/usr/local/src/Math" TYPE FILE FILES
+    "/home/me/Desktop/Math/src/Math/Degree.cpp"
+    "/home/me/Desktop/Math/src/Math/Radian.cpp"
+    "/home/me/Desktop/Math/src/Math/Point.cpp"
+    "/home/me/Desktop/Math/src/Math/Line.cpp"
+    "/home/me/Desktop/Math/src/Math/Ray.cpp"
+    "/home/me/Desktop/Math/src/Math/Vector.cpp"
+    )
 endif()
 

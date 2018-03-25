@@ -197,6 +197,141 @@ src/Math/Degree.cpp.s:
 	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Degree.cpp.s
 .PHONY : src/Math/Degree.cpp.s
 
+src/Math/Line.o: src/Math/Line.cpp.o
+
+.PHONY : src/Math/Line.o
+
+# target to build an object file
+src/Math/Line.cpp.o:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Line.cpp.o
+.PHONY : src/Math/Line.cpp.o
+
+src/Math/Line.i: src/Math/Line.cpp.i
+
+.PHONY : src/Math/Line.i
+
+# target to preprocess a source file
+src/Math/Line.cpp.i:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Line.cpp.i
+.PHONY : src/Math/Line.cpp.i
+
+src/Math/Line.s: src/Math/Line.cpp.s
+
+.PHONY : src/Math/Line.s
+
+# target to generate assembly for a file
+src/Math/Line.cpp.s:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Line.cpp.s
+.PHONY : src/Math/Line.cpp.s
+
+src/Math/Point.o: src/Math/Point.cpp.o
+
+.PHONY : src/Math/Point.o
+
+# target to build an object file
+src/Math/Point.cpp.o:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Point.cpp.o
+.PHONY : src/Math/Point.cpp.o
+
+src/Math/Point.i: src/Math/Point.cpp.i
+
+.PHONY : src/Math/Point.i
+
+# target to preprocess a source file
+src/Math/Point.cpp.i:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Point.cpp.i
+.PHONY : src/Math/Point.cpp.i
+
+src/Math/Point.s: src/Math/Point.cpp.s
+
+.PHONY : src/Math/Point.s
+
+# target to generate assembly for a file
+src/Math/Point.cpp.s:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Point.cpp.s
+.PHONY : src/Math/Point.cpp.s
+
+src/Math/Radian.o: src/Math/Radian.cpp.o
+
+.PHONY : src/Math/Radian.o
+
+# target to build an object file
+src/Math/Radian.cpp.o:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Radian.cpp.o
+.PHONY : src/Math/Radian.cpp.o
+
+src/Math/Radian.i: src/Math/Radian.cpp.i
+
+.PHONY : src/Math/Radian.i
+
+# target to preprocess a source file
+src/Math/Radian.cpp.i:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Radian.cpp.i
+.PHONY : src/Math/Radian.cpp.i
+
+src/Math/Radian.s: src/Math/Radian.cpp.s
+
+.PHONY : src/Math/Radian.s
+
+# target to generate assembly for a file
+src/Math/Radian.cpp.s:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Radian.cpp.s
+.PHONY : src/Math/Radian.cpp.s
+
+src/Math/Ray.o: src/Math/Ray.cpp.o
+
+.PHONY : src/Math/Ray.o
+
+# target to build an object file
+src/Math/Ray.cpp.o:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Ray.cpp.o
+.PHONY : src/Math/Ray.cpp.o
+
+src/Math/Ray.i: src/Math/Ray.cpp.i
+
+.PHONY : src/Math/Ray.i
+
+# target to preprocess a source file
+src/Math/Ray.cpp.i:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Ray.cpp.i
+.PHONY : src/Math/Ray.cpp.i
+
+src/Math/Ray.s: src/Math/Ray.cpp.s
+
+.PHONY : src/Math/Ray.s
+
+# target to generate assembly for a file
+src/Math/Ray.cpp.s:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Ray.cpp.s
+.PHONY : src/Math/Ray.cpp.s
+
+src/Math/Vector.o: src/Math/Vector.cpp.o
+
+.PHONY : src/Math/Vector.o
+
+# target to build an object file
+src/Math/Vector.cpp.o:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Vector.cpp.o
+.PHONY : src/Math/Vector.cpp.o
+
+src/Math/Vector.i: src/Math/Vector.cpp.i
+
+.PHONY : src/Math/Vector.i
+
+# target to preprocess a source file
+src/Math/Vector.cpp.i:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Vector.cpp.i
+.PHONY : src/Math/Vector.cpp.i
+
+src/Math/Vector.s: src/Math/Vector.cpp.s
+
+.PHONY : src/Math/Vector.s
+
+# target to generate assembly for a file
+src/Math/Vector.cpp.s:
+	$(MAKE) -f CMakeFiles/Math.dir/build.make CMakeFiles/Math.dir/src/Math/Vector.cpp.s
+.PHONY : src/Math/Vector.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,6 +348,21 @@ help:
 	@echo "... src/Math/Degree.o"
 	@echo "... src/Math/Degree.i"
 	@echo "... src/Math/Degree.s"
+	@echo "... src/Math/Line.o"
+	@echo "... src/Math/Line.i"
+	@echo "... src/Math/Line.s"
+	@echo "... src/Math/Point.o"
+	@echo "... src/Math/Point.i"
+	@echo "... src/Math/Point.s"
+	@echo "... src/Math/Radian.o"
+	@echo "... src/Math/Radian.i"
+	@echo "... src/Math/Radian.s"
+	@echo "... src/Math/Ray.o"
+	@echo "... src/Math/Ray.i"
+	@echo "... src/Math/Ray.s"
+	@echo "... src/Math/Vector.o"
+	@echo "... src/Math/Vector.i"
+	@echo "... src/Math/Vector.s"
 .PHONY : help
 
 
