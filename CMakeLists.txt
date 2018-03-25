@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1.0)
 
 #Compile Features
 set(GU_PRIVATE_COMPILE_FEATURES "cxx_nullptr" "cxx_right_angle_brackets")
-set(GU_PUBLIC_COMPILE_FEATURES "")
+set(GU_PUBLIC_COMPILE_FEATURES "cxx_nullptr")
 
 project("Math")
 
