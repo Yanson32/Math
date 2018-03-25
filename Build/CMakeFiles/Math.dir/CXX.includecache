@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Math/Degree.h
+
+/home/me/Desktop/Math/src/Math/Degree.cpp
+Math/Degree.h
+/home/me/Desktop/Math/src/Math/Math/Degree.h
+
