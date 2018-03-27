@@ -1,5 +1,5 @@
-#ifndef CONSTANTS_H_INCLUDED
-#define CONSTANTS_H_INCLUDED
+#ifndef MATH_CONSTANTS_H_INCLUDED
+#define MATH_CONSTANTS_H_INCLUDED
 namespace Math
 {
     constexpr unsigned pie = 3.14159265358979323846;

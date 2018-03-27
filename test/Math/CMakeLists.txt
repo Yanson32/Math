@@ -2,7 +2,7 @@ set(FILES ""
 
 )
 
-set(SUB_DIRECTORIES "Math")
+set(SUB_DIRECTORIES "")
 
 #Add subdirectories
 foreach(LOOP_VAR ${SUB_DIRECTORIES})
