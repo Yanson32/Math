@@ -17,9 +17,8 @@ namespace Math
             Vector() = default;
             explicit Vector(const Radian &direction, unsigned magnitude);
             explicit Vector(const Degree &direction, unsigned magnitude);
-        private:
-            unsigned m_Magnitude;
-            Radian m_Direction;
+            unsigned magnitude;
+            Radian direction;
     };
 
 }
