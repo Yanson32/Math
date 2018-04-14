@@ -17,6 +17,8 @@ namespace Math
         private:
             float m_Degrees = 0;
             friend class Radian;
+            friend float cos(const Degree &deg);
+            friend float sin(const Degree &deg);
     };
 
 
