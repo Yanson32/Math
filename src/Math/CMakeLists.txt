@@ -5,6 +5,7 @@ set(FILES "${CMAKE_CURRENT_SOURCE_DIR}/Degree.cpp"
 "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
 "${CMAKE_CURRENT_SOURCE_DIR}/Vector.cpp"
 "${CMAKE_CURRENT_SOURCE_DIR}/Functions.cpp"
+"${CMAKE_CURRENT_SOURCE_DIR}/cVector.cpp"
 )
 
 set(SUB_DIRECTORIES "")

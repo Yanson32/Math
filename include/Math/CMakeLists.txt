@@ -8,6 +8,7 @@ set(FILES "${CMAKE_CURRENT_SOURCE_DIR}/Degree.h"
 "${CMAKE_CURRENT_SOURCE_DIR}/ScalarQuantity.h"
 "${CMAKE_CURRENT_SOURCE_DIR}/VectorQuantity.h"
 "${CMAKE_CURRENT_SOURCE_DIR}/Functions.h"
+"${CMAKE_CURRENT_SOURCE_DIR}/cVector.h"
 
 )
 set(SUB_DIRECTORIES "")
