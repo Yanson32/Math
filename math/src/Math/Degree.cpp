@@ -66,4 +66,15 @@ namespace Math
 	{
 		return this->m_Degrees > param.m_Degrees;
 	}
+
+	std::ostream& operator << (std::ostream& out, const Degree &param)
+	{
+		return out << param.m_Degrees;
+	}
+
+	std::istream& operator >> (std::istream& in, const Degree &param)
+	{
+		return in >> param.m_Degrees;
+	}
 }
+
