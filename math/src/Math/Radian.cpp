@@ -25,4 +25,5 @@ namespace Math
     {
         m_Radians = radians;
     }
+
 }

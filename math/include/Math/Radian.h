@@ -1,10 +1,12 @@
 #ifndef MATH_RADIAN_H
 #define MATH_RADIAN_H
 
+#include "math_export.h"
+
 namespace Math
 {
     class Degree;
-    class Radian final
+    class MATH_EXPORT Radian final
     {
         public:
             Radian() = default;
@@ -12,7 +14,6 @@ namespace Math
             explicit Radian(const Degree &degree);
             float GetRadians() const noexcept;
             void SetRadians(const float radians) noexcept;
-
             template <class T>
             T operator * (const T param) const;
         private:

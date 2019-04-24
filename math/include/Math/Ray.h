@@ -1,12 +1,13 @@
 #ifndef MATH_RAY_H
 #define MATH_RAY_H
+#include "math_export.h"
 #include "Math/Radian.h"
 #include "Math/Point.h"
 
 namespace Math
 {
 
-    class Ray final
+    class MATH_EXPORT Ray final
     {
         public:
             Ray() = default;

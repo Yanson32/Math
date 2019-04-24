@@ -1,5 +1,7 @@
 #ifndef MATH_VECTOR_H
 #define MATH_VECTOR_H
+
+#include "math_export.h"
 #include "Math/Point.h"
 #include "Math/Radian.h"
 
@@ -11,7 +13,7 @@
 namespace Math
 {
 
-    class Vector final
+    class MATH_EXPORT Vector final
     {
         public:
             Vector() = default;

@@ -1,10 +1,12 @@
 #ifndef MATH_LINE_H
 #define MATH_LINE_H
+
+#include "math_export.h"
 #include "Math/Point.h"
 
 namespace Math
 {
-    class Line final
+    class MATH_EXPORT Line final
     {
         public:
             Line() = default;
@@ -13,6 +15,8 @@ namespace Math
             Line LeftNormal() const;
             Line RightNormal() const;
             unsigned Magnitude() const;
+			bool operator == (const Math::Line &param) const;
+			bool operator != (const Math::Line &param) const;
             Point m_Start;
             Point m_End;
     };

@@ -1,10 +1,11 @@
 #ifndef MATH_POINT_H
 #define MATH_POINT_H
 
+#include "math_export.h"
 namespace Math
 {
     class Vector;
-    struct Point final
+    struct MATH_EXPORT Point final
     {
         Point();
         Point(const float x, const float y);
@@ -19,9 +20,14 @@ namespace Math
         *   @return A Math::Point object which represents the original point
         *           plus the input vector.
         ******************************************************************/
-        Math::Point operator + (const Math::Vector &vec);
-        float m_x = 0;
-        float m_y = 0;
+        Math::Point operator + (const Math::Vector &vec) const;
+
+		bool operator == (const Math::Point &param) const;
+
+		bool operator != (const Math::Point &param) const;
+
+        float x = 0;
+        float y = 0;
     };
 }
 #endif // MATH_POINT_H

@@ -9,8 +9,8 @@ namespace Math
     }
 
     Point::Point(const float x, const float y):
-    m_x(x),
-    m_y(y)
+    x(x),
+    y(y)
     {
 
     }
@@ -24,8 +24,26 @@ namespace Math
     *   @return A Math::Point object which represents the original point
     *           plus the input vector.
     ******************************************************************/
-    Math::Point Point::operator + (const Math::Vector &vec)
+    Math::Point Point::operator + (const Math::Vector &vec) const
     {
-        return Math::Point(this->m_x += vec.GetX(), this->m_y += vec.GetY());
+        return Math::Point(this->x + vec.GetX(), this->y + vec.GetY());
     }
+
+	bool Point::operator == (const Math::Point &param) const
+	{
+		if (this->x == param.x && this->y == param.y)
+			return true;
+
+		return false;
+	}
+
+	bool Point::operator != (const Math::Point &param) const
+	{
+		if(this->x != param.x)
+			return true;
+
+		if (this->y != param.y)
+			return true;
+		return false;
+	}
 }

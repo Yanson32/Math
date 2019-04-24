@@ -4,9 +4,12 @@
 *	@author	Wayne J Larson Jr.
 *	@date	5/7/2018
 ****************************************************************/
+
+#include "math_export.h"
+
 namespace Math
 {
-	class cVector
+	class MATH_EXPORT cVector
 	{
 	public:
 		/************************************************************//**
