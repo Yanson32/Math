@@ -15,4 +15,65 @@ namespace Math
     {
 
     }
+
+	bool Degree::operator == (const Degree &param) const
+	{
+		return this->m_Degrees == param.m_Degrees;
+	}
+	bool Degree::operator != (const Degree &param) const
+	{
+		return this->m_Degrees != param.m_Degrees;
+	}
+	bool Degree::operator <= (const Degree &param) const
+	{
+		return this->m_Degrees <= param.m_Degrees;
+	}
+	bool Degree::operator >= (const Degree &param) const
+	{
+		return this->m_Degrees >= param.m_Degrees;
+	}
+
+	bool Degree::operator == (const Radian &param) const
+	{
+		return this->m_Degrees == Degree(param).m_Degrees;
+	}
+	bool Degree::operator != (const Radian &param) const
+	{
+		return this->m_Degrees != Degree(param).m_Degrees;
+	}
+	bool Degree::operator <= (const Radian &param) const
+	{
+		return this->m_Degrees <= Degree(param).m_Degrees;
+	}
+	bool Degree::operator >= (const Radian &param) const
+	{
+		return this->m_Degrees >= Degree(param).m_Degrees;
+	}
+
+	//Less than 
+	bool Degree::operator < (const Degree &param) const
+	{
+		return this->m_Degrees < param.m_Degrees;
+	}
+
+	bool Degree::operator < (const Radian &param) const
+	{
+		return this->m_Degrees < Math::Degree(param).m_Degrees;
+	}
+
+	//Greater than 
+	bool Degree::operator > (const Degree &param) const
+	{
+		return this->m_Degrees > param.m_Degrees;
+	}
+
+	std::ostream& operator << (std::ostream& out, const Degree &param)
+	{
+		return out << param.m_Degrees;
+	}
+
+	std::istream& operator >> (std::istream& in, const Degree &param)
+	{
+		return in >> param.m_Degrees;
+	}
 }

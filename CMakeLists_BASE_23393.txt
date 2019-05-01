@@ -8,8 +8,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 option(MATH_BUILD_EXAMPLES "Build example executables" FALSE)
 option(MATH_BUILD_TESTS "Build unit tests" FALSE)
 
-option(BUILD_SHARED_LIBS "Build shared library" TRUE)
-
 project("Math" VERSION 0.0.0.0)
 string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
