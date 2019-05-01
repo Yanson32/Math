@@ -22,3 +22,4 @@ namespace Math
     };
 }
 #endif // MATH_LINE_H
+

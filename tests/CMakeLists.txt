@@ -15,3 +15,4 @@ foreach(LOOP_VAR ${TESTS})
 	target_link_libraries("${LOOP_VAR}" PRIVATE GTest::GTest GTest::Main Math)
 	gtest_discover_tests("${LOOP_VAR}")
 endforeach()
+

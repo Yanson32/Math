@@ -39,3 +39,4 @@ namespace Math
 
 }
 #endif // MATH_VECTOR_H
+

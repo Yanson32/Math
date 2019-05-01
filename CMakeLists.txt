@@ -30,3 +30,4 @@ if(MATH_BUILD_TESTS)
 	include("GoogleTest")
 	add_subdirectory("tests")
 endif()
+

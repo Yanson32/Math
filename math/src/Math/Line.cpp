@@ -61,3 +61,4 @@ namespace Math
 			return true;
 	}
 }
+

@@ -24,5 +24,4 @@ TEST(Point, Equality)
 
 	Math::Point p3(0, 0);
 	EXPECT_NE(p1, p3);
-	
 }

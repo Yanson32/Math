@@ -31,3 +31,4 @@ namespace Math
     }
 }
 #endif // MATH_RADIAN_H
+
