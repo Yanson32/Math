@@ -1,3 +1,8 @@
+/************************************************************//**
+*   @author Wayne J Larson Jr.
+*   @date   5/20/19
+*   @brief  This file defines math constants
+****************************************************************/
 #ifndef MATH_CONSTANTS_H_INCLUDED
 #define MATH_CONSTANTS_H_INCLUDED
 namespace Math
