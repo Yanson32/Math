@@ -1,3 +1,36 @@
 @PACKAGE_INIT@
-check_required_components(${PROJECT_NAME})
-include("${CMAKE_CURRENT_LIST_DIR}/Math-Exports.cmake")
+
+#No components should be passed to this config file
+if(NOT Math_FIND_COMPONENTS STREQUAL "")
+	message("The Math library does not support components")
+endif()
+
+#Define a variable that points to the root of the package
+if(NOT DEFINED Math_ROOT)
+	set_and_check(Math_ROOT ${PACKAGE_PREFIX_DIR})
+endif()
+
+#Define a variaable that points to the library directory of the package
+set_and_check(Math_LIB_DIR ${PACKAGE_PREFIX_DIR}/lib)
+
+#Make sure the variable has not been set so it can be safely used internally
+if(DEFINED Math_STATIC_LIB_POSTFIX)
+	message(FATAL_ERROR "MathConfig.cmake uses the Math_STATIC_LIB_POSTFIX varaible internally. Please choose another name for your variable")
+endif()
+
+#If linking against static libs
+if(Math_STATIC_LIBS)
+	set(Math_STATIC_LIB_POSTFIX "Static")
+endif()
+
+#Path to exprot file
+set(Math_EXPORT_FILE_PATH ${CMAKE_CURRENT_LIST_DIR}/Math${Math_STATIC_LIB_POSTFIX}-Exports.cmake)
+
+#If export file exists
+if(EXISTS ${Math_EXPORT_FILE_PATH})
+	set(Math_FOUND True)
+	include("${Math_EXPORT_FILE_PATH}")
+else()
+	set(Math_FOUND False)
+endif()
+
