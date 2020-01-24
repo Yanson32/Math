@@ -59,6 +59,8 @@ namespace Math
 
 		if (this->m_End.y != param.m_End.y)
 			return true;
+
+        return false;
 	}
 }
 

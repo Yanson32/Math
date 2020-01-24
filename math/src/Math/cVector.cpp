@@ -78,7 +78,7 @@ namespace Math
 	{
 		float xAxis = x - param.x;
 		float yAxis = y - param.y;
-		return cVector(x, y);
+		return cVector(xAxis, yAxis);
 	}
 
 
