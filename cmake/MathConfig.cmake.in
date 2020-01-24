@@ -26,6 +26,8 @@ endif()
 #Path to export file
 set(Math_EXPORT_FILE_PATH ${CMAKE_CURRENT_LIST_DIR}/Math${Math_STATIC_LIB_POSTFIX}-Exports.cmake)
 
+unset(Math_STATIC_LIB_POSTFIX)
+
 #If export file exists
 if(EXISTS ${Math_EXPORT_FILE_PATH})
 	set(Math_FOUND True)
@@ -41,3 +43,5 @@ else()
 	endif()
 endif()
 
+
+unset(Math_EXPORT_FILE_PATH)
