@@ -2,5 +2,5 @@ language: cpp
 compiler: gcc
 
 script:
-  - cmake CMakeLists.txt
+  - cmake CMakeLists.txt -DMATH_BUILD_TESTS="True"
   - cmake  --build . --target Math
