@@ -2,5 +2,5 @@ language: cpp
 compiler: gcc
 
 script:
-  - cmake CMakeLists.txt -DMATH_BUILD_TESTS="True"
+  - cmake CMakeLists.txt -DCMAKE_VERBOSE_MAKEFILE=ON
   - make
