@@ -3,4 +3,4 @@ compiler: gcc
 
 script:
   - cmake CMakeLists.txt
-  - cmake  --build . 
+  - cmake  --build . -DMATH_BUILD_TESTS="True"
