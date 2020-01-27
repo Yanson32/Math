@@ -12,7 +12,7 @@ protected:
 	}
 
 	//void TearDown() override {}
-	Math::Degree default;
+	Math::Degree def;
 	Math::Degree deg2;
 	Math::Degree deg3;
 	Math::Radian rad;
@@ -21,7 +21,7 @@ protected:
 //Test constructor
 TEST_F(DegreeFix, Constructor)
 {
-	EXPECT_EQ(default, Math::Degree(0));
+	EXPECT_EQ(def, Math::Degree(0));
 	EXPECT_EQ(deg2, Math::Degree(2));
 	EXPECT_EQ(deg3, rad);
 }
@@ -30,8 +30,8 @@ TEST_F(DegreeFix, Constructor)
 TEST_F(DegreeFix, CopyConstructor)
 {
 	//Equality
-	Math::Degree temp(default);
-	EXPECT_EQ(default, temp);
+	Math::Degree temp(def);
+	EXPECT_EQ(def, temp);
 
 	Math::Degree temp2(deg2);
 	EXPECT_EQ(deg2, temp2);
@@ -55,25 +55,25 @@ TEST_F(DegreeFix, Multiplication)
 TEST_F(DegreeFix, Equality)
 {
 	//Equality
-	EXPECT_EQ(default, Math::Degree(0));
+	EXPECT_EQ(def, Math::Degree(0));
 	EXPECT_EQ(deg2, Math::Degree(2));
 	//EXPECT_EQ(deg3, Math::Degree(20));
 
 	//Greater than equal to
-	EXPECT_GE(deg2, default);
-	EXPECT_GE(deg3, default);
+	EXPECT_GE(deg2, def);
+	EXPECT_GE(deg3, def);
 }
 
 //Test for inequality
 TEST_F(DegreeFix, NotEqual)
 {
 	//Not Equal
-	EXPECT_NE(default, Math::Degree(200));
-	EXPECT_NE(deg2, default);
-	EXPECT_NE(deg3, default);
+	EXPECT_NE(def, Math::Degree(200));
+	EXPECT_NE(deg2, def);
+	EXPECT_NE(deg3, def);
 
 	//Not Equal (Radians)
-	EXPECT_NE(default, Math::Radian(200));
+	EXPECT_NE(def, Math::Radian(200));
 	EXPECT_NE(deg2, Math::Radian(0));
 	EXPECT_NE(deg3, Math::Radian(1000));
 }
@@ -82,13 +82,13 @@ TEST_F(DegreeFix, NotEqual)
 TEST_F(DegreeFix, LessThanEqualTo)
 {
 	//Less than equal to
-	EXPECT_LE(default, default);
-	EXPECT_LE(default, deg2);
+	EXPECT_LE(def, def);
+	EXPECT_LE(def, deg2);
 	EXPECT_LE(deg2, deg3);
 
 	//Less than equal to (Radians)
-	EXPECT_LE(default, Math::Radian(0));
-	EXPECT_LE(default, Math::Radian(10));
+	EXPECT_LE(def, Math::Radian(0));
+	EXPECT_LE(def, Math::Radian(10));
 	EXPECT_LE(deg2, Math::Radian(100));
 
 }
@@ -97,11 +97,11 @@ TEST_F(DegreeFix, LessThanEqualTo)
 TEST_F(DegreeFix, Lessthan)
 {
 	//Equality
-	EXPECT_LT(default, Math::Degree(1));
+	EXPECT_LT(def, Math::Degree(1));
 	EXPECT_LT(deg2, Math::Degree(20));
 	//EXPECT_LT(deg3, Math::Degree(1000));
 
-	EXPECT_LT(default, Math::Radian(1));
+	EXPECT_LT(def, Math::Radian(1));
 	EXPECT_LT(deg2, Math::Radian(1));
 	EXPECT_LT(deg3, Math::Radian(210));
 }
@@ -110,13 +110,13 @@ TEST_F(DegreeFix, Lessthan)
 TEST_F(DegreeFix, Greaterthan)
 {
 	//Equality
-	EXPECT_GT(default, Math::Degree(-1));
+	EXPECT_GT(def, Math::Degree(-1));
 	EXPECT_GT(deg2, Math::Degree(0));
 }
 
 //Test assignment operator
 TEST_F(DegreeFix, Assignment)
 {
-	Math::Degree temp = default;
-	EXPECT_EQ(temp, default);
+	Math::Degree temp = def;
+	EXPECT_EQ(temp, def);
 }

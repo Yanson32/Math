@@ -1,3 +1,8 @@
+include(GoogleTest)
+
+enable_testing()
+find_package(GTest REQUIRED)
+
 #list of tests
 set(TESTS "")
 
