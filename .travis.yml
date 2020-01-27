@@ -1,4 +1,2 @@
-language: c++
-script:
-  - cmake --version
-  - gcc --version
+language: cpp
+compiler: gcc
