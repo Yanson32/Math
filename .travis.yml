@@ -1,2 +1,4 @@
 language: c++
-
+script:
+  - cmake --version
+  - gcc --version
