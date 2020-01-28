@@ -26,4 +26,26 @@ namespace Math
         m_Radians = radians;
     }
 
+    /***************************************************************************//**
+    *   @brief  Overload the insertion operator.
+    *   @param  The stream where the data is.
+    *   @param  The Radian object will store data from the stream.
+    *******************************************************************************/
+    std::iostream& operator >> (std::iostream& in, Radian &rad)
+    {
+        in >> rad.m_Radians;
+        return in;
+    }
+
+
+    /****************************************************************************//**
+    *   @brief  Overload the extraction operator.
+    *   @param  The stream where the data will be inserted.
+    *   @param  The Radian object stores data that will be inserted into the stream.
+    ********************************************************************************/
+    std::ostream& operator << (std::ostream& out, const Radian &rad)
+    {
+         out << rad.m_Radians;
+         return out;
+    }
 }

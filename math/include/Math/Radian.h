@@ -2,6 +2,7 @@
 #define MATH_RADIAN_H
 
 #include "math_export.h"
+#include <iostream>
 
 namespace Math
 {
@@ -14,6 +15,8 @@ namespace Math
             explicit Radian(const Degree &degree);
             float GetRadians() const noexcept;
             void SetRadians(const float radians) noexcept;
+            friend std::iostream& operator >> (std::iostream& in, Radian &rad);
+            friend std::ostream& operator << (std::ostream& out, const Radian &rad);
             template <class T>
             T operator * (const T param) const;
         private:
@@ -23,7 +26,20 @@ namespace Math
             friend float sin(const Radian &rad);
     };
 
+    /****************************************************************************//**
+    *   @brief  Overload the insertion operator.
+    *   @param  The stream where the data is.
+    *   @param  The Radian object will store data from the stream.
+    ********************************************************************************/
+    std::iostream& operator >> (std::iostream& in, Radian &rad);
 
+
+    /****************************************************************************//**
+    *   @brief  Overload the extraction operator.
+    *   @param  The stream where the data will be inserted.
+    *   @param  The Radian object stores data that will be inserted into the stream.
+    ********************************************************************************/
+    std::ostream& operator << (std::ostream& in, const Radian &rad);
     template <class T>
     T Radian::operator * (const T param) const
     {
