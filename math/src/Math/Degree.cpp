@@ -25,7 +25,7 @@ namespace Math
     *           object.
     ****************************************************************/
     Degree::Degree(const Radian &radian):
-    m_Degrees((radian * 180) / pie)
+    m_Degrees(radian * (180 / pie))
     {
 
     }
