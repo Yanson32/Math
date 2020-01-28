@@ -22,10 +22,10 @@ class RadFix :
 //Test Radian constructor
 TEST_F(RadFix, Constructor)
 {
-    EXPECT_EQ(rad.get(), 0);
-    EXPECT_NEAR(rad2.get(), 3.25, DIVIATION);
-    EXPECT_NEAR(rad3.get(), -10.83, DIVIATION);
-    EXPECT_EQ(rad4.get(), -23);
+    EXPECT_EQ(rad, Math::Radian(0));
+    EXPECT_EQ(rad2, Math::Radian(3.25));
+    EXPECT_EQ(rad3, Math::Radian(-10.83));
+    EXPECT_EQ(rad4, Math::Radian(-23));
 }
 
 //Test insertion operator
@@ -54,19 +54,19 @@ TEST_F(RadFix, ExtractionOperator)
     ss << 0;
     Math::Radian rad;
     ss >> rad;
-    EXPECT_EQ(rad.get(), 0);
+    EXPECT_EQ(rad, Math::Radian(0));
 
     std::stringstream ss2;
     ss2 << -145;
     Math::Radian rad2;
     ss2 >> rad2;
-    EXPECT_EQ(rad2.get(), -145);
+    EXPECT_EQ(rad2, Math::Radian(-145));
 
     std::stringstream ss3;
     ss3 << 240;
     Math::Radian rad3;
     ss3 >> rad3;
-    EXPECT_EQ(rad3.get(), 240);
+    EXPECT_EQ(rad3, Math::Radian(240));
 }
 
 //Test the equality operator

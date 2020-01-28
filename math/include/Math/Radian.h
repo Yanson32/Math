@@ -17,7 +17,6 @@ namespace Math
             void SetRadians(const float radians) noexcept;
             friend std::iostream& operator >> (std::iostream& in, Radian &rad);
             friend std::ostream& operator << (std::ostream& out, const Radian &rad);
-            float get() const;
 
             bool operator == (const Math::Radian &rad) const;
             bool operator == (const Math::Degree &deg) const;

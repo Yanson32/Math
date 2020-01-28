@@ -29,11 +29,6 @@ namespace Math
         m_Radians = radians;
     }
 
-    float Radian::get() const
-    {
-        return m_Radians;
-    }
-
 
     bool Radian::operator == (const Math::Radian &rad) const
     {
