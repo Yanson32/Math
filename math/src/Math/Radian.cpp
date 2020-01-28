@@ -30,6 +30,32 @@ namespace Math
     }
 
 
+    /***************************************************************************//**
+    *   @brief  Overload the assignment operator.
+    *   @param  A Radian object that will be used to retrive data from.
+    *   @return A Reference to the current Radian object.
+    *******************************************************************************/
+    Math::Radian& Radian::operator = (const Math::Radian &rad)
+    {
+        if(this != &rad)
+            this->m_Radians = rad.m_Radians;
+
+        return *this;
+    }
+
+
+    /***************************************************************************//**
+    *   @brief  Overload the assignment operator.
+    *   @param  A Degree object that will be used to retrive data from.
+    *   @return A Reference to the current Radian object.
+    *******************************************************************************/
+    Math::Radian& Radian::operator = (const Math::Degree &deg)
+    {
+        this->m_Radians = Math::Radian(deg).m_Radians;
+
+        return *this;
+    }
+
     bool Radian::operator == (const Math::Radian &rad) const
     {
         float top = rad.m_Radians + DIVIATION;

@@ -18,8 +18,23 @@ namespace Math
             friend std::iostream& operator >> (std::iostream& in, Radian &rad);
             friend std::ostream& operator << (std::ostream& out, const Radian &rad);
 
+
+            /***************************************************************************//**
+            *   @brief  Overload the assignment operator.
+            *   @param  A Radian object that will be used to retrive data from.
+            *   @return A Reference to the current Radian object.
+            *******************************************************************************/
             bool operator == (const Math::Radian &rad) const;
+
+
+            /***************************************************************************//**
+            *   @brief  Overload the assignment operator.
+            *   @param  A Degree object that will be used to retrive data from.
+            *   @return A Reference to the current Radian object.
+            *******************************************************************************/
             bool operator == (const Math::Degree &deg) const;
+            Math::Radian& operator = (const Math::Radian &rad);
+            Math::Radian& operator = (const Math::Degree &deg);
             template <class T>
             float operator * (const T param) const;
         private:

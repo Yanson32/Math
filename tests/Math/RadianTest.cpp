@@ -37,6 +37,35 @@ TEST_F(RadFix, CopyConstructor)
     EXPECT_EQ(rad4, Math::Radian(rad4));
 }
 
+//Test assignment operator
+TEST_F(RadFix, AssignmentOperator)
+{
+    Math::Radian temp = rad;
+    EXPECT_EQ(rad, temp);
+
+    temp = Math::Degree(rad);
+    EXPECT_EQ(temp, Math::Degree(rad));
+
+    Math::Radian temp2 = rad2;
+    EXPECT_EQ(rad2, temp2);
+
+    temp2 = Math::Degree(rad2);
+    EXPECT_EQ(temp2, Math::Degree(rad2));
+
+    Math::Radian temp3 = rad3;
+    EXPECT_EQ(rad3, temp3);
+
+    temp3 = Math::Degree(rad3);
+    EXPECT_EQ(temp3, Math::Degree(rad3));
+
+    Math::Radian temp4 = rad4;
+    EXPECT_EQ(rad4, temp4);
+
+    temp4 = Math::Degree(rad4);
+    EXPECT_EQ(temp4, Math::Degree(rad4));
+}
+
+
 //Test insertion operator
 TEST_F(RadFix, InsertionOperator)
 {
