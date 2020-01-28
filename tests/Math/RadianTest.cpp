@@ -6,7 +6,26 @@ class RadFix :
 	public ::testing::Test
 {
 
+    public:
+        RadFix(): rad2(3.25), rad3(-10.83), rad4(-23){}
+
+    Math::Radian rad;
+    Math::Radian rad2;
+    Math::Radian rad3;
+    Math::Radian rad4;
+
+    const float DIVIATION = 0.001f;
 };
+
+
+//Test Radian constructor
+TEST_F(RadFix, Constructor)
+{
+    EXPECT_EQ(rad.get(), 0);
+    EXPECT_NEAR(rad2.get(), 3.25, DIVIATION);
+    EXPECT_NEAR(rad3.get(), -10.83, DIVIATION);
+    EXPECT_EQ(rad4.get(), -23);
+}
 
 //Test insertion operator
 TEST_F(RadFix, InsertionOperator)
