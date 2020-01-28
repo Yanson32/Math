@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <Math/Radian.h>
+#include <Math/Degree.h>
 #include <sstream>
 
 class RadFix :
@@ -66,4 +67,18 @@ TEST_F(RadFix, ExtractionOperator)
     Math::Radian rad3;
     ss3 >> rad3;
     EXPECT_EQ(rad3.get(), 240);
+}
+
+//Test the equality operator
+TEST_F(RadFix, EqualityOperator)
+{
+    EXPECT_EQ(rad, Math::Radian(0));
+    EXPECT_EQ(rad, Math::Degree(0));
+    EXPECT_EQ(rad, Math::Degree(rad));
+    EXPECT_EQ(rad2, Math::Radian(3.25));
+    EXPECT_EQ(rad2, Math::Degree(3.25));
+    EXPECT_EQ(rad3, Math::Radian(-10.83));
+    EXPECT_EQ(rad3, Math::Degree(-10.83));
+    EXPECT_EQ(rad4, Math::Degree(-23));
+    EXPECT_EQ(rad4, Math::Radian(-23));
 }

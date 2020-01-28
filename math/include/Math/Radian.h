@@ -18,6 +18,9 @@ namespace Math
             friend std::iostream& operator >> (std::iostream& in, Radian &rad);
             friend std::ostream& operator << (std::ostream& out, const Radian &rad);
             float get() const;
+
+            bool operator == (const Math::Radian &rad) const;
+            bool operator == (const Math::Degree &deg) const;
             template <class T>
             float operator * (const T param) const;
         private:

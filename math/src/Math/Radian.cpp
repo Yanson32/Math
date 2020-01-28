@@ -2,6 +2,9 @@
 #include "Math/Radian.h"
 #include "Math/Degree.h"
 
+namespace {
+    const float DIVIATION = 0.001f;
+}
 namespace Math
 {
     Radian::Radian(const float radian):
@@ -30,6 +33,26 @@ namespace Math
     {
         return m_Radians;
     }
+
+
+    bool Radian::operator == (const Math::Radian &rad) const
+    {
+        float top = rad.m_Radians + DIVIATION;
+        float bottom = rad.m_Radians - DIVIATION;
+
+        return this->m_Radians >= bottom && this->m_Radians <= top;
+    }
+
+
+    bool Radian::operator == (const Math::Degree &deg) const
+    {
+        float top = Math::Radian(deg).m_Radians + DIVIATION;
+        float bottom = Math::Radian(deg).m_Radians - DIVIATION;
+
+        return this->m_Radians >= bottom && this->m_Radians <= top;
+    }
+
+
     /***************************************************************************//**
     *   @brief  Overload the insertion operator.
     *   @param  The stream where the data is.
