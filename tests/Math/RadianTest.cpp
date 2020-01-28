@@ -20,12 +20,21 @@ class RadFix :
 
 
 //Test Radian constructor
-TEST_F(RadFix, Constructor)
+TEST_F(RadFix, FloatConstructor)
 {
     EXPECT_EQ(rad, Math::Radian(0));
     EXPECT_EQ(rad2, Math::Radian(3.25));
     EXPECT_EQ(rad3, Math::Radian(-10.83));
     EXPECT_EQ(rad4, Math::Radian(-23));
+}
+
+//Test the Radian constructor that takes a Degree object as a parameter
+TEST_F(RadFix, DegreeConstructor)
+{
+    EXPECT_EQ(rad, Math::Degree(0));
+    EXPECT_EQ(rad2, Math::Degree(3.25));
+    EXPECT_EQ(rad3, Math::Degree(-10.83));
+    EXPECT_EQ(rad4, Math::Degree(-23));
 }
 
 //Test for copy constructor
