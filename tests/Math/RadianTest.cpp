@@ -123,9 +123,10 @@ TEST_F(RadFix, EqualityOperator)
     EXPECT_EQ(rad, Math::Degree(0));
     EXPECT_EQ(rad, Math::Degree(rad));
     EXPECT_EQ(rad2, Math::Radian(3.25));
-    EXPECT_EQ(rad2, Math::Degree(3.25));
+    EXPECT_EQ(rad2, Math::Degree(rad2));
     EXPECT_EQ(rad3, Math::Radian(-10.83));
-    EXPECT_EQ(rad3, Math::Degree(-10.83));
-    EXPECT_EQ(rad4, Math::Degree(-23));
+    EXPECT_EQ(rad3, Math::Degree(rad3));
     EXPECT_EQ(rad4, Math::Radian(-23));
+    EXPECT_EQ(rad4, Math::Degree(rad4));
+
 }
