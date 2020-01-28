@@ -28,6 +28,15 @@ TEST_F(RadFix, Constructor)
     EXPECT_EQ(rad4, Math::Radian(-23));
 }
 
+//Test for copy constructor
+TEST_F(RadFix, CopyConstructor)
+{
+    EXPECT_EQ(rad, Math::Radian(rad));
+    EXPECT_EQ(rad2, Math::Radian(rad2));
+    EXPECT_EQ(rad3, Math::Radian(rad3));
+    EXPECT_EQ(rad4, Math::Radian(rad4));
+}
+
 //Test insertion operator
 TEST_F(RadFix, InsertionOperator)
 {
