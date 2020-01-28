@@ -59,7 +59,7 @@ TEST_F(DegreeFix, Equality)
 	//Equality
 	EXPECT_EQ(def, Math::Degree(0));
 	EXPECT_EQ(deg2, Math::Degree(2));
-	//EXPECT_EQ(deg3, Math::Degree(20));
+	EXPECT_EQ(deg3, Math::Degree(20));
 
 	//Greater than equal to
 	EXPECT_GE(deg2, def);
@@ -71,12 +71,12 @@ TEST_F(DegreeFix, NotEqual)
 {
 	//Not Equal
 	EXPECT_NE(def, Math::Degree(200));
-	//EXPECT_NE(deg2, def);
-	//EXPECT_NE(deg3, def);
+	EXPECT_NE(deg2, def);
+	EXPECT_NE(deg3, def);
 
 	//Not Equal (Radians)
 	EXPECT_NE(def, Math::Radian(200));
-	//EXPECT_NE(deg2, Math::Radian(0));
+	EXPECT_NE(deg2, Math::Radian(0));
 	EXPECT_NE(deg3, Math::Radian(1000));
 }
 
@@ -101,7 +101,7 @@ TEST_F(DegreeFix, Lessthan)
 	//Equality
 	EXPECT_LT(def, Math::Degree(1));
 	EXPECT_LT(deg2, Math::Degree(20));
-	//EXPECT_LT(deg3, Math::Degree(1000));
+	EXPECT_LT(deg3, Math::Degree(1000));
 
 	EXPECT_LT(def, Math::Radian(1));
 	EXPECT_LT(deg2, Math::Radian(1));
