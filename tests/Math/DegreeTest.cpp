@@ -45,12 +45,12 @@ TEST_F(DegreeFix, CopyConstructor)
 //Test multiplication operators
 TEST_F(DegreeFix, Multiplication)
 {
-	//Math::Degree temp(default * 5);
-	//EXPECT_EQ(temp, Math::Degree(0));
+	Math::Degree temp(def * 5);
+	EXPECT_EQ(temp, Math::Degree(0));
 
-	//Math::Degree temp2(1);
-	//Math::Degree temp3(temp2 * 5);
-	//EXPECT_EQ(temp3, Math::Degree(5));
+	Math::Degree temp2(1);
+	Math::Degree temp3(temp2 * 5);
+	EXPECT_EQ(temp3, Math::Degree(5));
 }
 
 //Test equality operators
