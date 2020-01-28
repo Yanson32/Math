@@ -86,7 +86,7 @@ TEST_F(DegreeFix, LessThanEqualTo)
 	//Less than equal to
 	EXPECT_LE(def, def);
 	EXPECT_LE(def, deg2);
-	EXPECT_LE(deg2, deg3);
+	EXPECT_LE(deg3, deg2);
 
 	//Less than equal to (Radians)
 	EXPECT_LE(def, Math::Radian(0));

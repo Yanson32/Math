@@ -38,7 +38,10 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator == (const Degree &param) const
 	{
-		return this->m_Degrees == param.m_Degrees;
+        const float top = m_Degrees + DIVIATION;
+        const float bottom = m_Degrees - DIVIATION;
+
+        return param.m_Degrees >= bottom && param.m_Degrees <= top;
 	}
 
 
@@ -49,7 +52,10 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator != (const Degree &param) const
 	{
-		return this->m_Degrees != param.m_Degrees;
+        const float top = param.m_Degrees + DIVIATION;
+        const float bottom = param.m_Degrees - DIVIATION;
+
+		return this->m_Degrees < bottom || this->m_Degrees > top;
 	}
 
 
@@ -62,7 +68,7 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator <= (const Degree &param) const
 	{
-        const float top = m_Degrees + DIVIATION;
+        const float top = param.m_Degrees + DIVIATION;
 		return this->m_Degrees <= top;
 	}
 
@@ -76,7 +82,8 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator >= (const Degree &param) const
 	{
-		return this->m_Degrees >= param.m_Degrees;
+        const float bottom = param.m_Degrees - DIVIATION;
+		return this->m_Degrees >= bottom;
 	}
 
 
@@ -129,7 +136,10 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator != (const Radian &param) const
 	{
-		return this->m_Degrees != Degree(param).m_Degrees;
+        const float top = param.m_Radians + DIVIATION;
+        const float bottom = param.m_Radians - DIVIATION;
+
+		return this->m_Degrees < bottom || this->m_Degrees > top;
 	}
 
 
@@ -142,6 +152,11 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator <= (const Radian &param) const
 	{
+        const float top = m_Degrees + DIVIATION;
+        const float bottom = m_Degrees - DIVIATION;
+        const float val = Degree(param).m_Degrees;
+
+
 		return this->m_Degrees <= Degree(param).m_Degrees;
 	}
 
@@ -155,7 +170,9 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator >= (const Radian &param) const
 	{
-		return this->m_Degrees >= Degree(param).m_Degrees;
+        const float top = param.m_Radians + DIVIATION;
+
+		return this->m_Degrees >= top;
 	}
 
 
