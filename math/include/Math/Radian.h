@@ -19,7 +19,7 @@ namespace Math
             friend std::ostream& operator << (std::ostream& out, const Radian &rad);
             float get() const;
             template <class T>
-            T operator * (const T param) const;
+            float operator * (const T param) const;
         private:
             float m_Radians = 0;
             friend class Degree;
@@ -42,7 +42,7 @@ namespace Math
     ********************************************************************************/
     std::ostream& operator << (std::ostream& in, const Radian &rad);
     template <class T>
-    T Radian::operator * (const T param) const
+    float Radian::operator * (const T param) const
     {
         return m_Radians * param;
     }

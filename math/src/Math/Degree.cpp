@@ -2,6 +2,10 @@
 #include "Math/Degree.h"
 #include "Math/Radian.h"
 
+namespace {
+    const float DIVIATION = 0.001f;
+}
+
 namespace Math
 {
     /************************************************************//**
@@ -21,7 +25,7 @@ namespace Math
     *           object.
     ****************************************************************/
     Degree::Degree(const Radian &radian):
-    m_Degrees(radian * 180 / pie)
+    m_Degrees((radian * 180) / pie)
     {
 
     }
@@ -58,7 +62,8 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator <= (const Degree &param) const
 	{
-		return this->m_Degrees <= param.m_Degrees;
+        const float top = m_Degrees + DIVIATION;
+		return this->m_Degrees <= top;
 	}
 
 
@@ -108,7 +113,11 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator == (const Radian &param) const
 	{
-		return this->m_Degrees == Degree(param).m_Degrees;
+        const float top = m_Degrees + DIVIATION;
+        const float bottom = m_Degrees - DIVIATION;
+        const float val = Degree(param).m_Degrees;
+
+        return (val >= bottom && val <= top);
 	}
 
 

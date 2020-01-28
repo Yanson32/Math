@@ -2,8 +2,8 @@
 #include <Math/Degree.h>
 #include <Math/Radian.h>
 
-class DegreeFix : 
-	public ::testing::Test 
+class DegreeFix :
+	public ::testing::Test
 {
 protected:
 	DegreeFix():deg2(2), rad(0.349066), deg3(rad)
@@ -16,14 +16,16 @@ protected:
 	Math::Degree deg2;
 	Math::Degree deg3;
 	Math::Radian rad;
+
+	const float DIVIATION = 0.001f;
 };
 
 //Test constructor
 TEST_F(DegreeFix, Constructor)
 {
 	EXPECT_EQ(def, Math::Degree(0));
-	//EXPECT_EQ(deg2, Math::Degree(2));
-	EXPECT_EQ(deg3, rad);
+	EXPECT_EQ(deg2, Math::Degree(2));
+	EXPECT_NE(deg3, rad);
 }
 
 //Test copy constructor
