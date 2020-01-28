@@ -17,6 +17,7 @@ namespace Math
             void SetRadians(const float radians) noexcept;
             friend std::iostream& operator >> (std::iostream& in, Radian &rad);
             friend std::ostream& operator << (std::ostream& out, const Radian &rad);
+            float get() const;
             template <class T>
             T operator * (const T param) const;
         private:

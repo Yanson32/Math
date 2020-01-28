@@ -1,0 +1,50 @@
+#include <gtest/gtest.h>
+#include <Math/Radian.h>
+#include <sstream>
+
+class RadFix :
+	public ::testing::Test
+{
+
+};
+
+//Test insertion operator
+TEST_F(RadFix, InsertionOperator)
+{
+    std::ostringstream ss;
+    Math::Radian rad;
+    ss << rad;
+    EXPECT_STREQ(ss.str().c_str(), "0");
+
+    std::ostringstream ss2;
+    Math::Radian rad2(-145);
+    ss2 << rad2;
+    EXPECT_STREQ(ss2.str().c_str(), "-145");
+
+    std::ostringstream ss3;
+    Math::Radian rad3(240);
+    ss3 << rad3;
+    EXPECT_STREQ(ss3.str().c_str(), "240");
+}
+
+//Test extraction operator
+TEST_F(RadFix, ExtractionOperator)
+{
+    std::stringstream ss;
+    ss << 0;
+    Math::Radian rad;
+    ss >> rad;
+    EXPECT_EQ(rad.get(), 0);
+
+    std::stringstream ss2;
+    ss2 << -145;
+    Math::Radian rad2;
+    ss2 >> rad2;
+    EXPECT_EQ(rad2.get(), -145);
+
+    std::stringstream ss3;
+    ss3 << 240;
+    Math::Radian rad3;
+    ss3 >> rad3;
+    EXPECT_EQ(rad3.get(), 240);
+}

@@ -26,6 +26,10 @@ namespace Math
         m_Radians = radians;
     }
 
+    float Radian::get() const
+    {
+        return m_Radians;
+    }
     /***************************************************************************//**
     *   @brief  Overload the insertion operator.
     *   @param  The stream where the data is.

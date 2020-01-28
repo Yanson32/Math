@@ -3,6 +3,7 @@ set(TESTS 	"PointTest"
 			"DegreeTest"
 			"FunctionsTest"
 			"LineTest"
+			"RadianTest"
 )
 
 #list of subdirectories
