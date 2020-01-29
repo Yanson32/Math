@@ -37,6 +37,8 @@ namespace Math
             Math::Radian operator + (const Degree &deg) const;
 
 
+            Math::Radian operator - (const Radian &rad) const;
+            Math::Radian operator - (const Degree &deg) const;
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
             *   @param  A Radian object that will be used to retrive data from.

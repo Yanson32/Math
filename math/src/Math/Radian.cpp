@@ -54,6 +54,18 @@ namespace Math
     }
 
 
+    Math::Radian Radian::operator - (const Radian &rad) const
+    {
+        return Math::Radian(this->m_Radians - rad.m_Radians);
+    }
+
+
+    Math::Radian Radian::operator - (const Degree &deg) const
+    {
+        return Math::Radian(this->m_Radians - Math::Radian(deg).m_Radians);
+    }
+
+
     /***************************************************************************//**
     *   @brief  Overload the assignment operator.
     *   @param  A Radian object that will be used to retrive data from.
