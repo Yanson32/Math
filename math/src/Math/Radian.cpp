@@ -54,12 +54,24 @@ namespace Math
     }
 
 
+    /***************************************************************************//**
+    *   @brief  Overload the subtraction operator.
+    *   @param  A Radian object to be subtracted from the current object
+    *   @return A Radian object that is equal to the difference of the current object
+    *           and the parameter.
+    *******************************************************************************/
     Math::Radian Radian::operator - (const Radian &rad) const
     {
         return Math::Radian(this->m_Radians - rad.m_Radians);
     }
 
 
+    /***************************************************************************//**
+    *   @brief  Overload the subtraction operator.
+    *   @param  A Degree object to be subtracted from the current object
+    *   @return A Radian object that is equal to the difference of the current object
+    *           and the parameter.
+    *******************************************************************************/
     Math::Radian Radian::operator - (const Degree &deg) const
     {
         return Math::Radian(this->m_Radians - Math::Radian(deg).m_Radians);

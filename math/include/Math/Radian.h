@@ -37,7 +37,21 @@ namespace Math
             Math::Radian operator + (const Degree &deg) const;
 
 
+            /***************************************************************************//**
+            *   @brief  Overload the subtraction operator.
+            *   @param  A Radian object to be subtracted from the current object
+            *   @return A Radian object that is equal to the difference of the current object
+            *           and the parameter.
+            *******************************************************************************/
             Math::Radian operator - (const Radian &rad) const;
+
+
+            /***************************************************************************//**
+            *   @brief  Overload the subtraction operator.
+            *   @param  A Degree object to be subtracted from the current object
+            *   @return A Radian object that is equal to the difference of the current object
+            *           and the parameter.
+            *******************************************************************************/
             Math::Radian operator - (const Degree &deg) const;
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
