@@ -14,7 +14,7 @@ namespace Math
     }
 
     Radian::Radian(const Degree &degree):
-    m_Radians(degree * (pie / 180))
+    m_Radians(degree.m_Degrees * (pie / 180))
     {
 
     }

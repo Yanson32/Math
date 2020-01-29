@@ -44,7 +44,7 @@ namespace Math
             *   @return template parameter
             ****************************************************************/
             template <class T>
-            float operator * (const T param) const;
+            Math::Degree operator * (const T param) const;
 
 
             /************************************************************//**
@@ -181,9 +181,9 @@ namespace Math
     *   @return template parameter
     ****************************************************************/
     template <class T>
-    float Degree::operator * (const T param) const
+    Math::Degree Degree::operator * (const T param) const
     {
-        return m_Degrees * param;
+        return Math::Degree(m_Degrees * param);
     }
 
 }

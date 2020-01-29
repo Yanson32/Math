@@ -56,7 +56,7 @@ namespace Math
             Math::Radian& operator = (const Math::Radian &rad);
             Math::Radian& operator = (const Math::Degree &deg);
             template <class T>
-            float operator * (const T param) const;
+            Math::Radian operator * (const T param) const;
         private:
             float m_Radians = 0;
             friend class Degree;
@@ -79,9 +79,9 @@ namespace Math
     ********************************************************************************/
     std::ostream& operator << (std::ostream& in, const Radian &rad);
     template <class T>
-    float Radian::operator * (const T param) const
+    Math::Radian Radian::operator * (const T param) const
     {
-        return m_Radians * param;
+        return Math::Radian(m_Radians * param);
     }
 }
 #endif // MATH_RADIAN_H
