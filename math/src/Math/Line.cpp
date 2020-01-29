@@ -3,6 +3,10 @@
 
 namespace Math
 {
+    Line::Line():m_Start(0, 0), m_End(0, 0)
+    {
+
+    }
 
     Line::Line(const Point &start, const Point &end):
     m_Start(start),

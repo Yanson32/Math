@@ -9,7 +9,7 @@ namespace Math
     class MATH_EXPORT Line final
     {
         public:
-            Line() = default;
+            Line();
             Line(const Point &start, const Point &end);
             Line Reverse() const;
             Line LeftNormal() const;

@@ -6,7 +6,7 @@ class DegreeFix :
 	public ::testing::Test
 {
 protected:
-	DegreeFix():deg2(2), rad(0.349066), deg3(Math::Radian(0.349066))
+	DegreeFix():def(0), deg2(2), rad(0.349066), deg3(Math::Radian(0.349066))
 	{
 
 	}
@@ -14,8 +14,9 @@ protected:
 	//void TearDown() override {}
 	Math::Degree def;
 	Math::Degree deg2;
-	Math::Degree deg3;
 	Math::Radian rad;
+	Math::Degree deg3;
+
 
 	const float DIVIATION = 0.001f;
 };

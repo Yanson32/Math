@@ -152,11 +152,6 @@ namespace Math
     ****************************************************************/
 	bool Degree::operator <= (const Radian &param) const
 	{
-        const float top = m_Degrees + DIVIATION;
-        const float bottom = m_Degrees - DIVIATION;
-        const float val = Degree(param).m_Degrees;
-
-
 		return this->m_Degrees <= Degree(param).m_Degrees;
 	}
 

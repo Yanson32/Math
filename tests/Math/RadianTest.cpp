@@ -8,7 +8,7 @@ class RadFix :
 {
 
     public:
-        RadFix(): rad2(3.25), rad3(-10.83), rad4(-23){}
+        RadFix(): rad(0), rad2(3.25), rad3(-10.83), rad4(-23){}
 
     Math::Radian rad;
     Math::Radian rad2;
