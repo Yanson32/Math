@@ -6,7 +6,7 @@ class DegreeFix :
 	public ::testing::Test
 {
 protected:
-	DegreeFix():deg2(2), rad(0.349066), deg3(rad)
+	DegreeFix():deg2(2), rad(0.349066), deg3(Math::Radian(0.349066))
 	{
 
 	}
@@ -60,8 +60,6 @@ TEST_F(DegreeFix, Equality)
 	EXPECT_EQ(def, Math::Degree(0));
 	EXPECT_EQ(deg2, Math::Degree(2));
 	EXPECT_EQ(deg3, Math::Degree(rad));
-
-
 }
 
 //Test for inequality
