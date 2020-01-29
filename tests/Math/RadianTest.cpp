@@ -138,7 +138,7 @@ TEST_F(RadFix, AdditionOperator)
     EXPECT_EQ(rad + rad2, Math::Radian(3.25));
     EXPECT_EQ(rad2 + rad3, Math::Radian(-7.58));
     EXPECT_EQ(rad2 + Math::Degree(12.3), Math::Radian(3.4646755));
-    EXPECT_EQ(rad3 + Math::Degree(-100), Math::Radian(-01.745329));
+    EXPECT_EQ(rad3 + Math::Degree(-100), Math::Radian(-12.575329));
     EXPECT_EQ(rad4 + Math::Degree(-52.4), Math::Radian(-23.9145525));
 }
 
