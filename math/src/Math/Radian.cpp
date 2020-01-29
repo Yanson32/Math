@@ -31,6 +31,30 @@ namespace Math
 
 
     /***************************************************************************//**
+    *   @brief  Overload the addition operator.
+    *   @param  A Radian object to be added to the current object
+    *   @return A Radian object that is equal to the sum of the current object
+    *           and the parameter.
+    *******************************************************************************/
+    Math::Radian Radian::operator + (const Radian &rad) const
+    {
+        return Math::Radian(this->m_Radians + rad.m_Radians);
+    }
+
+
+    /***************************************************************************//**
+    *   @brief  Overload the addition operator.
+    *   @param  A Degree object to be added to the current object
+    *   @return A Radian object that is equal to the sum of the current object
+    *           and the parameter.
+    *******************************************************************************/
+    Math::Radian Radian::operator + (const Degree &deg) const
+    {
+        return Math::Radian(this->m_Radians + Math::Radian(deg).m_Radians);
+    }
+
+
+    /***************************************************************************//**
     *   @brief  Overload the assignment operator.
     *   @param  A Radian object that will be used to retrive data from.
     *   @return A Reference to the current Radian object.

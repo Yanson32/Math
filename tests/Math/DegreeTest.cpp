@@ -59,11 +59,9 @@ TEST_F(DegreeFix, Equality)
 	//Equality
 	EXPECT_EQ(def, Math::Degree(0));
 	EXPECT_EQ(deg2, Math::Degree(2));
-	EXPECT_EQ(deg3, Math::Degree(20));
+	EXPECT_EQ(deg3, Math::Degree(rad));
 
-	//Greater than equal to
-	EXPECT_GE(deg2, def);
-	EXPECT_GE(deg3, def);
+
 }
 
 //Test for inequality
