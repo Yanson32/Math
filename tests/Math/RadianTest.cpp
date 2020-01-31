@@ -131,6 +131,21 @@ TEST_F(RadFix, EqualityOperator)
 
 }
 
+
+//Test for inequality
+TEST_F(RadFix, NotEqualOperator)
+{
+    EXPECT_NE(rad, rad2);
+    EXPECT_NE(rad, Math::Degree(rad2));
+
+    EXPECT_NE(rad2, rad3);
+    EXPECT_NE(rad2, Math::Degree(rad3));
+
+    EXPECT_NE(rad3, rad4);
+    EXPECT_NE(rad3, Math::Degree(rad4));
+}
+
+
 //Test addition operator
 TEST_F(RadFix, AdditionOperator)
 {

@@ -53,6 +53,8 @@ namespace Math
             *           and the parameter.
             *******************************************************************************/
             Math::Radian operator - (const Degree &deg) const;
+
+
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
             *   @param  A Radian object that will be used to retrive data from.
@@ -67,6 +69,24 @@ namespace Math
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
             bool operator == (const Math::Degree &deg) const;
+
+
+            /***************************************************************************//**
+            *   @brief  Overload the not equal operator.
+            *   @param  A Radian object that will be checked for inequality.
+            *   @return A boolean True value when the objects are not equal and false
+            *           otherwise.
+            *******************************************************************************/
+            bool operator != (const Math::Radian &rad) const;
+
+
+            /***************************************************************************//**
+            *   @brief  Overload the not equal operator.
+            *   @param  A Degree object that will be checked for inequality.
+            *   @return A boolean True value when the objects are not equal and false
+            *           otherwise.
+            *******************************************************************************/
+            bool operator != (const Math::Degree &deg) const;
             Math::Radian& operator = (const Math::Radian &rad);
             Math::Radian& operator = (const Math::Degree &deg);
             template <class T>

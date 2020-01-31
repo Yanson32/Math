@@ -104,6 +104,31 @@ namespace Math
         return *this;
     }
 
+
+    /***************************************************************************//**
+    *   @brief  Overload the not equal operator.
+    *   @param  A Radian object that will be checked for inequality.
+    *   @return A boolean True value when the objects are not equal and false
+    *           otherwise.
+    *******************************************************************************/
+    bool Radian::operator != (const Math::Radian &rad) const
+    {
+        return this->m_Radians != rad.m_Radians;
+    }
+
+
+    /***************************************************************************//**
+    *   @brief  Overload the not equal operator.
+    *   @param  A Degree object that will be checked for inequality.
+    *   @return A boolean True value when the objects are not equal and false
+    *           otherwise.
+    *******************************************************************************/
+    bool Radian::operator != (const Math::Degree &deg) const
+    {
+        return this->m_Radians != Math::Radian(deg).m_Radians;
+    }
+
+
     bool Radian::operator == (const Math::Radian &rad) const
     {
         float top = rad.m_Radians + DIVIATION;
