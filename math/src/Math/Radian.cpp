@@ -19,16 +19,6 @@ namespace Math
 
     }
 
-    float Radian::GetRadians() const noexcept
-    {
-        return m_Radians;
-    }
-
-    void Radian::SetRadians(const float radians) noexcept
-    {
-        m_Radians = radians;
-    }
-
 
     /***************************************************************************//**
     *   @brief  Overload the addition operator.

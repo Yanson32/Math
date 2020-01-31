@@ -13,9 +13,21 @@ namespace Math
             Radian() = default;
             Radian(const float radian);
             explicit Radian(const Degree &degree);
-            float GetRadians() const noexcept;
-            void SetRadians(const float radians) noexcept;
+
+
+            /****************************************************************************//**
+            *   @brief  Overload the insertion operator.
+            *   @param  The stream where the data is.
+            *   @param  The Radian object will store data from the stream.
+            ********************************************************************************/
             friend std::iostream& operator >> (std::iostream& in, Radian &rad);
+
+
+            /****************************************************************************//**
+            *   @brief  Overload the extraction operator.
+            *   @param  The stream where the data will be inserted.
+            *   @param  The Radian object stores data that will be inserted into the stream.
+            ********************************************************************************/
             friend std::ostream& operator << (std::ostream& out, const Radian &rad);
 
 
@@ -93,7 +105,21 @@ namespace Math
             *   @brief  Type cast operator for converting to float.
             *******************************************************************************/
             operator float() const;
+
+
+            /***************************************************************************//**
+            *   @brief  Overload the assignment operator.
+            *   @param  A Radian object that will be used to retrive data from.
+            *   @return A Reference to the current Radian object.
+            *******************************************************************************/
             Math::Radian& operator = (const Math::Radian &rad);
+
+
+            /***************************************************************************//**
+            *   @brief  Overload the assignment operator.
+            *   @param  A Degree object that will be used to retrive data from.
+            *   @return A Reference to the current Radian object.
+            *******************************************************************************/
             Math::Radian& operator = (const Math::Degree &deg);
             template <class T>
             Math::Radian operator * (const T param) const;
