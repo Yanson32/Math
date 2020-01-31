@@ -167,3 +167,20 @@ TEST_F(RadFix, SubtractionOperator)
     EXPECT_EQ(rad3 - Math::Degree(-100), Math::Radian(-9.084671));
     EXPECT_EQ(rad4 - Math::Degree(-52.4), Math::Radian(-22.0854475));
 }
+
+//Test typecast operator
+TEST_F(RadFix, FLoatTypecastOperator)
+{
+    EXPECT_EQ(static_cast<float>(rad), 0);
+    EXPECT_EQ(static_cast<float>(rad2), 3.25);
+
+
+    const float DIVIATION = 0.000001;
+    float temp = static_cast<float>(rad3);
+    float top = -10.83 + DIVIATION;
+    float bottom = -10.83 - DIVIATION;
+
+    EXPECT_LE(-10.83, top);
+    EXPECT_GE(-10.83, bottom);
+    EXPECT_EQ(static_cast<float>(rad4), -23);
+}

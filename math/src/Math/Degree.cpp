@@ -183,6 +183,15 @@ namespace Math
 	}
 
 
+    /***************************************************************************//**
+    *   @brief  Type cast operator for converting to float.
+    *******************************************************************************/
+    Degree::operator float() const
+    {
+        return m_Degrees;
+    }
+
+
     /************************************************************//**
     *   @brief  Insertion operator overload
     *   @param  output stream where the Degree object will be printed.

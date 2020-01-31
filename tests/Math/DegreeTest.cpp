@@ -119,3 +119,11 @@ TEST_F(DegreeFix, Assignment)
 	Math::Degree temp = def;
 	EXPECT_EQ(temp, def);
 }
+
+
+//Test float
+TEST_F(DegreeFix, FloatTypecastOperator)
+{
+    EXPECT_EQ(static_cast<float>(def), 0);
+    EXPECT_EQ(static_cast<float>(deg2), 2);
+}

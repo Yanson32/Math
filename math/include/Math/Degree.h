@@ -149,6 +149,12 @@ namespace Math
 			bool operator < (const Radian &param) const;
 
 
+            /***************************************************************************//**
+            *   @brief  Type cast operator for converting to float.
+            *******************************************************************************/
+            operator float() const;
+
+
             /************************************************************//**
             *   @brief  Insertion operator overload
             *   @param  output stream where the Degree object will be printed.

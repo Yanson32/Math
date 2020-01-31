@@ -87,6 +87,12 @@ namespace Math
             *           otherwise.
             *******************************************************************************/
             bool operator != (const Math::Degree &deg) const;
+
+
+            /***************************************************************************//**
+            *   @brief  Type cast operator for converting to float.
+            *******************************************************************************/
+            operator float() const;
             Math::Radian& operator = (const Math::Radian &rad);
             Math::Radian& operator = (const Math::Degree &deg);
             template <class T>

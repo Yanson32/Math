@@ -129,6 +129,15 @@ namespace Math
     }
 
 
+    /***************************************************************************//**
+    *   @brief  Type cast operator for converting to float.
+    *******************************************************************************/
+    Radian::operator float() const
+    {
+        return m_Radians;
+    }
+
+
     bool Radian::operator == (const Math::Radian &rad) const
     {
         float top = rad.m_Radians + DIVIATION;
