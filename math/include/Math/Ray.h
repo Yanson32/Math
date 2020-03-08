@@ -1,5 +1,6 @@
 #ifndef MATH_RAY_H
 #define MATH_RAY_H
+/*
 #include "math_export.h"
 #include "Math/Radian.h"
 #include "Math/Point.h"
@@ -12,10 +13,12 @@ namespace Math
         public:
             Ray() = default;
         private:
-            Radian m_Radian;
-            Point m_Point;
+            //Radian m_Radian;
+            //Point m_Point;
 
     };
 
 }
+*/
 #endif // MATH_RAY_H
+

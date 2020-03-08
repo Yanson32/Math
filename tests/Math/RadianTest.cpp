@@ -10,10 +10,10 @@ class RadFix :
     public:
         RadFix(): rad(0), rad2(3.25), rad3(-10.83), rad4(-23){}
 
-    Math::Radian rad;
-    Math::Radian rad2;
-    Math::Radian rad3;
-    Math::Radian rad4;
+    Math::Radian<float> rad;
+    Math::Radian<float> rad2;
+    Math::Radian<float> rad3;
+    Math::Radian<float> rad4;
 
     const float DIVIATION = 0.001f;
 };
@@ -22,56 +22,56 @@ class RadFix :
 //Test Radian constructor
 TEST_F(RadFix, FloatConstructor)
 {
-    EXPECT_EQ(rad, Math::Radian(0));
-    EXPECT_EQ(rad2, Math::Radian(3.25));
-    EXPECT_EQ(rad3, Math::Radian(-10.83));
-    EXPECT_EQ(rad4, Math::Radian(-23));
+    EXPECT_EQ(rad, Math::Radian<float>(0));
+    EXPECT_EQ(rad2, Math::Radian<float>(3.25));
+    EXPECT_EQ(rad3, Math::Radian<float>(-10.83));
+    EXPECT_EQ(rad4, Math::Radian<float>(-23));
 }
 
 //Test the Radian constructor that takes a Degree object as a parameter
 TEST_F(RadFix, DegreeConstructor)
 {
-    EXPECT_EQ(rad, Math::Radian(Math::Degree(rad)));
-    EXPECT_EQ(rad2, Math::Radian(Math::Degree(rad2)));
-    EXPECT_EQ(rad3, Math::Radian(Math::Degree(rad3)));
-    EXPECT_EQ(rad4, Math::Radian(Math::Degree(rad4)));
+    EXPECT_EQ(rad, Math::Radian<float>(Math::Degree<float>(rad)));
+    EXPECT_EQ(rad2, Math::Radian<float>(Math::Degree<float>(rad2)));
+    EXPECT_EQ(rad3, Math::Radian<float>(Math::Degree<float>(rad3)));
+    EXPECT_EQ(rad4, Math::Radian<float>(Math::Degree<float>(rad4)));
 }
 
 //Test for copy constructor
 TEST_F(RadFix, CopyConstructor)
 {
-    EXPECT_EQ(rad, Math::Radian(rad));
-    EXPECT_EQ(rad2, Math::Radian(rad2));
-    EXPECT_EQ(rad3, Math::Radian(rad3));
-    EXPECT_EQ(rad4, Math::Radian(rad4));
+    EXPECT_EQ(rad, Math::Radian<float>(rad));
+    EXPECT_EQ(rad2, Math::Radian<float>(rad2));
+    EXPECT_EQ(rad3, Math::Radian<float>(rad3));
+    EXPECT_EQ(rad4, Math::Radian<float>(rad4));
 }
 
 //Test assignment operator
 TEST_F(RadFix, AssignmentOperator)
 {
-    Math::Radian temp = rad;
+    Math::Radian<float> temp = rad;
     EXPECT_EQ(rad, temp);
 
-    temp = Math::Degree(rad);
-    EXPECT_EQ(temp, Math::Degree(rad));
+    temp = Math::Degree<float>(rad);
+    EXPECT_EQ(temp, Math::Degree<float>(rad));
 
-    Math::Radian temp2 = rad2;
+    Math::Radian<float> temp2 = rad2;
     EXPECT_EQ(rad2, temp2);
 
-    temp2 = Math::Degree(rad2);
-    EXPECT_EQ(temp2, Math::Degree(rad2));
+    temp2 = Math::Degree<float>(rad2);
+    EXPECT_EQ(temp2, Math::Degree<float>(rad2));
 
-    Math::Radian temp3 = rad3;
+    Math::Radian<float> temp3 = rad3;
     EXPECT_EQ(rad3, temp3);
 
-    temp3 = Math::Degree(rad3);
-    EXPECT_EQ(temp3, Math::Degree(rad3));
+    temp3 = Math::Degree<float>(rad3);
+    EXPECT_EQ(temp3, Math::Degree<float>(rad3));
 
-    Math::Radian temp4 = rad4;
+    Math::Radian<float> temp4 = rad4;
     EXPECT_EQ(rad4, temp4);
 
-    temp4 = Math::Degree(rad4);
-    EXPECT_EQ(temp4, Math::Degree(rad4));
+    temp4 = Math::Degree<float>(rad4);
+    EXPECT_EQ(temp4, Math::Degree<float>(rad4));
 }
 
 
@@ -79,17 +79,17 @@ TEST_F(RadFix, AssignmentOperator)
 TEST_F(RadFix, InsertionOperator)
 {
     std::ostringstream ss;
-    Math::Radian rad;
+    Math::Radian<float> rad;
     ss << rad;
     EXPECT_STREQ(ss.str().c_str(), "0");
 
     std::ostringstream ss2;
-    Math::Radian rad2(-145);
+    Math::Radian<float> rad2(-145);
     ss2 << rad2;
     EXPECT_STREQ(ss2.str().c_str(), "-145");
 
     std::ostringstream ss3;
-    Math::Radian rad3(240);
+    Math::Radian<float> rad3(240);
     ss3 << rad3;
     EXPECT_STREQ(ss3.str().c_str(), "240");
 }
@@ -99,35 +99,35 @@ TEST_F(RadFix, ExtractionOperator)
 {
     std::stringstream ss;
     ss << 0;
-    Math::Radian rad;
+    Math::Radian<float> rad;
     ss >> rad;
-    EXPECT_EQ(rad, Math::Radian(0));
+    EXPECT_EQ(rad, Math::Radian<float>(0));
 
     std::stringstream ss2;
     ss2 << -145;
-    Math::Radian rad2;
+    Math::Radian<float> rad2;
     ss2 >> rad2;
-    EXPECT_EQ(rad2, Math::Radian(-145));
+    EXPECT_EQ(rad2, Math::Radian<float>(-145));
 
     std::stringstream ss3;
     ss3 << 240;
-    Math::Radian rad3;
+    Math::Radian<float> rad3;
     ss3 >> rad3;
-    EXPECT_EQ(rad3, Math::Radian(240));
+    EXPECT_EQ(rad3, Math::Radian<float>(240));
 }
 
 //Test the equality operator
 TEST_F(RadFix, EqualityOperator)
 {
-    EXPECT_EQ(rad, Math::Radian(0));
-    EXPECT_EQ(rad, Math::Degree(0));
-    EXPECT_EQ(rad, Math::Degree(rad));
-    EXPECT_EQ(rad2, Math::Radian(3.25));
-    EXPECT_EQ(rad2, Math::Degree(rad2));
-    EXPECT_EQ(rad3, Math::Radian(-10.83));
-    EXPECT_EQ(rad3, Math::Degree(rad3));
-    EXPECT_EQ(rad4, Math::Radian(-23));
-    EXPECT_EQ(rad4, Math::Degree(rad4));
+    EXPECT_EQ(rad, Math::Radian<float>(0));
+    EXPECT_EQ(rad, Math::Degree<float>(0));
+    EXPECT_EQ(rad, Math::Degree<float>(rad));
+    EXPECT_EQ(rad2, Math::Radian<float>(3.25));
+    EXPECT_EQ(rad2, Math::Degree<float>(rad2));
+    EXPECT_EQ(rad3, Math::Radian<float>(-10.83));
+    EXPECT_EQ(rad3, Math::Degree<float>(rad3));
+    EXPECT_EQ(rad4, Math::Radian<float>(-23));
+    EXPECT_EQ(rad4, Math::Degree<float>(rad4));
 
 }
 
@@ -136,36 +136,36 @@ TEST_F(RadFix, EqualityOperator)
 TEST_F(RadFix, NotEqualOperator)
 {
     EXPECT_NE(rad, rad2);
-    EXPECT_NE(rad, Math::Degree(rad2));
+    EXPECT_NE(rad, Math::Degree<float>(rad2));
 
     EXPECT_NE(rad2, rad3);
-    EXPECT_NE(rad2, Math::Degree(rad3));
+    EXPECT_NE(rad2, Math::Degree<float>(rad3));
 
     EXPECT_NE(rad3, rad4);
-    EXPECT_NE(rad3, Math::Degree(rad4));
+    EXPECT_NE(rad3, Math::Degree<float>(rad4));
 }
 
 
 //Test addition operator
 TEST_F(RadFix, AdditionOperator)
 {
-    EXPECT_EQ(rad + rad, Math::Radian(0));
-    EXPECT_EQ(rad + rad2, Math::Radian(3.25));
-    EXPECT_EQ(rad2 + rad3, Math::Radian(-7.58));
-    EXPECT_EQ(rad2 + Math::Degree(12.3), Math::Radian(3.4646755));
-    EXPECT_EQ(rad3 + Math::Degree(-100), Math::Radian(-12.575329));
-    EXPECT_EQ(rad4 + Math::Degree(-52.4), Math::Radian(-23.9145525));
+    EXPECT_EQ(rad + rad, Math::Radian<float>(0));
+    EXPECT_EQ(rad + rad2, Math::Radian<float>(3.25));
+    EXPECT_EQ(rad2 + rad3, Math::Radian<float>(-7.58));
+    EXPECT_EQ(rad2 + Math::Degree<float>(12.3), Math::Radian<float>(3.4646755));
+    EXPECT_EQ(rad3 + Math::Degree<float>(-100), Math::Radian<float>(-12.575329));
+    EXPECT_EQ(rad4 + Math::Degree<float>(-52.4), Math::Radian<float>(-23.9145525));
 }
 
 //Test subtraction operator
 TEST_F(RadFix, SubtractionOperator)
 {
-    EXPECT_EQ(rad - rad, Math::Radian(0));
-    EXPECT_EQ(rad - rad2, Math::Radian(-3.25));
-    EXPECT_EQ(rad2 - rad3, Math::Radian(14.08));
-    EXPECT_EQ(rad2 - Math::Degree(12.3), Math::Radian(3.0353245));
-    EXPECT_EQ(rad3 - Math::Degree(-100), Math::Radian(-9.084671));
-    EXPECT_EQ(rad4 - Math::Degree(-52.4), Math::Radian(-22.0854475));
+    EXPECT_EQ(rad - rad, Math::Radian<float>(0));
+    EXPECT_EQ(rad - rad2, Math::Radian<float>(-3.25));
+    EXPECT_EQ(rad2 - rad3, Math::Radian<float>(14.08));
+    EXPECT_EQ(rad2 - Math::Degree<float>(12.3), Math::Radian<float>(3.0353245));
+    EXPECT_EQ(rad3 - Math::Degree<float>(-100), Math::Radian<float>(-9.084671));
+    EXPECT_EQ(rad4 - Math::Degree<float>(-52.4), Math::Radian<float>(-22.0854475));
 }
 
 //Test typecast operator

@@ -1,10 +1,12 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
+#include "Math/Constants.h"
+#include "Math/Radian.h"
+#include "Math/Degree.h"
+
 namespace Math
 {
-    class Radian;
-    class Degree;
 
     /*********************************************************//**
     *   @brief  Get the cosign of a Math::Radian object.
@@ -13,7 +15,11 @@ namespace Math
     *   @return a float representing the cosign of the input
     *           Math::Radian object.
     *************************************************************/
-    float cos(const Radian &rad);
+    template <class T>
+    float cos(const Radian<T> &rad)
+    {
+        return std::cos(rad.m_Radians);
+    }
 
 
     /***********************************************************//**
@@ -23,7 +29,11 @@ namespace Math
     *   @return a float representing the cosign of the input
     *           Math::Degree object.
     ***************************************************************/
-    float cos(const Degree &deg);
+    template <class P>
+    float cos(const Degree<P> &deg)
+    {
+        return std::cos(deg.m_Degrees);
+    }
 
 
     /***********************************************************//**
@@ -33,7 +43,11 @@ namespace Math
     *   @return a float representing the sin of the input
     *           Math::Radian object.
     ***************************************************************/
-    float sin(const Radian &rad);
+    template <class T>
+    float sin(const Radian<T> &rad)
+    {
+        return std::sin(rad.m_Radians);
+    }
 
 
     /***********************************************************//**
@@ -43,7 +57,11 @@ namespace Math
     *   @return a float representing the sin of the input
     *           Math::Degree object.
     ***************************************************************/
-    float sin(const Degree &deg);
+    template <class P>
+    float sin(const Degree<P> &deg)
+    {
+        return std::sin(deg.m_Degrees);
+    }
 }
 
 #endif // FUNCTIONS_H

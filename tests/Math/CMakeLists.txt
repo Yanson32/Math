@@ -1,8 +1,8 @@
 #list of tests
-set(TESTS 	"PointTest"
+set(TESTS 	#"PointTest"
 			"DegreeTest"
-			"FunctionsTest"
-			"LineTest"
+			#"FunctionsTest"
+			#"LineTest"
 			"RadianTest"
 )
 

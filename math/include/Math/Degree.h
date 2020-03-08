@@ -8,11 +8,14 @@
 #define	MATH_DEGREE_H
 
 #include <iostream>
-
+#include <Math/Constants.h>
 #include "math_export.h"
 namespace Math
 {
+    template <class T>
     class Radian;
+
+    template <class T>
     class MATH_EXPORT Degree final
     {
         public:
@@ -34,7 +37,8 @@ namespace Math
             *   @param  A Radian object which will be converted to a degree
             *           object.
             ****************************************************************/
-            explicit Degree(const Radian &radian);
+            template <class P>            
+            explicit Degree(const Radian<P> &radian);
 
 
             /************************************************************//**
@@ -43,8 +47,8 @@ namespace Math
             *   @param  The object to be multiplied by.
             *   @return template parameter
             ****************************************************************/
-            template <class T>
-            Math::Degree operator * (const T param) const;
+            template <class P>
+            Degree<T> operator * (const P param) const;
 
 
             /************************************************************//**
@@ -108,7 +112,8 @@ namespace Math
             *   @return True if this object is equal to parameter and
             *           false otherwise
             ****************************************************************/
-			bool operator == (const Radian &param) const;
+            template <class P>
+			bool operator == (const Radian<P> &param) const;
 
 
             /************************************************************//**
@@ -117,7 +122,8 @@ namespace Math
             *   @return True if this object is not equal to parameter and
             *           false otherwise
             ****************************************************************/
-			bool operator != (const Radian &param) const;
+            template <class P>
+			bool operator != (const Radian<P> &param) const;
 
 
             /************************************************************//**
@@ -127,7 +133,8 @@ namespace Math
             *   @return True if this object is less than or equal to
             *           parameter and false otherwise
             ****************************************************************/
-			bool operator <= (const Radian &param) const;
+            template <class P>
+			bool operator <= (const Radian<P> &param) const;
 
 
             /************************************************************//**
@@ -137,7 +144,8 @@ namespace Math
             *   @return True if this object is greater than or equal to
             *           parameter and false otherwise
             ****************************************************************/
-			bool operator >= (const Radian &param) const;
+            template <class P>
+			bool operator >= (const Radian<P> &param) const;
 
 
             /************************************************************//**
@@ -146,7 +154,8 @@ namespace Math
             *   @return True if this object is less than parameter and
             *           false otherwise
             ****************************************************************/
-			bool operator < (const Radian &param) const;
+            template <class P>			
+            bool operator < (const Radian<P> &param) const;
 
 
             /***************************************************************************//**
@@ -161,7 +170,8 @@ namespace Math
             *   @param  A Degree object which will be printed to output stream.
             *   @return The output stream the Degree object was printed to.
             ****************************************************************/
-			friend std::ostream& operator << (std::ostream& out, const Degree &param);
+            //template <class P>
+			//friend std::ostream& operator << (std::ostream& out, const Degree<P> &param);
 
 
             /************************************************************//**
@@ -170,13 +180,18 @@ namespace Math
             *   @param  A Degree object which will store the extracted object.
             *   @return The input stream the Degree object was extracted from.
             ****************************************************************/
-			friend std::istream& operator >> (std::istream& in, const Degree &param);
+            //template <class P>
+			//friend std::istream& operator >> (std::istream& in, const Degree<P> &param);
 
         private:
-            float m_Degrees = 0;
-            friend class Radian;
-            friend float cos(const Degree &deg);
-            friend float sin(const Degree &deg);
+            T m_Degrees = 0;
+            //friend class Radian;
+
+            template <class P>
+            friend T cos(const Degree<T> &deg);
+
+            template <class P>
+            friend T sin(const Degree<T> &deg);
     };
 
 
@@ -187,10 +202,224 @@ namespace Math
     *   @return template parameter
     ****************************************************************/
     template <class T>
-    Math::Degree Degree::operator * (const T param) const
+    template <class P>
+    Degree<T> Degree<T>::operator * (const P param) const
     {
-        return Math::Degree(m_Degrees * param);
+        return Degree<T>(m_Degrees * static_cast<T>(param));
     }
 
+    /************************************************************//**
+    *   @brief  Single parameter constructor
+    *   @param  construct a Degree object from a float.
+    ****************************************************************/
+    template <class T>
+    Degree<T>::Degree(const float degree):
+    m_Degrees(degree)
+    {
+
+    }
+
+
+    /************************************************************//**
+    *   @brief  Construct a Degree object from a Radian object
+    *   @param  A Radian object which will be converted to a degree
+    *           object.
+    ****************************************************************/
+    template <class T>
+    template <class P> 
+    Degree<T>::Degree(const Radian<P> &radian):
+    m_Degrees(static_cast<T>(radian) * (180 / pie))
+    {
+
+    }
+
+
+    /************************************************************//**
+    *   @brief  Checks for equality between two Degree objects.
+    *   @param  A degree object equality will be checked against.
+    *   @return True if the two objects are equal and false otherwise
+    ****************************************************************/
+    template <class T>
+	bool Degree<T>::operator == (const Degree &param) const
+	{
+        return this->m_Degrees == param.m_Degrees;
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks that two Degree objects are not equal.
+    *   @param  A degree object equality will be checked against.
+    *   @return True if the two objects are not equal and false otherwise
+    ****************************************************************/
+    template <class T>
+	bool Degree<T>::operator != (const Degree &param) const
+	{
+		return this->m_Degrees  != param.m_Degrees;
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is less than or equal to
+    *           the parameter.
+    *   @param  A degree object equality will be checked against.
+    *   @return True if this object is less than or equal to parameter
+    *           and false otherwise
+    ****************************************************************/
+    template <class T>
+	bool Degree<T>::operator <= (const Degree &param) const
+	{
+		return this->m_Degrees <= param.m_Degrees;
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is greater than or equal to
+    *           the parameter.
+    *   @param  A degree object equality will be checked against.
+    *   @return True if this object is greater than or equal to
+    *           parameter and false otherwise
+    ****************************************************************/
+    template <class T>
+	bool Degree<T>::operator >= (const Degree &param) const
+	{
+		return this->m_Degrees >= param.m_Degrees;
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is less than parameter
+    *   @param  A Degree object .
+    *   @return True if this object is less than parameter and
+    *           false otherwise
+    ****************************************************************/
+    template <class T>
+	bool Degree<T>::operator < (const Degree &param) const
+	{
+		return this->m_Degrees < param.m_Degrees;
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is greater than parameter
+    *   @param  A Degree object .
+    *   @return True if this object is greater than parameter and
+    *           false otherwise
+    ****************************************************************/
+    template <class T>
+	bool Degree<T>::operator > (const Degree &param) const
+	{
+		return this->m_Degrees > param.m_Degrees;
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is greater than or equal to
+    *           a Radian object
+    *   @param  A Radian object equality will be checked against.
+    *   @return True if this object is equal to parameter and
+    *           false otherwise
+    ****************************************************************/
+    template <class T>
+    template <class P>
+	bool Degree<T>::operator == (const Radian<P> &param) const
+	{
+
+        return this->m_Degrees == static_cast<T>(param);
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is not equal to a Radian object
+    *   @param  A Radian object equality will be checked against.
+    *   @return True if this object is not equal to parameter and
+    *           false otherwise
+    ****************************************************************/
+    template <class T>
+    template <class P>
+	bool Degree<T>::operator != (const Radian<P> &param) const
+	{
+		return this->m_Degrees != static_cast<T>(param);
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is less than or equal to
+    *           a Radian object
+    *   @param  A Radian object equality will be checked against.
+    *   @return True if this object is less than or equal to
+    *           parameter and false otherwise
+    ****************************************************************/
+    template <class T>
+    template <class P>
+	bool Degree<T>::operator <= (const Radian<P> &param) const
+	{
+		return this->m_Degrees <= static_cast<T>(param);
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is greater than or equal to
+    *           a Radian object
+    *   @param  A Radian object equality will be checked against.
+    *   @return True if this object is greater than or equal to
+    *           parameter and false otherwise
+    ****************************************************************/
+    template <class T>
+    template <class P>
+	bool Degree<T>::operator >= (const Radian<P> &param) const
+	{
+
+		return this->m_Degrees >= static_cast<T>(param);
+	}
+
+
+    /************************************************************//**
+    *   @brief  Checks if this object is less than parameter
+    *   @param  A Radian object .
+    *   @return True if this object is less than parameter and
+    *           false otherwise
+    ****************************************************************/
+    template <class T>
+    template <class P>
+	bool Degree<T>::operator < (const Radian<P> &param) const
+	{
+		return this->m_Degrees < static_cast<T>(param);
+	}
+
+
+    /***************************************************************************//**
+    *   @brief  Type cast operator for converting to float.
+    *******************************************************************************/
+    template <class T>
+    Degree<T>::operator float() const
+    {
+        return m_Degrees;
+    }
+
+
+    /************************************************************//**
+    *   @brief  Insertion operator overload
+    *   @param  output stream where the Degree object will be printed.
+    *   @param  A Degree object which will be printed to output stream.
+    *   @return The output stream the Degree object was printed to.
+    ****************************************************************/
+    template <class P>
+	std::ostream& operator << (std::ostream& out, const Degree<P> &param)
+	{
+		return out << static_cast<P>(param);
+	}
+
+
+    /************************************************************//**
+    *   @brief  Extraction operator overload
+    *   @param  input stream where the Degree object will be extracted.
+    *   @param  A Degree object which will store the extracted object.
+    *   @return The input stream the Degree object was extracted from.
+    ****************************************************************/
+    template <class P>
+	std::istream& operator >> (std::istream& in, const Degree<P> &param)
+	{
+		return in >> param.m_Degrees;
+	}
 }
 #endif
