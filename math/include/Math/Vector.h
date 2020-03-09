@@ -2,8 +2,6 @@
 #define MATH_VECTOR_H
 
 #include "math_export.h"
-#include "Math/Point.h"
-#include "Math/Radian.h"
 
 /*******************************************************************//**
 *   @author Wayne J Larson Jr

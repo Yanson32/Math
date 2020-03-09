@@ -6,7 +6,7 @@
 ****************************************************************/
 
 #include "math_export.h"
-
+#include <cmath>
 namespace Math
 {
     template <class T>
@@ -69,19 +69,12 @@ namespace Math
 
 
 		/************************************************************//**
-		*	@brief	Set the magnitude of the vector
-		*	@param	magnitude the new magnitude of the vector.
-		****************************************************************/
-		void setMagnitude(const T magnitude);
-
-
-		/************************************************************//**
 		*	@brief	Calculate the dot product of two vectors.
 		*	@param	param a vector that will be used to calculate the
 		*			dot product against.
 		*	@return	The dot product of this vector and the input vector.
 		****************************************************************/
-		float dot(const Vector2<T> param);
+		T dot(const Vector2<T> param);
 
 
 		/************************************************************//**
@@ -96,7 +89,8 @@ namespace Math
 	/************************************************************//**
 	*	@brief	Default constructor
 	****************************************************************/
-	cVector<T>::cVector()
+    template <class T>
+	Vector2<T>::Vector2()
 	{
 
 	}
@@ -107,7 +101,8 @@ namespace Math
 	*	@param	newX movement on the x axis.
 	*	@param	newY movement on the y axis.
 	****************************************************************/
-	cVector<T>::cVector(const T newX, const T newY) :
+    template <class T>
+	Vector2<T>::Vector2(const T newX, const T newY) :
 		x(newX),
 		y(newY)
 	{
@@ -119,7 +114,8 @@ namespace Math
 	*	@brief	Get the vectors magnitude.
 	*	@return	The magnitude of the vector
 	****************************************************************/
-	T cVector<T>::magnitude() const
+    template <class T>
+	T Vector2<T>::magnitude() const
 	{
 		//Use pythagorean theorem to calculate magnitude
 		return std::sqrt(x * x + y * y);
@@ -130,11 +126,12 @@ namespace Math
 	*	@brief	Set the vectors magnitude to one, with the same
 	*			direction.
 	****************************************************************/
-	void cVector<T>::normalize()
+    template <class T>
+	void Vector2<T>::normalize()
 	{
 		T mag = magnitude();
 		if (!mag)
-			throw std::runtime_error("cannot divide by zero [cVector::normalize]");
+			throw std::runtime_error("cannot divide by zero [Vector2::normalize]");
 
 		x = x / mag;
 		y = y / mag;
@@ -147,11 +144,12 @@ namespace Math
 	*	@return	A vector that has been scaled in comparison to
 	*		    this vector object.
 	****************************************************************/
-	cVector<T> cVector<T>::operator * (const T scalar)
+    template <class T>
+	Vector2<T> Vector2<T>::operator * (const T scalar)
 	{
-		T mag = (magnitude() * scalar);
-		cVector vec;
-		vec.setMagnitude(mag);
+		Vector2<T> vec;
+		vec.x  = x * scalar;
+        vec.y  = y * scalar;
 		return vec;
 	}
 
@@ -162,11 +160,12 @@ namespace Math
 	*	@return	A vector representing the difference between this
 	*			vector and the input vector (param)
 	****************************************************************/
-	cVector<T> cVector<T>::operator - (const cVector<T> param)
+    template <class T>
+	Vector2<T> Vector2<T>::operator - (const Vector2<T> param)
 	{
 		T xAxis = x - param.x;
 		T yAxis = y - param.y;
-		return cVector<T>(xAxis, yAxis);
+		return Vector2<T>(xAxis, yAxis);
 	}
 
 
@@ -176,24 +175,12 @@ namespace Math
 	*	@return	A vector representing the sum of this
 	*			vector and the input vector (param)
 	****************************************************************/
-	cVector<T> cVector<T>::operator + (const cVector<T> param)
+    template <class T>
+	Vector2<T> Vector2<T>::operator + (const Vector2<T> param)
 	{
 		T xAxis = x + param.x;
 		T yAxis = y + param.y;
-		return cVector<T>(xAxis, yAxis);
-	}
-
-
-	/************************************************************//**
-	*	@brief	Set the magnitude of the vector
-	*	@param	magnitude the new magnitude of the vector.
-	****************************************************************/
-	void cVector<T>::setMagnitude(const T magnitude)
-	{
-		normalize();
-		cVector<T> vec = *this * magnitude;
-		x = vec.x;
-		y = vec.y;
+		return Vector2<T>(xAxis, yAxis);
 	}
 
 
@@ -203,7 +190,8 @@ namespace Math
 	*			dot product against.
 	*	@return	The dot product of this vector and the input vector.
 	****************************************************************/
-	T cVector<T>::dot(const cVector<T> param)
+    template <class T>
+	T Vector2<T>::dot(const Vector2<T> param)
 	{
 		return x  * param.x + y * param.y;
 	}
@@ -212,7 +200,8 @@ namespace Math
 	/************************************************************//**
 	*	@brief	Destructor
 	****************************************************************/
-	cVector::~cVector()
+    template <class T>
+	Vector2<T>::~Vector2()
 	{
 
 	}

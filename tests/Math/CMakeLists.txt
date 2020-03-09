@@ -4,6 +4,7 @@ set(TESTS 	#"PointTest"
 			#"FunctionsTest"
 			#"LineTest"
 			"RadianTest"
+			"Vector2Test"
 )
 
 #list of subdirectories
