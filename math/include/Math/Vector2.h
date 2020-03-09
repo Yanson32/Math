@@ -9,13 +9,13 @@
 
 namespace Math
 {
-	class MATH_EXPORT cVector
+	class MATH_EXPORT Vector2
 	{
 	public:
 		/************************************************************//**
 		*	@brief	Default constructor
 		****************************************************************/
-		cVector();
+		Vector2();
 
 
 		/************************************************************//**
@@ -23,7 +23,7 @@ namespace Math
 		*	@param	newX movement on the x axis.
 		*	@param	newY movement on the y axis.
 		****************************************************************/
-		cVector(const float newX, const float newY);
+		Vector2(const float newX, const float newY);
 
 
 		/************************************************************//**
@@ -46,7 +46,7 @@ namespace Math
 		*	@return	A vector that has been scaled in comparison to
 		*		    this vector object.
 		****************************************************************/
-		cVector operator * (const float scalar);
+		Vector2 operator * (const float scalar);
 
 
 		/************************************************************//**
@@ -55,7 +55,7 @@ namespace Math
 		*	@return	A vector representing the difference between this
 		*			vector and the input vector (param)
 		****************************************************************/
-		cVector operator - (const cVector param);
+		Vector2 operator - (const Vector2 param);
 
 
 		/************************************************************//**
@@ -64,7 +64,7 @@ namespace Math
 		*	@return	A vector representing the sum of this
 		*			vector and the input vector (param)
 		****************************************************************/
-		cVector operator + (const cVector param);
+		Vector2 operator + (const Vector2 param);
 
 
 		/************************************************************//**
@@ -80,13 +80,13 @@ namespace Math
 		*			dot product against.
 		*	@return	The dot product of this vector and the input vector.
 		****************************************************************/
-		float dot(const cVector param);
+		float dot(const Vector2 param);
 
 
 		/************************************************************//**
 		*	@brief	Destructor
 		****************************************************************/
-		~cVector();
+		~Vector2();
 
 
 		float x = 0;
