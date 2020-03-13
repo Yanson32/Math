@@ -1,5 +1,4 @@
 set(FILES "${CMAKE_CURRENT_SOURCE_DIR}/Line.cpp"
-"${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
 )
 
 set(SUB_DIRECTORIES "")
