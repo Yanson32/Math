@@ -1,8 +1,5 @@
 set(FILES "${CMAKE_CURRENT_SOURCE_DIR}/Line.cpp"
-#"${CMAKE_CURRENT_SOURCE_DIR}/Point.cpp"
 "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-#"${CMAKE_CURRENT_SOURCE_DIR}/Vector.cpp"
-#"${CMAKE_CURRENT_SOURCE_DIR}/Functions.cpp"
 )
 
 set(SUB_DIRECTORIES "")
