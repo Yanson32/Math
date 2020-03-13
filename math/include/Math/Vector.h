@@ -2,6 +2,8 @@
 #define MATH_VECTOR_H
 
 #include "math_export.h"
+#include "Math/Radian.h"
+#include "Math/Functions.h"
 
 /*******************************************************************//**
 *   @author Wayne J Larson Jr
@@ -18,27 +20,27 @@ namespace Math
             explicit Vector(const Radian<T> &direction, unsigned magnitude);
 
             template <class P>
-            explicit Vector(const Degree<T> &direction, unsigned magnitude);
+            explicit Vector(const Degree<P> &direction, unsigned magnitude);
 
 
             /****************************************************************//**
             *   @brief  Get the x axis movemet in cartesian coordinates
             *   @return the movement on the x axis in cartesian coordinates
             ********************************************************************/
-            float GetX() const;
+            T GetX() const;
 
 
             /****************************************************************//**
             *   @brief  Get the y axis movemet in cartesian coordinates
             *   @return the movement on the y axis in cartesian coordinates
             ********************************************************************/
-            float GetY() const;
+            T GetY() const;
             unsigned magnitude;
             Radian<T> direction;
     };
 
     template <class T>
-    Vector<T>::Vector(const Radian &direction, unsigned magnitude):
+    Vector<T>::Vector(const Radian<T> &direction, unsigned magnitude):
     magnitude(magnitude),
     direction(direction)
     {
@@ -46,7 +48,8 @@ namespace Math
     }
 
     template <class T>
-    Vector<T>::Vector(const Degree &direction, unsigned magnitude):
+    template <class P>
+    Vector<T>::Vector(const Degree<P> &direction, unsigned magnitude):
     magnitude(magnitude),
     direction(direction)
     {
@@ -58,7 +61,7 @@ namespace Math
     *   @return the movement on the x axis in cartesian coordinates
     ********************************************************************/
     template <class T>
-    float Vector<T>::GetX() const
+    T Vector<T>::GetX() const
     {
         return Math::cos(direction);
     }
@@ -68,7 +71,7 @@ namespace Math
     *   @return the movement on the y axis in cartesian coordinates
     ********************************************************************/
     template <class T>
-    float Vector<T>::GetY() const
+    T Vector<T>::GetY() const
     {
         return Math::sin(direction);
     }

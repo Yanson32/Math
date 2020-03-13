@@ -1,5 +1,5 @@
 #list of tests
-set(TESTS 	#"PointTest"
+set(TESTS 	"Point2Test"
 			"DegreeTest"
 			#"FunctionsTest"
 			#"LineTest"
