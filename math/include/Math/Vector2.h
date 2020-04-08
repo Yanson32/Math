@@ -5,12 +5,11 @@
 *	@date	5/7/2018
 ****************************************************************/
 
-#include "math_export.h"
 #include <cmath>
 namespace Math
 {
     template <class T>
-	class MATH_EXPORT Vector2
+	class Vector2
 	{
 	public:
 		/************************************************************//**

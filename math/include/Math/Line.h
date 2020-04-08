@@ -1,7 +1,6 @@
 #ifndef MATH_LINE_H
 #define MATH_LINE_H
 
-#include "math_export.h"
 #include "Math/Point.h"
 #include "Math/Line.h"
 #include <cmath>
@@ -9,7 +8,7 @@
 namespace Math
 {
     template <class T>
-    class MATH_EXPORT Line final
+    class Line final
     {
         public:
             Line();

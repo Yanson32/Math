@@ -1,7 +1,6 @@
 #ifndef MATH_RADIAN_H
 #define MATH_RADIAN_H
 
-#include "math_export.h"
 #include <Math/Constants.h>
 #include <iostream>
 
@@ -11,7 +10,7 @@ namespace Math
     class Degree;
 
     template <class T>
-    class MATH_EXPORT Radian final
+    class Radian final
     {
         public:
             Radian() = default;

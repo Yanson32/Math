@@ -9,14 +9,14 @@
 
 #include <iostream>
 #include <Math/Constants.h>
-#include "math_export.h"
+
 namespace Math
 {
     template <class T>
     class Radian;
 
     template <class T>
-    class MATH_EXPORT Degree final
+    class Degree final
     {
         public:
             /************************************************************//**

@@ -1,14 +1,13 @@
 #ifndef MATH_Point2_H
 #define MATH_Point2_H
 
-#include "math_export.h"
 namespace Math
 {
     template <class T>
     class Vector2;
 
     template <class T>
-    struct MATH_EXPORT Point2 final
+    struct Point2 final
     {
         Point2();
         Point2(const T x, const T y);

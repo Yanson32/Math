@@ -1,7 +1,6 @@
 #ifndef MATH_VECTOR_H
 #define MATH_VECTOR_H
 
-#include "math_export.h"
 #include "Math/Radian.h"
 #include "Math/Functions.h"
 
@@ -13,7 +12,7 @@
 namespace Math
 {
     template <class T>
-    class MATH_EXPORT Vector final
+    class Vector final
     {
         public:
             Vector() = default;
