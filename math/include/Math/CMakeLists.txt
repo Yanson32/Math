@@ -1,16 +1,18 @@
-set(FILES "${CMAKE_CURRENT_SOURCE_DIR}/Degree.h"
-"${CMAKE_CURRENT_SOURCE_DIR}/Radian.h"
-"${CMAKE_CURRENT_SOURCE_DIR}/Point2.h"
-"${CMAKE_CURRENT_SOURCE_DIR}/Line.h"
-#"${CMAKE_CURRENT_SOURCE_DIR}/Vector.h"
-"${CMAKE_CURRENT_SOURCE_DIR}/Constants.h"
-"${CMAKE_CURRENT_SOURCE_DIR}/Functions.h"
-"${CMAKE_CURRENT_SOURCE_DIR}/Vector2.h"
+set(RELATIVE_PATH "include/Math")
+
+set(FILES "${CMAKE_CURRENT_LIST}/Degree.h"
+"${CMAKE_CURRENT_LIST}/Radian.h"
+"${CMAKE_CURRENT_LIST}/Point2.h"
+"${CMAKE_CURRENT_LIST}/Line.h"
+"${CMAKE_CURRENT_LIST}/Vector.h"
+"${CMAKE_CURRENT_LIST}/Constants.h"
+"${CMAKE_CURRENT_LIST}/Functions.h"
+"${CMAKE_CURRENT_LIST}/Vector2.h"
 
 )
 set(SUB_DIRECTORIES "")
 
-set(RELATIVE_PATH "include/Math")
+
 
 #Add subdirectories
 foreach(LOOP_VAR ${SUB_DIRECTORIES})
@@ -19,7 +21,7 @@ endforeach()
 
 if(FILES)
 	#Add source file to target
-	target_sources(	"${PROJECT_NAME}" PRIVATE ${FILES})
+	target_sources(	"${PROJECT_NAME}" INTERFACE ${FILES})
 
 	#Install source files
 	install(FILES ${FILES} DESTINATION "${RELATIVE_PATH}")
