@@ -10,7 +10,7 @@ set(GU_PUBLIC_COMPILE_FEATURES "cxx_defaulted_functions"
 add_library("${PROJECT_NAME}" INTERFACE)
 add_library("Math::Math" ALIAS "${PROJECT_NAME}")
 
-#add_subdirectory("include")
+add_subdirectory("include")
 
 #Define compiler features
 target_compile_features("${PROJECT_NAME}"
@@ -26,12 +26,6 @@ target_include_directories("${PROJECT_NAME}" INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
   $<INSTALL_INTERFACE:include>
 	)
-
-
-install(FILES
-	"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME_LOWER}_export.h"
-	DESTINATION
-	"${CMAKE_INSTALL_PREFIX}/include")
 
 
 #Install Source Files
