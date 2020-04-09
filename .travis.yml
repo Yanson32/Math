@@ -3,13 +3,13 @@ compiler: gcc
 sudo: true
 install:
   - sudo apt-get install libgtest-dev -y
-  - cd /usr/src/gtest
+  - pushd /usr/src/gtest
   - sudo mkdir build
   - cd build
-  - sudo cmake ..
+  - sudo cmake ../
   - sudo make
   - sudo make install
-  - cd ../
+  - popd
 script:
   - cmake CMakeLists.txt -DMATH_BUILD_TESTS=ON
   - make
