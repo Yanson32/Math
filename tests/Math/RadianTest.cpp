@@ -2,6 +2,7 @@
 #include <Math/Radian.h>
 #include <Math/Degree.h>
 #include <sstream>
+#include <cmath>
 
 class RadFix :
 	public ::testing::Test
@@ -15,7 +16,7 @@ class RadFix :
     Math::Radian<float> rad3;
     Math::Radian<float> rad4;
 
-    const float DIVIATION = 0.001f;
+    const float EPSILON = 0.001f;
 };
 
 
@@ -123,11 +124,14 @@ TEST_F(RadFix, EqualityOperator)
     EXPECT_EQ(rad, Math::Degree<float>(0));
     EXPECT_EQ(rad, Math::Degree<float>(rad));
     EXPECT_EQ(rad2, Math::Radian<float>(3.25));
-    EXPECT_EQ(rad2, Math::Degree<float>(rad2));
+    
+    EXPECT_NEAR(rad2,Math::Degree<float>(rad2), 3.25);
     EXPECT_EQ(rad3, Math::Radian<float>(-10.83));
-    EXPECT_EQ(rad3, Math::Degree<float>(rad3));
+
+    EXPECT_NEAR(rad3,Math::Degree<float>(rad3), -10.83);
     EXPECT_EQ(rad4, Math::Radian<float>(-23));
-    EXPECT_EQ(rad4, Math::Degree<float>(rad4));
+
+    EXPECT_NEAR(rad4,Math::Degree<float>(rad4), -23);
 
 }
 
