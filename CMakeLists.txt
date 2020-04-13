@@ -32,3 +32,6 @@ if(MATH_BUILD_TESTS)
 	include("GoogleTest")
 	add_subdirectory("tests")
 endif()
+
+set(CPACK_PROJECT_CONFIG_FILE "${ImageBuddy_SOURCE_DIR}/${PROJECT_NAME}PackageConfig.cmake")
+include ("CPack")
