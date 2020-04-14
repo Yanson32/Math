@@ -1,18 +1,17 @@
-<h1>Math</h1>
+# Math
 
-<p>
-	The Math library allows for some basic math calculations.	
-</p>
+The Math library allows for some basic math calculations.	
 
-<h2>Features</h2>
-<ul>
-	<li>Math Constants like pie</li>
-	<li>Geometric shapes like lines</li>
-</ul>
 
-<h2>Compilation Instructions</h2>
+## Features
+* Math Constants like pie
+* Geometric shapes like lines
 
-<h3>CMake</h3>
-<p>
-	The Math library comes with a CMake https://cmake.org/ file. Set BUILD_SHARED_LIBS to true for a shared library.
-</p>
+## Compilation Instructions
+
+* Debian Linux
+    1. sudo  mkdir build
+    2. cd build
+    3 cmake ../ [-DBUILD_SHARED_LIBS="True"][-DCMAKE_BUILD_TYPE="True"]
+    4. make
+    5. sudo make install
