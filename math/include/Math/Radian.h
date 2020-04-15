@@ -79,7 +79,8 @@ namespace Math
             *   @param  A Radian object that will be used to retrive data from.
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
-            bool operator == (const Radian<T> &rad) const;
+            template <class P>
+            bool operator == (const Radian<P> &rad) const;
 
 
             /***************************************************************************//**
@@ -302,19 +303,17 @@ namespace Math
     }
 
     template <class T>
-    bool Radian<T>::operator == (const Radian<T> &rad) const
+    template <class P>
+    bool Radian<T>::operator == (const Radian<P> &rad) const
     {
-        float top = rad.m_Radians;
-        float bottom = rad.m_Radians;
-
-        return this->m_Radians >= bottom && this->m_Radians <= top;
+        return this->m_Radians == static_cast<T>(rad);
     }
 
     template <class T>
     template <class P>
     bool Radian<T>::operator == (const Degree<P> &deg) const
     {
-        return this->m_Radians == static_cast<T>(deg);
+        return this->m_Radians == static_cast<T>(Math::Radian<P>(deg));
     }
 
 

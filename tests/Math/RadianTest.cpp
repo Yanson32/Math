@@ -125,13 +125,11 @@ TEST_F(RadFix, EqualityOperator)
     EXPECT_EQ(rad, Math::Degree<float>(rad));
     EXPECT_EQ(rad2, Math::Radian<float>(3.25));
     
-    EXPECT_NEAR(rad2,Math::Degree<float>(rad2), 3.25);
+    EXPECT_EQ(rad2, Math::Degree<float>(rad2));
     EXPECT_EQ(rad3, Math::Radian<float>(-10.83));
 
-    EXPECT_NEAR(rad3,Math::Degree<float>(rad3), -10.83);
+    EXPECT_EQ(rad3,Math::Degree<float>(rad3));
     EXPECT_EQ(rad4, Math::Radian<float>(-23));
-
-    EXPECT_NEAR(rad4,Math::Degree<float>(rad4), -23);
 
 }
 
