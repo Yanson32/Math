@@ -56,7 +56,8 @@ namespace Math
             *   @param  A degree object equality will be checked against.
             *   @return True if the two objects are equal and false otherwise
             ****************************************************************/
-			bool operator == (const Degree &param) const;
+            template <class P>
+			bool operator == (const Degree<P> &param) const;
 
 
             /************************************************************//**
@@ -64,7 +65,8 @@ namespace Math
             *   @param  A degree object equality will be checked against.
             *   @return True if the two objects are not equal and false otherwise
             ****************************************************************/
-			bool operator != (const Degree &param) const;
+            template <class P>
+			bool operator != (const Degree<P> &param) const;
 
 
             /************************************************************//**
@@ -74,7 +76,8 @@ namespace Math
             *   @return True if this object is less than or equal to parameter
             *           and false otherwise
             ****************************************************************/
-			bool operator <= (const Degree &param) const;
+            template <class P>
+			bool operator <= (const Degree<P> &param) const;
 
 
             /************************************************************//**
@@ -84,7 +87,8 @@ namespace Math
             *   @return True if this object is greater than or equal to
             *           parameter and false otherwise
             ****************************************************************/
-			bool operator >= (const Degree &param) const;
+            template <class P>
+			bool operator >= (const Degree<P> &param) const;
 
 
             /************************************************************//**
@@ -93,8 +97,18 @@ namespace Math
             *   @return True if this object is less than parameter and
             *           false otherwise
             ****************************************************************/
-			bool operator < (const Degree &param) const;
+            template <class P>
+			bool operator < (const Degree<P> &param) const;
 
+
+            /************************************************************//**
+            *   @brief  Checks if this object is less than parameter
+            *   @param  A Radian object .
+            *   @return True if this object is less than parameter and
+            *           false otherwise
+            ****************************************************************/
+            template <class P>			
+            bool operator < (const Radian<P> &param) const;
 
             /************************************************************//**
             *   @brief  Checks if this object is greater than parameter
@@ -102,7 +116,8 @@ namespace Math
             *   @return True if this object is greater than parameter and
             *           false otherwise
             ****************************************************************/
-			bool operator > (const Degree &param) const;
+            template <class P>
+			bool operator > (const Degree<P> &param) const;
 
 
             /************************************************************//**
@@ -148,14 +163,7 @@ namespace Math
 			bool operator >= (const Radian<P> &param) const;
 
 
-            /************************************************************//**
-            *   @brief  Checks if this object is less than parameter
-            *   @param  A Radian object .
-            *   @return True if this object is less than parameter and
-            *           false otherwise
-            ****************************************************************/
-            template <class P>			
-            bool operator < (const Radian<P> &param) const;
+
 
 
             /***************************************************************************//**
@@ -240,7 +248,8 @@ namespace Math
     *   @return True if the two objects are equal and false otherwise
     ****************************************************************/
     template <class T>
-	bool Degree<T>::operator == (const Degree &param) const
+    template <class P>
+	bool Degree<T>::operator == (const Degree<P> &param) const
 	{
         return this->m_Degrees == param.m_Degrees;
 	}
@@ -252,7 +261,8 @@ namespace Math
     *   @return True if the two objects are not equal and false otherwise
     ****************************************************************/
     template <class T>
-	bool Degree<T>::operator != (const Degree &param) const
+    template <class P>
+	bool Degree<T>::operator != (const Degree<P> &param) const
 	{
 		return this->m_Degrees  != param.m_Degrees;
 	}
@@ -266,7 +276,8 @@ namespace Math
     *           and false otherwise
     ****************************************************************/
     template <class T>
-	bool Degree<T>::operator <= (const Degree &param) const
+    template <class P>
+	bool Degree<T>::operator <= (const Degree<P> &param) const
 	{
 		return this->m_Degrees <= param.m_Degrees;
 	}
@@ -280,7 +291,8 @@ namespace Math
     *           parameter and false otherwise
     ****************************************************************/
     template <class T>
-	bool Degree<T>::operator >= (const Degree &param) const
+    template <class P>
+	bool Degree<T>::operator >= (const Degree<P> &param) const
 	{
 		return this->m_Degrees >= param.m_Degrees;
 	}
@@ -293,11 +305,25 @@ namespace Math
     *           false otherwise
     ****************************************************************/
     template <class T>
-	bool Degree<T>::operator < (const Degree &param) const
+    template <class P>
+	bool Degree<T>::operator < (const Degree<P> &param) const
 	{
 		return this->m_Degrees < param.m_Degrees;
 	}
 
+
+    /************************************************************//**
+    *   @brief  Checks if this object is less than parameter
+    *   @param  A Radian object .
+    *   @return True if this object is less than parameter and
+    *           false otherwise
+    ****************************************************************/
+    template <class T>
+    template <class P>
+    bool Degree<T>::operator < (const Radian<P> &param) const
+    {
+        return this->m_Degrees < Math::Degree<T>(param).m_Degrees;
+    }
 
     /************************************************************//**
     *   @brief  Checks if this object is greater than parameter
@@ -306,7 +332,8 @@ namespace Math
     *           false otherwise
     ****************************************************************/
     template <class T>
-	bool Degree<T>::operator > (const Degree &param) const
+    template <class P>
+	bool Degree<T>::operator > (const Degree<P> &param) const
 	{
 		return this->m_Degrees > param.m_Degrees;
 	}
@@ -370,20 +397,6 @@ namespace Math
 	{
 
 		return this->m_Degrees >= static_cast<T>(param);
-	}
-
-
-    /************************************************************//**
-    *   @brief  Checks if this object is less than parameter
-    *   @param  A Radian object .
-    *   @return True if this object is less than parameter and
-    *           false otherwise
-    ****************************************************************/
-    template <class T>
-    template <class P>
-	bool Degree<T>::operator < (const Radian<P> &param) const
-	{
-		return this->m_Degrees < static_cast<T>(param);
 	}
 
 
