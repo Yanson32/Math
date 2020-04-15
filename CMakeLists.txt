@@ -7,7 +7,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 option(MATH_BUILD_EXAMPLES "Build example executables" FALSE)
 option(MATH_BUILD_TESTS "Build unit tests" FALSE)
-
+option(MATH_BUILD_DOC "Set to TRUE if you want to build documentation" FALSE)
 option(BUILD_SHARED_LIBS "Build shared library" TRUE)
 
 project("Math" VERSION 0.0.0.0)
@@ -31,6 +31,11 @@ if(MATH_BUILD_TESTS)
 	find_package("GTest" REQUIRED)
 	include("GoogleTest")
 	add_subdirectory("tests")
+endif()
+
+#Build documentation
+if(MATH_BUILD_DOC)
+	add_subdirectory("doc")
 endif()
 
 set(CPACK_PROJECT_CONFIG_FILE "${ImageBuddy_SOURCE_DIR}/${PROJECT_NAME}PackageConfig.cmake")
