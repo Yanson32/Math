@@ -7,6 +7,8 @@ The Math library allows for some basic math calculations.
 * Math Constants like pie
 * Geometric shapes like lines
 
+## Documentation
+    The documentation can be found [here](https://yanson32.github.io/Math/doc/www/)
 ## Compilation Instructions
 
 * Debian Linux
