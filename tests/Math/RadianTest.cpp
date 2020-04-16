@@ -59,20 +59,20 @@ TEST_F(RadFix, AssignmentOperator)
     Math::Radian<float> temp2 = rad2;
     EXPECT_EQ(rad2, temp2);
 
-    temp2 = Math::Degree<float>(rad2);
-    EXPECT_EQ(temp2, Math::Degree<float>(rad2));
+    Math::Radian<float> temp3 = Math::Degree<float>(rad2);
+    EXPECT_EQ(temp3, Math::Degree<float>(rad2));
 
-    Math::Radian<float> temp3 = rad3;
-    EXPECT_EQ(rad3, temp3);
+    Math::Radian<float> temp4 = rad3;
+    EXPECT_EQ(rad3, temp4);
 
-    temp3 = Math::Degree<float>(rad3);
-    EXPECT_EQ(temp3, Math::Degree<float>(rad3));
+    Math::Radian<float> temp5 = Math::Degree<float>(rad3);
+    EXPECT_EQ(temp5, Math::Degree<float>(rad3));
 
-    Math::Radian<float> temp4 = rad4;
-    EXPECT_EQ(rad4, temp4);
+    Math::Radian<float> temp6 = rad4;
+    EXPECT_EQ(rad4, temp6);
 
-    temp4 = Math::Degree<float>(rad4);
-    EXPECT_EQ(temp4, Math::Degree<float>(rad4));
+    Math::Radian<float> temp7 = Math::Degree<float>(rad4);
+    EXPECT_EQ(temp7, Math::Degree<float>(rad4));
 }
 
 

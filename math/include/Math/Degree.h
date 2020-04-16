@@ -38,7 +38,7 @@ namespace Math
             *           object.
             ****************************************************************/
             template <class P>            
-            explicit Degree(const Radian<P> &radian);
+            Degree(const Radian<P> &radian);
 
 
             /************************************************************//**
@@ -132,6 +132,26 @@ namespace Math
 
 
             /************************************************************//**
+            *   @brief  Assign a Degree object to another Degree object.
+            *   @param  The Degree object will be used to assign its value
+            *           to the current object.
+            *   @return The current Degree object with the new value.
+            ****************************************************************/
+            template <class P>
+            Degree<T>& operator = (const Degree<P> &deg);
+
+
+            /************************************************************//**
+            *   @brief  Assign a Radian object to a Degree object.
+            *   @param  The Radian object will be used to assign its value
+            *           to the current Degree object.
+            *   @return The current Degree object with it's new value.
+            ****************************************************************/
+            template <class P>
+            Degree<T>& operator = (const Radian<P> &rad);
+
+
+            /************************************************************//**
             *   @brief  Checks if this object is not equal to a Radian object
             *   @param  A Radian object equality will be checked against.
             *   @return True if this object is not equal to parameter and
@@ -161,9 +181,6 @@ namespace Math
             ****************************************************************/
             template <class P>
 			bool operator >= (const Radian<P> &param) const;
-
-
-
 
 
             /***************************************************************************//**
@@ -253,6 +270,37 @@ namespace Math
 	{
         return this->m_Degrees == param.m_Degrees;
 	}
+
+
+    /************************************************************//**
+    *   @brief  Assign a Degree object to another Degree object.
+    *   @param  The Degree object will be used to assign its value
+    *           to the current object.
+    *   @return The current Degree object with the new value.
+    ****************************************************************/
+    template <class T>
+    template <class P>
+    Degree<T>& Degree<T>::operator = (const Degree<P> &deg)
+    {
+        if(this != &deg)
+            this->m_Degrees = deg.m_Degrees;
+        return *this;
+    }
+
+
+    /************************************************************//**
+    *   @brief  Assign a Radian object to a Degree object.
+    *   @param  The Radian object will be used to assign its value
+    *           to the current Degree object.
+    *   @return The current Degree object with it's new value.
+    ****************************************************************/
+    template <class T>
+    template <class P>
+    Degree<T>& Degree<T>::operator = (const Radian<P> &rad)
+    {
+        this->m_Degrees = static_cast<T>(Math::Degree<P>(rad));
+        return *this;
+    }
 
 
     /************************************************************//**

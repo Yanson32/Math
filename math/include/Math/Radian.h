@@ -16,7 +16,7 @@ namespace Math
             Radian() = default;
             Radian(const float radian);
             template <class P>
-            explicit Radian(const Degree<P> &degree);
+            Radian(const Degree<P> &degree);
 
 
             /****************************************************************************//**
@@ -122,7 +122,8 @@ namespace Math
             *   @param  A Radian object that will be used to retrive data from.
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
-            Radian<T>& operator = (const Radian<T> &rad);
+            template <class P>
+            Radian<T>& operator = (const Radian<P> &rad);
 
 
             /***************************************************************************//**
@@ -242,7 +243,8 @@ namespace Math
     *   @return A Reference to the current Radian object.
     *******************************************************************************/
     template <class T>
-    Radian<T>& Radian<T>::operator = (const Radian<T> &rad)
+    template <class P>
+    Radian<T>& Radian<T>::operator = (const Radian<P> &rad)
     {
         if(this != &rad)
             this->m_Radians = rad.m_Radians;
@@ -260,7 +262,7 @@ namespace Math
     template <class P>
     Radian<T>& Radian<T>::operator = (const Degree<P> &deg)
     {
-        this->m_Radians = static_cast<T>(deg);
+        this->m_Radians = static_cast<T>(Math::Radian<P>(deg));
 
         return *this;
     }
