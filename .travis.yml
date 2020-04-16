@@ -10,6 +10,8 @@ install:
   - cd build
   - sudo cmake ../
   - sudo make
+  - ls -l
+  - sudo make install
   - popd
 script:
   - cmake CMakeLists.txt -DMATH_BUILD_TESTS=ON
