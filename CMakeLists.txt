@@ -10,6 +10,8 @@ option(MATH_BUILD_TESTS "Build unit tests" FALSE)
 option(MATH_BUILD_DOC "Set to TRUE if you want to build documentation" FALSE)
 option(BUILD_SHARED_LIBS "Build shared library" TRUE)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+
 project("Math" VERSION 0.0.0.0)
 string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
@@ -49,5 +51,5 @@ if(NOT TARGET uninstall)
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
 
-set(CPACK_PROJECT_CONFIG_FILE "${ImageBuddy_SOURCE_DIR}/${PROJECT_NAME}PackageConfig.cmake")
+include ("CPackConfig")
 include ("CPack")
