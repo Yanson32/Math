@@ -38,5 +38,16 @@ if(MATH_BUILD_DOC)
 	add_subdirectory("doc")
 endif()
 
+# uninstall target
+if(NOT TARGET uninstall)
+  configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY)
+
+  add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+endif()
+
 set(CPACK_PROJECT_CONFIG_FILE "${ImageBuddy_SOURCE_DIR}/${PROJECT_NAME}PackageConfig.cmake")
 include ("CPack")
