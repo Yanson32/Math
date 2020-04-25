@@ -3,3 +3,4 @@ bUILD/
 BUILD/
 build/
 *.orig
+.fuse*
