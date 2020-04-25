@@ -20,9 +20,10 @@ namespace Math
 
 
             /****************************************************************************//**
+
             *   @brief  Overload the insertion operator.
-            *   @param  The stream where the data is.
-            *   @param  The Radian object will store data from the stream.
+            *   @param[in, out] rad - The stream where the data is.
+            *   @param[in] rad - The Radian object will store data from the stream.
             ********************************************************************************/
             template <class P>            
             friend std::iostream& operator >> (std::iostream& in, Radian<P> &rad);
@@ -30,15 +31,15 @@ namespace Math
 
             /****************************************************************************//**
             *   @brief  Overload the extraction operator.
-            *   @param  The stream where the data will be inserted.
-            *   @param  The Radian object stores data that will be inserted into the stream.
+            *   @param[in, out] out - The stream where the data will be inserted.
+            *   @param[in] rad - The Radian object stores data that will be inserted into the stream.
             ********************************************************************************/
             //friend std::ostream& operator << (std::ostream& out, const Radian &rad);
 
 
             /***************************************************************************//**
             *   @brief  Overload the addition operator.
-            *   @param  A Radian object to be added to the current object
+            *   @param[in] rad - A Radian object to be added to the current object
             *   @return A Radian object that is equal to the sum of the current object
             *           and the parameter.
             *******************************************************************************/
@@ -47,7 +48,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the addition operator.
-            *   @param  A Degree object to be added to the current object
+            *   @param[in] deg - A Degree object to be added to the current object
             *   @return A Radian object that is equal to the sum of the current object
             *           and the parameter.
             *******************************************************************************/
@@ -57,7 +58,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the subtraction operator.
-            *   @param  A Radian object to be subtracted from the current object
+            *   @param[in] rad - A Radian object to be subtracted from the current object
             *   @return A Radian object that is equal to the difference of the current object
             *           and the parameter.
             *******************************************************************************/
@@ -66,7 +67,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the subtraction operator.
-            *   @param  A Degree object to be subtracted from the current object
+            *   @param[in] deg - A Degree object to be subtracted from the current object
             *   @return A Radian object that is equal to the difference of the current object
             *           and the parameter.
             *******************************************************************************/
@@ -76,7 +77,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
-            *   @param  A Radian object that will be used to retrive data from.
+            *   @param[in] rad - A Radian object that will be used to retrive data from.
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
             template <class P>
@@ -85,7 +86,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
-            *   @param  A Degree object that will be used to retrive data from.
+            *   @param[in] deg - A Degree object that will be used to retrive data from.
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
             template <class P>            
@@ -94,7 +95,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the not equal operator.
-            *   @param  A Radian object that will be checked for inequality.
+            *   @param[in] rad - A Radian object that will be checked for inequality.
             *   @return A boolean True value when the objects are not equal and false
             *           otherwise.
             *******************************************************************************/
@@ -103,7 +104,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the not equal operator.
-            *   @param  A Degree object that will be checked for inequality.
+            *   @param[in] deg - A Degree object that will be checked for inequality.
             *   @return A boolean True value when the objects are not equal and false
             *           otherwise.
             *******************************************************************************/
@@ -119,7 +120,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
-            *   @param  A Radian object that will be used to retrive data from.
+            *   @param[in] rad - A Radian object that will be used to retrive data from.
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
             template <class P>
@@ -128,7 +129,7 @@ namespace Math
 
             /***************************************************************************//**
             *   @brief  Overload the assignment operator.
-            *   @param  A Degree object that will be used to retrive data from.
+            *   @param[in] deg - A Degree object that will be used to retrive data from.
             *   @return A Reference to the current Radian object.
             *******************************************************************************/
             template <class P>            
@@ -145,8 +146,8 @@ namespace Math
 
     /****************************************************************************//**
     *   @brief  Overload the insertion operator.
-    *   @param  The stream where the data is.
-    *   @param  The Radian object will store data from the stream.
+    *   @param[in, out] rad - The stream where the data is.
+    *   @param[in] rad - The Radian object will store data from the stream.
     ********************************************************************************/
     template <class P>    
     std::iostream& operator >> (std::iostream& in, Radian<P> &rad);
@@ -154,8 +155,8 @@ namespace Math
 
     /****************************************************************************//**
     *   @brief  Overload the extraction operator.
-    *   @param  The stream where the data will be inserted.
-    *   @param  The Radian object stores data that will be inserted into the stream.
+    *   @param[in, out] rad - The stream where the data will be inserted.
+    *   @param[in] rad - The Radian object stores data that will be inserted into the stream.
     ********************************************************************************/
     template <class P>    
     std::ostream& operator << (std::ostream& in, const Radian<P> &rad);
@@ -185,7 +186,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the addition operator.
-    *   @param  A Radian object to be added to the current object
+    *   @param[in] rad - A Radian object to be added to the current object
     *   @return A Radian object that is equal to the sum of the current object
     *           and the parameter.
     *******************************************************************************/
@@ -198,7 +199,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the addition operator.
-    *   @param  A Degree object to be added to the current object
+    *   @param[in] deg - A Degree object to be added to the current object
     *   @return A Radian object that is equal to the sum of the current object
     *           and the parameter.
     *******************************************************************************/
@@ -212,7 +213,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the subtraction operator.
-    *   @param  A Radian object to be subtracted from the current object
+    *   @param[in] rad - A Radian object to be subtracted from the current object
     *   @return A Radian object that is equal to the difference of the current object
     *           and the parameter.
     *******************************************************************************/\
@@ -225,7 +226,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the subtraction operator.
-    *   @param  A Degree object to be subtracted from the current object
+    *   @param[in] deg - A Degree object to be subtracted from the current object
     *   @return A Radian object that is equal to the difference of the current object
     *           and the parameter.
     *******************************************************************************/
@@ -239,7 +240,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the assignment operator.
-    *   @param  A Radian object that will be used to retrive data from.
+    *   @param[in] rad - A Radian object that will be used to retrive data from.
     *   @return A Reference to the current Radian object.
     *******************************************************************************/
     template <class T>
@@ -255,7 +256,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the assignment operator.
-    *   @param  A Degree object that will be used to retrive data from.
+    *   @param[in] deg - A Degree object that will be used to retrive data from.
     *   @return A Reference to the current Radian object.
     *******************************************************************************/
     template <class T>
@@ -270,7 +271,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the not equal operator.
-    *   @param  A Radian object that will be checked for inequality.
+    *   @param[in] rad - A Radian object that will be checked for inequality.
     *   @return A boolean True value when the objects are not equal and false
     *           otherwise.
     *******************************************************************************/
@@ -283,7 +284,7 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the not equal operator.
-    *   @param  A Degree object that will be checked for inequality.
+    *   @param[in] deg - A Degree object that will be checked for inequality.
     *   @return A boolean True value when the objects are not equal and false
     *           otherwise.
     *******************************************************************************/
@@ -321,8 +322,8 @@ namespace Math
 
     /***************************************************************************//**
     *   @brief  Overload the insertion operator.
-    *   @param  The stream where the data is.
-    *   @param  The Radian object will store data from the stream.
+    *   @param[in, out] rad - The stream where the data is.
+    *   @param[in] rad - The Radian object will store data from the stream.
     *******************************************************************************/
     template <class P>
     std::iostream& operator >> (std::iostream& in, Radian<P> &rad)
@@ -334,8 +335,8 @@ namespace Math
 
     /****************************************************************************//**
     *   @brief  Overload the extraction operator.
-    *   @param  The stream where the data will be inserted.
-    *   @param  The Radian object stores data that will be inserted into the stream.
+    *   @param[in, out] out - The stream where the data will be inserted.
+    *   @param[in] rad - The Radian object stores data that will be inserted into the stream.
     ********************************************************************************/
     template <class P>    
     std::ostream& operator << (std::ostream& out, const Radian<P> &rad)
