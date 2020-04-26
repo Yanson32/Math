@@ -186,3 +186,12 @@ TEST_F(RadFix, FLoatTypecastOperator)
     EXPECT_GE(-10.83, bottom);
     EXPECT_EQ(static_cast<float>(rad4), -23);
 }
+
+//Test scalar multiplication
+TEST_F(RadFix, ScalarMultiplication)
+{
+    	EXPECT_EQ(rad * 1, 0);
+	EXPECT_EQ(rad2 * 1, 3.25);
+	EXPECT_EQ(rad4 * 1, -23);
+	EXPECT_EQ(rad4 * 0, 0);
+}
