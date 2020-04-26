@@ -27,14 +27,14 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Single parameter constructor
-            *   @param  construct a Degree object from a float.
+            *   @param[in] degree - construct a Degree object from a float.
             ****************************************************************/
             Degree(const float degree);
 
 
             /************************************************************//**
             *   @brief  Construct a Degree object from a Radian object
-            *   @param  A Radian object which will be converted to a degree
+            *   @param[in] radian - A Radian object which will be converted to a degree
             *           object.
             ****************************************************************/
             template <class P>            
@@ -43,8 +43,8 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Multiplication operator
-            *   @tparam The datatype of the object to be multiplied by
-            *   @param  The object to be multiplied by.
+            *   @tparam P - The datatype of the object to be multiplied by
+            *   @param[in] param - The object to be multiplied by.
             *   @return template parameter
             ****************************************************************/
             template <class P>
@@ -53,7 +53,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks for equality between two Degree objects.
-            *   @param  A degree object equality will be checked against.
+            *   @param[in] param - A degree object equality will be checked against.
             *   @return True if the two objects are equal and false otherwise
             ****************************************************************/
             template <class P>
@@ -62,7 +62,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks that two Degree objects are not equal.
-            *   @param  A degree object equality will be checked against.
+            *   @param[in] param - A degree object equality will be checked against.
             *   @return True if the two objects are not equal and false otherwise
             ****************************************************************/
             template <class P>
@@ -72,7 +72,7 @@ namespace Math
             /************************************************************//**
             *   @brief  Checks if this object is less than or equal to
             *           the parameter.
-            *   @param  A degree object equality will be checked against.
+            *   @param[in] param - A degree object equality will be checked against.
             *   @return True if this object is less than or equal to parameter
             *           and false otherwise
             ****************************************************************/
@@ -83,7 +83,7 @@ namespace Math
             /************************************************************//**
             *   @brief  Checks if this object is greater than or equal to
             *           the parameter.
-            *   @param  A degree object equality will be checked against.
+            *   @param[in] param - A degree object equality will be checked against.
             *   @return True if this object is greater than or equal to
             *           parameter and false otherwise
             ****************************************************************/
@@ -93,7 +93,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks if this object is less than parameter
-            *   @param  A Degree object .
+            *   @param[in] param - A Degree object .
             *   @return True if this object is less than parameter and
             *           false otherwise
             ****************************************************************/
@@ -103,7 +103,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks if this object is less than parameter
-            *   @param  A Radian object .
+            *   @param[in] param - A Radian object .
             *   @return True if this object is less than parameter and
             *           false otherwise
             ****************************************************************/
@@ -112,7 +112,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks if this object is greater than parameter
-            *   @param  A Degree object .
+            *   @param[in] param - A Degree object .
             *   @return True if this object is greater than parameter and
             *           false otherwise
             ****************************************************************/
@@ -123,7 +123,7 @@ namespace Math
             /************************************************************//**
             *   @brief  Checks if this object is greater than or equal to
             *           a Radian object
-            *   @param  A Radian object equality will be checked against.
+            *   @param[in] param - A Radian object equality will be checked against.
             *   @return True if this object is equal to parameter and
             *           false otherwise
             ****************************************************************/
@@ -133,7 +133,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Assign a Degree object to another Degree object.
-            *   @param  The Degree object will be used to assign its value
+            *   @param[in] deg - The Degree object will be used to assign its value
             *           to the current object.
             *   @return The current Degree object with the new value.
             ****************************************************************/
@@ -143,7 +143,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Assign a Radian object to a Degree object.
-            *   @param  The Radian object will be used to assign its value
+            *   @param[in] rad - The Radian object will be used to assign its value
             *           to the current Degree object.
             *   @return The current Degree object with it's new value.
             ****************************************************************/
@@ -153,7 +153,7 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks if this object is not equal to a Radian object
-            *   @param  A Radian object equality will be checked against.
+            *   @param[in] param - A Radian object equality will be checked against.
             *   @return True if this object is not equal to parameter and
             *           false otherwise
             ****************************************************************/
@@ -164,7 +164,7 @@ namespace Math
             /************************************************************//**
             *   @brief  Checks if this object is less than or equal to
             *           a Radian object
-            *   @param  A Radian object equality will be checked against.
+            *   @param[in] param - A Radian object equality will be checked against.
             *   @return True if this object is less than or equal to
             *           parameter and false otherwise
             ****************************************************************/
@@ -175,7 +175,7 @@ namespace Math
             /************************************************************//**
             *   @brief  Checks if this object is greater than or equal to
             *           a Radian object
-            *   @param  A Radian object equality will be checked against.
+            *   @param[in] param - A Radian object equality will be checked against.
             *   @return True if this object is greater than or equal to
             *           parameter and false otherwise
             ****************************************************************/
@@ -191,8 +191,8 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Insertion operator overload
-            *   @param  output stream where the Degree object will be printed.
-            *   @param  A Degree object which will be printed to output stream.
+            *   @param[in, out] out - output stream where the Degree object will be printed.
+            *   @param[in] param - A Degree object which will be printed to output stream.
             *   @return The output stream the Degree object was printed to.
             ****************************************************************/
             //template <class P>
@@ -201,8 +201,9 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Extraction operator overload
-            *   @param  input stream where the Degree object will be extracted.
-            *   @param  A Degree object which will store the extracted object.
+            *   @param[in, out] in - input stream where the Degree object will 
+	    *   be extracted.
+            *   @param[in] param  A Degree object which will store the extracted object.
             *   @return The input stream the Degree object was extracted from.
             ****************************************************************/
             //template <class P>
@@ -222,8 +223,8 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Multiplication operator
-    *   @tparam The datatype of the object to be multiplied by
-    *   @param  The object to be multiplied by.
+    *   @tparam P - The datatype of the object to be multiplied by
+    *   @param[in] param - The object to be multiplied by.
     *   @return template parameter
     ****************************************************************/
     template <class T>
@@ -235,7 +236,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Single parameter constructor
-    *   @param  construct a Degree object from a float.
+    *   @param[in] degree - construct a Degree object from a float.
     ****************************************************************/
     template <class T>
     Degree<T>::Degree(const float degree):
@@ -247,7 +248,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Construct a Degree object from a Radian object
-    *   @param  A Radian object which will be converted to a degree
+    *   @param[in] radian - A Radian object which will be converted to a degree
     *           object.
     ****************************************************************/
     template <class T>
@@ -261,7 +262,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks for equality between two Degree objects.
-    *   @param  A degree object equality will be checked against.
+    *   @param[in] param - A degree object equality will be checked against.
     *   @return True if the two objects are equal and false otherwise
     ****************************************************************/
     template <class T>
@@ -274,7 +275,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Assign a Degree object to another Degree object.
-    *   @param  The Degree object will be used to assign its value
+    *   @param[in] deg - The Degree object will be used to assign its value
     *           to the current object.
     *   @return The current Degree object with the new value.
     ****************************************************************/
@@ -290,7 +291,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Assign a Radian object to a Degree object.
-    *   @param  The Radian object will be used to assign its value
+    *   @param[in] rad - The Radian object will be used to assign its value
     *           to the current Degree object.
     *   @return The current Degree object with it's new value.
     ****************************************************************/
@@ -305,7 +306,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks that two Degree objects are not equal.
-    *   @param  A degree object equality will be checked against.
+    *   @param[in] param - A degree object equality will be checked against.
     *   @return True if the two objects are not equal and false otherwise
     ****************************************************************/
     template <class T>
@@ -319,7 +320,7 @@ namespace Math
     /************************************************************//**
     *   @brief  Checks if this object is less than or equal to
     *           the parameter.
-    *   @param  A degree object equality will be checked against.
+    *   @param[in] param - A degree object equality will be checked against.
     *   @return True if this object is less than or equal to parameter
     *           and false otherwise
     ****************************************************************/
@@ -334,7 +335,7 @@ namespace Math
     /************************************************************//**
     *   @brief  Checks if this object is greater than or equal to
     *           the parameter.
-    *   @param  A degree object equality will be checked against.
+    *   @param[in] param - A degree object equality will be checked against.
     *   @return True if this object is greater than or equal to
     *           parameter and false otherwise
     ****************************************************************/
@@ -348,7 +349,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks if this object is less than parameter
-    *   @param  A Degree object .
+    *   @param[in] param - A Degree object .
     *   @return True if this object is less than parameter and
     *           false otherwise
     ****************************************************************/
@@ -362,7 +363,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks if this object is less than parameter
-    *   @param  A Radian object .
+    *   @param[in] param - A Radian object .
     *   @return True if this object is less than parameter and
     *           false otherwise
     ****************************************************************/
@@ -375,7 +376,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks if this object is greater than parameter
-    *   @param  A Degree object .
+    *   @param[in] param - A Degree object .
     *   @return True if this object is greater than parameter and
     *           false otherwise
     ****************************************************************/
@@ -390,7 +391,7 @@ namespace Math
     /************************************************************//**
     *   @brief  Checks if this object is greater than or equal to
     *           a Radian object
-    *   @param  A Radian object equality will be checked against.
+    *   @param[in] param - A Radian object equality will be checked against.
     *   @return True if this object is equal to parameter and
     *           false otherwise
     ****************************************************************/
@@ -405,7 +406,7 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks if this object is not equal to a Radian object
-    *   @param  A Radian object equality will be checked against.
+    *   @param[in] param - A Radian object equality will be checked against.
     *   @return True if this object is not equal to parameter and
     *           false otherwise
     ****************************************************************/
@@ -420,7 +421,7 @@ namespace Math
     /************************************************************//**
     *   @brief  Checks if this object is less than or equal to
     *           a Radian object
-    *   @param  A Radian object equality will be checked against.
+    *   @param[in] param - A Radian object equality will be checked against.
     *   @return True if this object is less than or equal to
     *           parameter and false otherwise
     ****************************************************************/
@@ -435,7 +436,7 @@ namespace Math
     /************************************************************//**
     *   @brief  Checks if this object is greater than or equal to
     *           a Radian object
-    *   @param  A Radian object equality will be checked against.
+    *   @param[in] param - A Radian object equality will be checked against.
     *   @return True if this object is greater than or equal to
     *           parameter and false otherwise
     ****************************************************************/
@@ -460,8 +461,10 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Insertion operator overload
-    *   @param  output stream where the Degree object will be printed.
-    *   @param  A Degree object which will be printed to output stream.
+    *   @param[in, out] out - output stream where the Degree object 
+    *   will be printed.
+    *   @param[in] param - A Degree object which will be printed to 
+    *   output stream.
     *   @return The output stream the Degree object was printed to.
     ****************************************************************/
     template <class P>
@@ -473,8 +476,9 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Extraction operator overload
-    *   @param  input stream where the Degree object will be extracted.
-    *   @param  A Degree object which will store the extracted object.
+    *   @param[in, out] in - input stream where the Degree object will 
+    *   be extracted.
+    *   @param[in] param - A Degree object which will store the extracted object.
     *   @return The input stream the Degree object was extracted from.
     ****************************************************************/
     template <class P>
