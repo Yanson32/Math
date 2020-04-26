@@ -20,13 +20,26 @@ protected:
 
 	const float DIVIATION = 0.001f;
 };
+//Default constructor
+TEST_F(DegreeFix, DefaultConstructor)
+{
+	EXPECT_EQ(Math::Degree<float>(), 0);
+}
 
-//Test constructor
-TEST_F(DegreeFix, Constructor)
+//Test single argument constructor
+TEST_F(DegreeFix, SingleArgumentConstructor)
 {
 	EXPECT_EQ(def, Math::Degree<float>(0));
 	EXPECT_EQ(deg2, Math::Degree<float>(2));
 	EXPECT_NE(deg3, rad);
+}
+
+//Test constructor that converts Radina
+//to Degree.
+TEST_F(DegreeFix, RadianToDegreeConstructor)
+{
+	Math::Degree<float> degTest1(2);
+	EXPECT_EQ(Math::Degree<float>(Math::Radian<float>(degTest1)), degTest1);
 }
 
 //Test copy constructor
