@@ -154,10 +154,10 @@ namespace Math
 		*   @brief  Scalar multiplication
 		*   @tparam	P - The type of the scalar
 		*   @param[in] param - Multiply the radian object by the input parameter.
-		*   @return A Reference to the current Radian object.
+		*   @return A Radian object set to the new value.
 		*******************************************************************************/
 		template <class P>
-		Radian<T>& operator * (const P param) const;
+		Radian<T> operator * (const P param) const;
 	private:
 		float m_Radians = 0;
 		//friend class Degree<T>;
@@ -187,7 +187,7 @@ namespace Math
 	*   @brief  Scalar multiplication
 	*   @tparam	P - The type of the scalar
 	*   @param[in] param - Multiply the radian object by the input parameter.
-	*   @return A Reference to the current Radian object.
+	*   @return A Radian object set to the new value.
 	*******************************************************************************/
 	template <class T>
 	template <class P>
