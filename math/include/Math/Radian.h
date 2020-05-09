@@ -65,8 +65,8 @@ namespace Math
 		/***************************************************************************//**
 		*   @brief  Overload the subtraction operator.
 		*   @param[in] rad - A Radian object to be subtracted from the current object
-		*   @return A Radian object that is equal to the difference of the current object
-		*           and the parameter.
+		*   @return A Radian object that is equal to the difference of the current 
+		*   object and the parameter.
 		*******************************************************************************/
 		Radian<T> operator - (const Radian<T> &rad) const;
 
@@ -74,8 +74,8 @@ namespace Math
 		/***************************************************************************//**
 		*   @brief  Overload the subtraction operator.
 		*   @param[in] deg - A Degree object to be subtracted from the current object
-		*   @return A Radian object that is equal to the difference of the current object
-		*           and the parameter.
+		*   @return A Radian object that is equal to the difference of the current
+		*   object and the parameter.
 		*******************************************************************************/
 		template <class P>            
 		Radian<T> operator - (const Degree<P> &deg) const;
@@ -169,7 +169,8 @@ namespace Math
 	/****************************************************************************//**
 	*   @brief  Overload the extraction operator.
 	*   @param[in, out] rad - The stream where the data will be inserted.
-	*   @param[in] rad - The Radian object stores data that will be inserted into the stream.
+	*   @param[in] rad - The Radian object stores data that will be inserted into the 
+	*   stream.
 	********************************************************************************/
 	template <class P>    
 	std::ostream& operator << (std::ostream& in, const Radian<P> &rad);
@@ -191,7 +192,7 @@ namespace Math
 
 	/****************************************************************************//**
 	*   @brief  Single argument constructor.
-	*	@param[in] radian - A floating point representation of a radian.
+	*   @param[in] radian - A floating point representation of a radian.
 	********************************************************************************/
 	template <class T>
 	Radian<T>::Radian(const float radian):
@@ -245,9 +246,9 @@ namespace Math
 	/***************************************************************************//**
 	*   @brief  Overload the subtraction operator.
 	*   @param[in] rad - A Radian object to be subtracted from the current object
-	*   @return A Radian object that is equal to the difference of the current object
-	*           and the parameter.
-	*******************************************************************************/\
+	*   @return A Radian object that is equal to the difference of the current 
+	*   object and the parameter.
+	*******************************************************************************/
 	template <class T>
 	Radian<T> Radian<T>::operator - (const Radian<T> &rad) const
 	{
@@ -258,8 +259,8 @@ namespace Math
 	/***************************************************************************//**
 	*   @brief  Overload the subtraction operator.
 	*   @param[in] deg - A Degree object to be subtracted from the current object
-	*   @return A Radian object that is equal to the difference of the current object
-	*           and the parameter.
+	*   @return A Radian object that is equal to the difference of the current 
+	*   	object and the parameter.
 	*******************************************************************************/
 	template <class T>
 	template <class P>
@@ -379,7 +380,8 @@ namespace Math
 	/****************************************************************************//**
 	*   @brief  Overload the extraction operator.
 	*   @param[in, out] out - The stream where the data will be inserted.
-	*   @param[in] rad - The Radian object stores data that will be inserted into the stream.
+	*   @param[in] rad - The Radian object stores data that will be inserted into 
+	*   the stream.
 	********************************************************************************/
 	template <class P>    
 	std::ostream& operator << (std::ostream& out, const Radian<P> &rad)
