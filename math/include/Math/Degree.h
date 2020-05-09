@@ -34,8 +34,10 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Construct a Degree object from a Radian object
-            *   @param[in] radian - A Radian object which will be converted to a degree
-            *           object.
+            *   @tparam P - The datatype used internally by the Radian
+	    *   	object.
+	    *   @param[in] radian - A Radian object which will be converted 
+	    *   	to a degree object.
             ****************************************************************/
             template <class P>            
             Degree(const Radian<P> &radian);
@@ -45,7 +47,8 @@ namespace Math
             *   @brief  Multiplication operator
             *   @tparam P - The datatype of the object to be multiplied by
             *   @param[in] param - The object to be multiplied by.
-            *   @return template parameter
+            *   @return A Degree object which represents the product of
+	    *   	the current Degree object and the input parameter
             ****************************************************************/
             template <class P>
             Degree<T> operator * (const P param) const;
@@ -53,17 +56,22 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks for equality between two Degree objects.
-            *   @param[in] param - A degree object equality will be checked against.
+            *   tparam P - The internal data type of the Degree parameter.
+	    *   @param[in] param - A degree object equality will be checked 
+	    *   	against.
             *   @return True if the two objects are equal and false otherwise
             ****************************************************************/
             template <class P>
-			bool operator == (const Degree<P> &param) const;
+	    bool operator == (const Degree<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks that two Degree objects are not equal.
-            *   @param[in] param - A degree object equality will be checked against.
-            *   @return True if the two objects are not equal and false otherwise
+            *   @tparam P - The internal data type of the Degree parameter.
+	    *   @param[in] param - A degree object equality will be checked 
+	    *   	against.
+            *   @return True if the two objects are not equal and false 
+	    *   	otherwise
             ****************************************************************/
             template <class P>
 			bool operator != (const Degree<P> &param) const;
@@ -72,37 +80,42 @@ namespace Math
             /************************************************************//**
             *   @brief  Checks if this object is less than or equal to
             *           the parameter.
-            *   @param[in] param - A degree object equality will be checked against.
+            *   @tparam P - The internal data type of the Degree parameter.
+            *   @param[in] param - A degree object equality will be checked 
+	    *   	against.
             *   @return True if this object is less than or equal to parameter
             *           and false otherwise
             ****************************************************************/
             template <class P>
-			bool operator <= (const Degree<P> &param) const;
+	    bool operator <= (const Degree<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks if this object is greater than or equal to
             *           the parameter.
+            *   @tparam P - The internal data type of the Degree parameter.
             *   @param[in] param - A degree object equality will be checked against.
             *   @return True if this object is greater than or equal to
             *           parameter and false otherwise
             ****************************************************************/
             template <class P>
-			bool operator >= (const Degree<P> &param) const;
+	    bool operator >= (const Degree<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks if this object is less than parameter
+            *   @tparam P - The internal data type of the Degree parameter.
             *   @param[in] param - A Degree object .
             *   @return True if this object is less than parameter and
             *           false otherwise
             ****************************************************************/
             template <class P>
-			bool operator < (const Degree<P> &param) const;
+	    bool operator < (const Degree<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks if this object is less than parameter
+            *   @tparam P - The internal data type of the Radian parameter.
             *   @param[in] param - A Radian object .
             *   @return True if this object is less than parameter and
             *           false otherwise
@@ -112,29 +125,33 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks if this object is greater than parameter
+            *   @tparam P - The internal data type of the Degree parameter.
             *   @param[in] param - A Degree object .
             *   @return True if this object is greater than parameter and
             *           false otherwise
             ****************************************************************/
             template <class P>
-			bool operator > (const Degree<P> &param) const;
+	    bool operator > (const Degree<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks if this object is greater than or equal to
             *           a Radian object
-            *   @param[in] param - A Radian object equality will be checked against.
+            *   @tparam P - The internal data type of the Radian parameter.
+            *   @param[in] param - A Radian object equality will be checked 
+	    *   against.
             *   @return True if this object is equal to parameter and
-            *           false otherwise
+            *   	false otherwise
             ****************************************************************/
             template <class P>
-			bool operator == (const Radian<P> &param) const;
+	    bool operator == (const Radian<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Assign a Degree object to another Degree object.
-            *   @param[in] deg - The Degree object will be used to assign its value
-            *           to the current object.
+            *   @tparam P - The internal data type of the Degree parameter.
+            *   @param[in] deg - The Degree object will be used to assign its 
+	    *   	value to the current object.
             *   @return The current Degree object with the new value.
             ****************************************************************/
             template <class P>
@@ -143,8 +160,9 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Assign a Radian object to a Degree object.
-            *   @param[in] rad - The Radian object will be used to assign its value
-            *           to the current Degree object.
+            *   @tparam P - The internal data type of the Radian parameter.
+            *   @param[in] rad - The Radian object will be used to assign its 
+	    *   	value to the current Degree object.
             *   @return The current Degree object with it's new value.
             ****************************************************************/
             template <class P>
@@ -153,66 +171,49 @@ namespace Math
 
             /************************************************************//**
             *   @brief  Checks if this object is not equal to a Radian object
-            *   @param[in] param - A Radian object equality will be checked against.
+            *   @tparam P - The internal data type of the Radian parameter.
+            *   @param[in] param - A Radian object equality will be checked 
+	    *   	against.
             *   @return True if this object is not equal to parameter and
             *           false otherwise
             ****************************************************************/
             template <class P>
-			bool operator != (const Radian<P> &param) const;
+            bool operator != (const Radian<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks if this object is less than or equal to
             *           a Radian object
-            *   @param[in] param - A Radian object equality will be checked against.
+            *   @tparam P - The internal data type of the Radian parameter.
+            *   @param[in] param - A Radian object equality will be checked 
+	    *   	against.
             *   @return True if this object is less than or equal to
             *           parameter and false otherwise
             ****************************************************************/
             template <class P>
-			bool operator <= (const Radian<P> &param) const;
+	    bool operator <= (const Radian<P> &param) const;
 
 
             /************************************************************//**
             *   @brief  Checks if this object is greater than or equal to
             *           a Radian object
-            *   @param[in] param - A Radian object equality will be checked against.
+            *   @tparam P - The internal data type of the Radian parameter.
+            *   @param[in] param - A Radian object equality will be checked \
+	    *   	against.
             *   @return True if this object is greater than or equal to
             *           parameter and false otherwise
             ****************************************************************/
             template <class P>
-			bool operator >= (const Radian<P> &param) const;
+            bool operator >= (const Radian<P> &param) const;
 
 
-            /***************************************************************************//**
+            /************************************************************//**
             *   @brief  Type cast operator for converting to float.
-            *******************************************************************************/
+            ****************************************************************/
             operator float() const;
-
-
-            /************************************************************//**
-            *   @brief  Insertion operator overload
-            *   @param[in, out] out - output stream where the Degree object will be printed.
-            *   @param[in] param - A Degree object which will be printed to output stream.
-            *   @return The output stream the Degree object was printed to.
-            ****************************************************************/
-            //template <class P>
-			//friend std::ostream& operator << (std::ostream& out, const Degree<P> &param);
-
-
-            /************************************************************//**
-            *   @brief  Extraction operator overload
-            *   @param[in, out] in - input stream where the Degree object will 
-	    *   be extracted.
-            *   @param[in] param  A Degree object which will store the extracted object.
-            *   @return The input stream the Degree object was extracted from.
-            ****************************************************************/
-            //template <class P>
-			//friend std::istream& operator >> (std::istream& in, const Degree<P> &param);
-
-        private:
+	private:
             T m_Degrees = 0;
-            //friend class Radian;
-
+           
             template <class P>
             friend T cos(const Degree<T> &deg);
 
@@ -248,8 +249,9 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Construct a Degree object from a Radian object
-    *   @param[in] radian - A Radian object which will be converted to a degree
-    *           object.
+    *   @tparam P - The internal data type of the Radian parameter.
+    *   @param[in] radian - A Radian object which will be converted 
+    *   	to a degree object.
     ****************************************************************/
     template <class T>
     template <class P> 
@@ -262,21 +264,24 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks for equality between two Degree objects.
-    *   @param[in] param - A degree object equality will be checked against.
+    *   @tparam P - The internal data type of the Degree parameter.
+    *   @param[in] param - A degree object equality will be checked 
+    *   	against.
     *   @return True if the two objects are equal and false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator == (const Degree<P> &param) const
-	{
-        return this->m_Degrees == param.m_Degrees;
-	}
+    bool Degree<T>::operator == (const Degree<P> &param) const
+    {
+	return this->m_Degrees == param.m_Degrees;
+    }
 
 
     /************************************************************//**
     *   @brief  Assign a Degree object to another Degree object.
-    *   @param[in] deg - The Degree object will be used to assign its value
-    *           to the current object.
+    *   @tparam P - The internal data type of the Degree parameter.
+    *   @param[in] deg - The Degree object will be used to assign its 
+    *   	`value to the current object.
     *   @return The current Degree object with the new value.
     ****************************************************************/
     template <class T>
@@ -291,8 +296,9 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Assign a Radian object to a Degree object.
-    *   @param[in] rad - The Radian object will be used to assign its value
-    *           to the current Degree object.
+    *   @tparam P - The internal data type of the Radian parameter.
+    *   @param[in] rad - The Radian object will be used to assign 
+    *   	its value to the current Degree object.
     *   @return The current Degree object with it's new value.
     ****************************************************************/
     template <class T>
@@ -306,63 +312,72 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks that two Degree objects are not equal.
-    *   @param[in] param - A degree object equality will be checked against.
-    *   @return True if the two objects are not equal and false otherwise
+    *   @tparam P - The internal data type of the Degree parameter.
+    *   @param[in] param - A degree object equality will be checked 
+    *   	against.
+    *   @return True if the two objects are not equal and false 
+    *   	otherwise.
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator != (const Degree<P> &param) const
-	{
-		return this->m_Degrees  != param.m_Degrees;
-	}
+    bool Degree<T>::operator != (const Degree<P> &param) const
+    {
+        return this->m_Degrees  != param.m_Degrees;
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is less than or equal to
     *           the parameter.
-    *   @param[in] param - A degree object equality will be checked against.
+    *   @tparam P - The internal data type of the Degree parameter.
+    *   @param[in] param - A degree object equality will be checked 
+    *   	against.
     *   @return True if this object is less than or equal to parameter
     *           and false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator <= (const Degree<P> &param) const
-	{
-		return this->m_Degrees <= param.m_Degrees;
-	}
+    bool Degree<T>::operator <= (const Degree<P> &param) const
+    {
+        return this->m_Degrees <= param.m_Degrees;
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is greater than or equal to
     *           the parameter.
-    *   @param[in] param - A degree object equality will be checked against.
+    *   @tparam P - The internal data type of the Degree parameter.
+    *   @param[in] param - A degree object equality will be checked 
+    *   	against.
     *   @return True if this object is greater than or equal to
     *           parameter and false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator >= (const Degree<P> &param) const
-	{
-		return this->m_Degrees >= param.m_Degrees;
-	}
+    bool Degree<T>::operator >= (const Degree<P> &param) const
+    {
+        return this->m_Degrees >= param.m_Degrees;
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is less than parameter
+    *   @tparam P - The internal data type of the Degree parameter.
     *   @param[in] param - A Degree object .
     *   @return True if this object is less than parameter and
     *           false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator < (const Degree<P> &param) const
-	{
-		return this->m_Degrees < param.m_Degrees;
-	}
+    bool Degree<T>::operator < (const Degree<P> &param) const
+    {
+        return this->m_Degrees < param.m_Degrees;
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is less than parameter
+    *   @tparam P - The internal data type of the Radian parameter.
     *   @param[in] param - A Radian object .
     *   @return True if this object is less than parameter and
     *           false otherwise
@@ -376,82 +391,89 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Checks if this object is greater than parameter
+    *   @tparam P - The internal data type of the Degree parameter.
     *   @param[in] param - A Degree object .
     *   @return True if this object is greater than parameter and
     *           false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator > (const Degree<P> &param) const
-	{
-		return this->m_Degrees > param.m_Degrees;
-	}
+    bool Degree<T>::operator > (const Degree<P> &param) const
+    {
+        return this->m_Degrees > param.m_Degrees;
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is greater than or equal to
     *           a Radian object
-    *   @param[in] param - A Radian object equality will be checked against.
+    *   @tparam P - The internal data type of the Radian parameter.
+    *   @param[in] param - A Radian object equality will be checked 
+    *   	against.
     *   @return True if this object is equal to parameter and
     *           false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator == (const Radian<P> &param) const
-	{
-
+    bool Degree<T>::operator == (const Radian<P> &param) const
+    {
         return this->m_Degrees == static_cast<T>(param);
-	}
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is not equal to a Radian object
-    *   @param[in] param - A Radian object equality will be checked against.
+    *   @tparam P - The internal data type of the Radian parameter.
+    *   @param[in] param - A Radian object equality will be checked 
+    *   	against.
     *   @return True if this object is not equal to parameter and
     *           false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator != (const Radian<P> &param) const
-	{
-		return this->m_Degrees != static_cast<T>(param);
-	}
+    bool Degree<T>::operator != (const Radian<P> &param) const
+    {
+        return this->m_Degrees != static_cast<T>(param);
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is less than or equal to
     *           a Radian object
-    *   @param[in] param - A Radian object equality will be checked against.
+    *   @tparam P - The internal data type of the Radian parameter.
+    *   @param[in] param - A Radian object equality will be checked 
+    *   	against.
     *   @return True if this object is less than or equal to
     *           parameter and false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator <= (const Radian<P> &param) const
-	{
-		return this->m_Degrees <= static_cast<T>(param);
-	}
+    bool Degree<T>::operator <= (const Radian<P> &param) const
+    {
+        return this->m_Degrees <= static_cast<T>(param);
+    }
 
 
     /************************************************************//**
     *   @brief  Checks if this object is greater than or equal to
     *           a Radian object
-    *   @param[in] param - A Radian object equality will be checked against.
+    *   @tparam P - The internal data type of the Radian parameter.
+    *   @param[in] param - A Radian object equality will be checked 
+    *   	against.
     *   @return True if this object is greater than or equal to
     *           parameter and false otherwise
     ****************************************************************/
     template <class T>
     template <class P>
-	bool Degree<T>::operator >= (const Radian<P> &param) const
-	{
+    bool Degree<T>::operator >= (const Radian<P> &param) const
+    {
+        return this->m_Degrees >= static_cast<T>(param);
+    }
 
-		return this->m_Degrees >= static_cast<T>(param);
-	}
 
-
-    /***************************************************************************//**
+    /***********************************************************//**
     *   @brief  Type cast operator for converting to float.
-    *******************************************************************************/
+    ***************************************************************/
     template <class T>
     Degree<T>::operator float() const
     {
@@ -461,30 +483,33 @@ namespace Math
 
     /************************************************************//**
     *   @brief  Insertion operator overload
+    *   @tparam P - The internal data type of the Degree parameter.
     *   @param[in, out] out - output stream where the Degree object 
-    *   will be printed.
+    *   	will be printed.
     *   @param[in] param - A Degree object which will be printed to 
-    *   output stream.
+    *   	output stream.
     *   @return The output stream the Degree object was printed to.
     ****************************************************************/
     template <class P>
-	std::ostream& operator << (std::ostream& out, const Degree<P> &param)
-	{
-		return out << static_cast<P>(param);
-	}
+    std::ostream& operator << (std::ostream& out, const Degree<P> &param)
+    {
+        return out << static_cast<P>(param);
+    }
 
 
     /************************************************************//**
     *   @brief  Extraction operator overload
+    *   @tparam P - The internal data type of the Degree parameter.
     *   @param[in, out] in - input stream where the Degree object will 
-    *   be extracted.
-    *   @param[in] param - A Degree object which will store the extracted object.
+    *   	be extracted.
+    *   @param[in] param - A Degree object which will store the 
+    *   	extracted object.
     *   @return The input stream the Degree object was extracted from.
     ****************************************************************/
     template <class P>
-	std::istream& operator >> (std::istream& in, const Degree<P> &param)
-	{
-		return in >> param.m_Degrees;
-	}
+    std::istream& operator >> (std::istream& in, const Degree<P> &param)
+    {
+        return in >> param.m_Degrees;
+    }
 }
 #endif
