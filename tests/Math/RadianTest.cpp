@@ -47,34 +47,6 @@ TEST_F(RadFix, CopyConstructor)
     EXPECT_EQ(rad4, Math::Radian<float>(rad4));
 }
 
-//Test assignment operator
-TEST_F(RadFix, AssignmentOperator)
-{
-    Math::Radian<float> temp = rad;
-    EXPECT_EQ(rad, temp);
-
-    temp = Math::Degree<float>(rad);
-    EXPECT_EQ(temp, Math::Degree<float>(rad));
-
-    Math::Radian<float> temp2 = rad2;
-    EXPECT_EQ(rad2, temp2);
-
-    Math::Radian<float> temp3 = Math::Degree<float>(rad2);
-    EXPECT_EQ(temp3, Math::Degree<float>(rad2));
-
-    Math::Radian<float> temp4 = rad3;
-    EXPECT_EQ(rad3, temp4);
-
-    Math::Radian<float> temp5 = Math::Degree<float>(rad3);
-    EXPECT_EQ(temp5, Math::Degree<float>(rad3));
-
-    Math::Radian<float> temp6 = rad4;
-    EXPECT_EQ(rad4, temp6);
-
-    Math::Radian<float> temp7 = Math::Degree<float>(rad4);
-    EXPECT_EQ(temp7, Math::Degree<float>(rad4));
-}
-
 
 //Test insertion operator
 TEST_F(RadFix, InsertionOperator)
@@ -117,6 +89,31 @@ TEST_F(RadFix, ExtractionOperator)
     EXPECT_EQ(rad3, Math::Radian<float>(240));
 }
 
+
+//Test addition operator
+TEST_F(RadFix, AdditionOperator)
+{
+    EXPECT_EQ(rad + rad, Math::Radian<float>(0));
+    EXPECT_EQ(rad + rad2, Math::Radian<float>(3.25));
+    EXPECT_EQ(rad2 + rad3, Math::Radian<float>(-7.58));
+    EXPECT_EQ(rad2 + Math::Degree<float>(12.3), Math::Radian<float>(3.4646755));
+    EXPECT_EQ(rad3 + Math::Degree<float>(-100), Math::Radian<float>(-12.575329));
+    EXPECT_EQ(rad4 + Math::Degree<float>(-52.4), Math::Radian<float>(-23.9145525));
+}
+
+
+//Test subtraction operator
+TEST_F(RadFix, SubtractionOperator)
+{
+    EXPECT_EQ(rad - rad, Math::Radian<float>(0));
+    EXPECT_EQ(rad - rad2, Math::Radian<float>(-3.25));
+    EXPECT_EQ(rad2 - rad3, Math::Radian<float>(14.08));
+    EXPECT_EQ(rad2 - Math::Degree<float>(12.3), Math::Radian<float>(3.0353245));
+    EXPECT_EQ(rad3 - Math::Degree<float>(-100), Math::Radian<float>(-9.084671));
+    EXPECT_EQ(rad4 - Math::Degree<float>(-52.4), Math::Radian<float>(-22.0854475));
+}
+
+
 //Test the equality operator
 TEST_F(RadFix, EqualityOperator)
 {
@@ -148,28 +145,6 @@ TEST_F(RadFix, NotEqualOperator)
 }
 
 
-//Test addition operator
-TEST_F(RadFix, AdditionOperator)
-{
-    EXPECT_EQ(rad + rad, Math::Radian<float>(0));
-    EXPECT_EQ(rad + rad2, Math::Radian<float>(3.25));
-    EXPECT_EQ(rad2 + rad3, Math::Radian<float>(-7.58));
-    EXPECT_EQ(rad2 + Math::Degree<float>(12.3), Math::Radian<float>(3.4646755));
-    EXPECT_EQ(rad3 + Math::Degree<float>(-100), Math::Radian<float>(-12.575329));
-    EXPECT_EQ(rad4 + Math::Degree<float>(-52.4), Math::Radian<float>(-23.9145525));
-}
-
-//Test subtraction operator
-TEST_F(RadFix, SubtractionOperator)
-{
-    EXPECT_EQ(rad - rad, Math::Radian<float>(0));
-    EXPECT_EQ(rad - rad2, Math::Radian<float>(-3.25));
-    EXPECT_EQ(rad2 - rad3, Math::Radian<float>(14.08));
-    EXPECT_EQ(rad2 - Math::Degree<float>(12.3), Math::Radian<float>(3.0353245));
-    EXPECT_EQ(rad3 - Math::Degree<float>(-100), Math::Radian<float>(-9.084671));
-    EXPECT_EQ(rad4 - Math::Degree<float>(-52.4), Math::Radian<float>(-22.0854475));
-}
-
 //Test typecast operator
 TEST_F(RadFix, FLoatTypecastOperator)
 {
@@ -186,6 +161,36 @@ TEST_F(RadFix, FLoatTypecastOperator)
     EXPECT_GE(-10.83, bottom);
     EXPECT_EQ(static_cast<float>(rad4), -23);
 }
+
+
+//Test assignment operator
+TEST_F(RadFix, AssignmentOperator)
+{
+    Math::Radian<float> temp = rad;
+    EXPECT_EQ(rad, temp);
+
+    temp = Math::Degree<float>(rad);
+    EXPECT_EQ(temp, Math::Degree<float>(rad));
+
+    Math::Radian<float> temp2 = rad2;
+    EXPECT_EQ(rad2, temp2);
+
+    Math::Radian<float> temp3 = Math::Degree<float>(rad2);
+    EXPECT_EQ(temp3, Math::Degree<float>(rad2));
+
+    Math::Radian<float> temp4 = rad3;
+    EXPECT_EQ(rad3, temp4);
+
+    Math::Radian<float> temp5 = Math::Degree<float>(rad3);
+    EXPECT_EQ(temp5, Math::Degree<float>(rad3));
+
+    Math::Radian<float> temp6 = rad4;
+    EXPECT_EQ(rad4, temp6);
+
+    Math::Radian<float> temp7 = Math::Degree<float>(rad4);
+    EXPECT_EQ(temp7, Math::Degree<float>(rad4));
+}
+
 
 //Test scalar multiplication
 TEST_F(RadFix, ScalarMultiplication)

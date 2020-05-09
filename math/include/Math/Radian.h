@@ -43,14 +43,6 @@ namespace Math
 		friend std::iostream& operator >> (std::iostream& in, Radian<P> &rad);
 
 
-		/****************************************************************************//**
-		*   @brief  Overload the extraction operator.
-		*   @param[in, out] out - The stream where the data will be inserted.
-		*   @param[in] rad - The Radian object stores data that will be inserted into the stream.
-		********************************************************************************/
-		//friend std::ostream& operator << (std::ostream& out, const Radian &rad);
-
-
 		/***************************************************************************//**
 		*   @brief  Overload the addition operator.
 		*   @param[in] rad - A Radian object to be added to the current object
@@ -160,7 +152,7 @@ namespace Math
 		Radian<T> operator * (const P param) const;
 	private:
 		float m_Radians = 0;
-		//friend class Degree<T>;
+
 		friend float cos(const Radian &rad);
 		friend float sin(const Radian &rad);
 	};
