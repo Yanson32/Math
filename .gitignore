@@ -4,4 +4,8 @@ BUILD/
 build/
 *.orig
 .fuse*
+
+#Ignore vim files
 *.swp
+*.swn
+*.swo
