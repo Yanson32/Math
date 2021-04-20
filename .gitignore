@@ -6,6 +6,4 @@ build/
 .fuse*
 
 #Ignore vim files
-*.swp
-*.swn
-*.swo
+*.sw*
