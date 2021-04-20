@@ -2,7 +2,6 @@ set(RELATIVE_PATH "include/Math")
 
 set(FILES "${CMAKE_CURRENT_LIST_DIR}/Degree.h"
 "${CMAKE_CURRENT_LIST_DIR}/Radian.h"
-"${CMAKE_CURRENT_LIST_DIR}/Point2.h"
 "${CMAKE_CURRENT_LIST_DIR}/Line.h"
 "${CMAKE_CURRENT_LIST_DIR}/Vector.h"
 "${CMAKE_CURRENT_LIST_DIR}/Constants.h"

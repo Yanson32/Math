@@ -1,8 +1,7 @@
 #ifndef MATH_LINE_H
 #define MATH_LINE_H
 
-#include "Math/Point.h"
-#include "Math/Line.h"
+#include "Math/Vector2.h"
 #include <cmath>
 
 namespace Math
@@ -12,15 +11,15 @@ namespace Math
     {
         public:
             Line();
-            Line(const Point<T> &start, const Point<T> &end);
+            Line(const Vector2 &start, const Vector2 &end);
             Line<T> Reverse() const;
             Line<T> LeftNormal() const;
             Line<T> RightNormal() const;
             unsigned Magnitude() const;
 			bool operator == (const Math::Line<T> &param) const;
 			bool operator != (const Math::Line<T> &param) const;
-            Point<T> m_Start;
-            Point<T> m_End;
+            Vector2 m_Start;
+            Vector2 m_End;
     };
 
 
@@ -30,7 +29,7 @@ namespace Math
 
     }
 
-    Line<T>::Line(const Point<T> &start, const Point<T> &end):
+    Line<T>::Line(const Vector2 &start, const Vector2 &end):
     m_Start<T>(start),
     m_End<T>(end)
     {
