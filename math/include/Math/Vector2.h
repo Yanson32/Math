@@ -6,6 +6,8 @@
 ****************************************************************/
 #include <stdexcept>
 #include <cmath>
+#include <stdexcept>
+
 namespace Math
 {
     template <class T>
