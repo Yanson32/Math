@@ -4,7 +4,7 @@
 *	@author	Wayne J Larson Jr.
 *	@date	5/7/2018
 ****************************************************************/
-
+#include <stdexcept>
 #include <cmath>
 namespace Math
 {
