@@ -27,7 +27,7 @@ namespace Math
             *   @param end if the ending point (x and y coordinat) of 
             *          the line.
             *************************************************************/
-            Line(const Vector2 &start, const Vector2 &end);
+            Line(const Vector2<T> &start, const Vector2<T> &end);
             
 
             /*********************************************************//**
@@ -91,8 +91,8 @@ namespace Math
 			bool operator != (const Math::Line<T> &param) const;
             
 
-            Vector2 m_Start;                    //The starting point (x,y coordinate) of the line.
-            Vector2 m_End;                      //The ending point (x,y coordinate) of the line.
+            Vector2<T> m_Start;                    //The starting point (x,y coordinate) of the line.
+            Vector2<T> m_End;                      //The ending point (x,y coordinate) of the line.
     };
 
     
@@ -100,7 +100,7 @@ namespace Math
     *   @brief Constructor 
     *************************************************************/
     template <class T>
-    Line<T>::Line():m_Start<T>(0, 0), m_End<T>(0, 0)
+    Line<T>::Line():m_Start(0, 0), m_End(0, 0)
     {
 
     }
@@ -112,7 +112,8 @@ namespace Math
     *   @param end if the ending point (x and y coordinat) of 
     *          the line.
     *************************************************************/
-    Line<T>::Line(const Vector2 &start, const Vector2 &end): m_Start<T>(start), m_End<T>(end)
+    template <class T>
+    Line<T>::Line(const Vector2<T> &start, const Vector2<T> &end): m_Start(start), m_End(end)
     {
 
     }
@@ -125,6 +126,7 @@ namespace Math
     *   @return A new line object but with the start and end points
     *           swapped.
     *************************************************************/
+    template <class T>
     Line<T> Line<T>::Reverse() const
     {
         return Line<T>(m_End, m_Start);
@@ -139,6 +141,7 @@ namespace Math
     *   @return A line segment that represents the left normal
     *           of the parent line.
     *************************************************************/
+    template <class T>
     Line<T> Line<T>::LeftNormal() const
     {
         T dx = m_End.x - m_Start.x;
@@ -155,7 +158,8 @@ namespace Math
     *   @return A line segment that represents the right normal
     *           of the parent line.
     *************************************************************/
-    Line<T> Line::RightNormal() const
+    template <class T>
+    Line<T> Line<T>::RightNormal() const
     {
         T dx = m_End.x - m_Start.x;
         T dy = m_End.y - m_Start.y;
@@ -168,6 +172,7 @@ namespace Math
     *          line. 
     *   @return The magnitude of the line. 
     *************************************************************/
+    template <class T>
     unsigned Line<T>::Magnitude() const
     {
         auto a = std::abs(m_End.x - m_Start.x);
@@ -183,6 +188,7 @@ namespace Math
     *   @return True is returned if the lines are equal and false
     *           otherwise. 
     *************************************************************/
+    template <class T>
 	bool Line<T>::operator == (const Math::Line<T> &param) const
 	{
 		if (this->m_Start.x == param.m_Start.x && this->m_Start.y == param.m_Start.y)
@@ -201,6 +207,7 @@ namespace Math
     *   @return True is returnd if the lines are not equal and 
     *           false otherwise. 
     *************************************************************/
+    template <class T>
 	bool Line<T>::operator != (const Math::Line<T> &param) const
 	{
 		if (this->m_Start.x != param.m_Start.x)
