@@ -1,6 +1,10 @@
+/*********************************************************//**
+*   @author Wayne J Larson Jr.
+*   @date   4/26/22
+*   @description This class represents a line segment.
+*************************************************************/
 #ifndef MATH_LINE_H
 #define MATH_LINE_H
-
 #include "Math/Vector2.h"
 #include <cmath>
 
@@ -10,37 +14,131 @@ namespace Math
     class Line final
     {
         public:
+            /*********************************************************//**
+            *   @brief Constructor 
+            *************************************************************/
             Line();
+
+            
+            /*********************************************************//**
+            *   @brief Constructor 
+            *   @param start is the starting point (x and y coordinat) 
+            *          of the line.
+            *   @param end if the ending point (x and y coordinat) of 
+            *          the line.
+            *************************************************************/
             Line(const Vector2 &start, const Vector2 &end);
+            
+
+            /*********************************************************//**
+            *   @brief This method reverses the line. Reversing the line
+            *          is when the start point and end points of the line
+            *          are swapped.
+            *   @return A new line object but with the start and end points
+            *           swapped.
+            *************************************************************/
             Line<T> Reverse() const;
+            
+
+            /*********************************************************//**
+            *   @brief This method returns a line representing the left 
+            *          normal of the line. A left normal is a line that
+            *          is perpendicular to the parent line, on the left
+            *          side, and starting at the parent line's end point. 
+            *   @return A line segment that represents the left normal
+            *           of the parent line.
+            *************************************************************/
             Line<T> LeftNormal() const;
+            
+
+            /*********************************************************//**
+            *   @brief This method returns a line representing the right
+            *          normal of the line. A right normal is a line that
+            *          is perpendicular to the parent line, on the right 
+            *          side, and starting at the parent line's end point. 
+            *   @return A line segment that represents the right normal
+            *           of the parent line.
+            *************************************************************/
             Line<T> RightNormal() const;
+            
+            
+            /*********************************************************//**
+            *   @brief This method returns the magnitude (lenght) of the
+            *          line. 
+            *   @return The magnitude of the line. 
+            *************************************************************/
             unsigned Magnitude() const;
+            
+
+            /*********************************************************//**
+            *   @brief  This method checks for equality between two lines.
+            *           A line is considered equal if the start and end
+            *           points are the same. 
+            *   @return True is returned if the lines are equal and false
+            *           otherwise. 
+            *************************************************************/
 			bool operator == (const Math::Line<T> &param) const;
+            
+
+            /*********************************************************//**
+            *   @brief  This method checks unequal lines. Two lines are 
+            *           considered to be unequal, when the start and end
+            *           point of the current line, is different form the 
+            *           start and end point of the input line.
+            *   @return True is returnd if the lines are not equal and 
+            *           false otherwise. 
+            *************************************************************/
 			bool operator != (const Math::Line<T> &param) const;
-            Vector2 m_Start;
-            Vector2 m_End;
+            
+
+            Vector2 m_Start;                    //The starting point (x,y coordinate) of the line.
+            Vector2 m_End;                      //The ending point (x,y coordinate) of the line.
     };
 
-
+    
+    /*********************************************************//**
+    *   @brief Constructor 
+    *************************************************************/
     template <class T>
     Line<T>::Line():m_Start<T>(0, 0), m_End<T>(0, 0)
     {
 
     }
 
-    Line<T>::Line(const Vector2 &start, const Vector2 &end):
-    m_Start<T>(start),
-    m_End<T>(end)
+    /*********************************************************//**
+    *   @brief Constructor 
+    *   @param start is the starting point (x and y coordinat) 
+    *          of the line.
+    *   @param end if the ending point (x and y coordinat) of 
+    *          the line.
+    *************************************************************/
+    Line<T>::Line(const Vector2 &start, const Vector2 &end): m_Start<T>(start), m_End<T>(end)
     {
 
     }
 
+    
+    /*********************************************************//**
+    *   @brief This method reverses the line. Reversing the line
+    *          is when the start point and end points of the line
+    *          are swapped.
+    *   @return A new line object but with the start and end points
+    *           swapped.
+    *************************************************************/
     Line<T> Line<T>::Reverse() const
     {
         return Line<T>(m_End, m_Start);
     }
 
+    
+    /*********************************************************//**
+    *   @brief This method returns a line representing the left 
+    *          normal of the line. A left normal is a line that
+    *          is perpendicular to the parent line, on the left
+    *          side, and starting at the parent line's end point. 
+    *   @return A line segment that represents the left normal
+    *           of the parent line.
+    *************************************************************/
     Line<T> Line<T>::LeftNormal() const
     {
         T dx = m_End.x - m_Start.x;
@@ -48,6 +146,15 @@ namespace Math
         return Line<T>(m_Start, {-dy, dx});
     }
 
+    
+    /*********************************************************//**
+    *   @brief This method returns a line representing the right
+    *          normal of the line. A right normal is a line that
+    *          is perpendicular to the parent line, on the right 
+    *          side, and starting at the parent line's end point. 
+    *   @return A line segment that represents the right normal
+    *           of the parent line.
+    *************************************************************/
     Line<T> Line::RightNormal() const
     {
         T dx = m_End.x - m_Start.x;
@@ -55,6 +162,12 @@ namespace Math
         return Line<T>(m_Start, {dy, -dx});
     }
 
+    
+    /*********************************************************//**
+    *   @brief This method returns the magnitude (lenght) of the
+    *          line. 
+    *   @return The magnitude of the line. 
+    *************************************************************/
     unsigned Line<T>::Magnitude() const
     {
         auto a = std::abs(m_End.x - m_Start.x);
@@ -62,6 +175,14 @@ namespace Math
         return std::sqrt(a * a + b * b);
     }
 
+    
+    /*********************************************************//**
+    *   @brief  This method checks for equality between two lines.
+    *           A line is considered equal if the start and end
+    *           points are the same. 
+    *   @return True is returned if the lines are equal and false
+    *           otherwise. 
+    *************************************************************/
 	bool Line<T>::operator == (const Math::Line<T> &param) const
 	{
 		if (this->m_Start.x == param.m_Start.x && this->m_Start.y == param.m_Start.y)
@@ -71,6 +192,15 @@ namespace Math
 		return false;
 	}
 
+    
+    /*********************************************************//**
+    *   @brief  This method checks unequal lines. Two lines are 
+    *           considered to be unequal, when the start and end
+    *           point of the current line, is different form the 
+    *           start and end point of the input line.
+    *   @return True is returnd if the lines are not equal and 
+    *           false otherwise. 
+    *************************************************************/
 	bool Line<T>::operator != (const Math::Line<T> &param) const
 	{
 		if (this->m_Start.x != param.m_Start.x)
