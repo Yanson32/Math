@@ -48,7 +48,7 @@ namespace Math
             *   @return A line segment that represents the left normal
             *           of the parent line.
             *************************************************************/
-            Line<T> LeftNormal() const;
+            Vector2<T> LeftNormal() const;
             
 
             /*********************************************************//**
@@ -59,7 +59,7 @@ namespace Math
             *   @return A line segment that represents the right normal
             *           of the parent line.
             *************************************************************/
-            Line<T> RightNormal() const;
+            Vector2<T> RightNormal() const;
             
             
             /*********************************************************//**
@@ -142,11 +142,11 @@ namespace Math
     *           of the parent line.
     *************************************************************/
     template <class T>
-    Line<T> Line<T>::LeftNormal() const
+    Vector2<T> Line<T>::LeftNormal() const
     {
         T dx = m_End.x - m_Start.x;
         T dy = m_End.y - m_Start.y;
-        return Line<T>(m_Start, {-dy, dx});
+        return Vector2<T>(-dy, dx);
     }
 
     
@@ -159,11 +159,11 @@ namespace Math
     *           of the parent line.
     *************************************************************/
     template <class T>
-    Line<T> Line<T>::RightNormal() const
+    Vector2<T> Line<T>::RightNormal() const
     {
         T dx = m_End.x - m_Start.x;
         T dy = m_End.y - m_Start.y;
-        return Line<T>(m_Start, {dy, -dx});
+        return Vector2<T>(dy, -dx);
     }
 
     
