@@ -39,7 +39,7 @@ namespace Math
 		*	@brief	Set the vectors magnitude to one, with the same
 		*			direction.
 		****************************************************************/
-		void normalize();
+		Vector2<T> normalize();
 
 
 		/************************************************************//**
@@ -128,14 +128,13 @@ namespace Math
 	*			direction.
 	****************************************************************/
     template <class T>
-	void Vector2<T>::normalize()
+	Vector2<T> Vector2<T>::normalize()
 	{
 		T mag = magnitude();
 		if (!mag)
 			throw std::runtime_error("cannot divide by zero [Vector2::normalize]");
 
-		x = x / mag;
-		y = y / mag;
+        return Vector2<T>(x / mag, y / mag);
 	}
 
 
