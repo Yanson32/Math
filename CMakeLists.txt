@@ -30,9 +30,8 @@ endif()
 
 #Build unit tests
 if(MATH_BUILD_TESTS)
-	find_package("GTest" REQUIRED)
-	include("GoogleTest")
-	add_subdirectory("tests")
+    add_subdirectory("extlibs")	
+    add_subdirectory("tests")
 endif()
 
 #Build documentation

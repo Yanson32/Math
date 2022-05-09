@@ -1,28 +1,24 @@
-#include <gtest/gtest.h>
-#include <Math/Point2.h>
-#include <Math/Vector.h>
+#include <catch2/catch_test_macros.hpp>
+#include <Math/Vector2.h>
 
 //Test constructor
-TEST(Point, Constructor)
+TEST_CASE("Math::Vector2::Constructor")
 {
-	Math::Point2<float> point;
+	Math::Vector2<float> vec;
 	
-	EXPECT_EQ(point.x, 0);
-	EXPECT_EQ(point.y, 0);
+	REQUIRE(vec.x == 0);
+	REQUIRE(vec.y == 0);
 
-	Math::Point2<float> point2(1, 5);
-	EXPECT_EQ(point2.x, 1);
-	EXPECT_EQ(point2.y, 5);
+	Math::Vector2<float> vec2(1, 5);
+	REQUIRE(vec2.x == 1);
+	REQUIRE(vec2.y == 5);
 }
 
 //Test equality
-TEST(Point, Equality)
+TEST_CASE("Math::Vector2::Equality")
 {
-	Math::Point2<float> p1(100, 200);
-	Math::Point2<float> p2(100, 200);
-	EXPECT_EQ(p1, p2);
+	Math::Vector2<float> p1(100, 200);
+	Math::Vector2<float> p2(100, 200);
+	//REQUIRE(p1 == p2);
 
-	Math::Point2<float> p3(0, 0);
-	EXPECT_NE(p1, p3);
-	
 }

@@ -1,86 +1,109 @@
-#include <gtest/gtest.h>
+#include <catch2/catch_test_macros.hpp>
 #include <Math/Vector2.h>
-
-class Vector2Fix : public ::testing::Test
-{
-    protected:  
-	    Vector2Fix(): vec2(12.0f, 23.0f)
-	    {
-
-	    }
-    Math::Vector2<float> vec;
-    Math::Vector2<float> vec2;
-};
+#include <iostream>
 
 //Test constructor
-TEST_F(Vector2Fix, Constructor)
+TEST_CASE("Math::Vector2::Constructor")
 {
-	EXPECT_EQ(vec.x, 0);
-	EXPECT_EQ(vec.y, 0);
+	Math::Vector2<float> vec;
+	
+	REQUIRE(vec.x == 0);
+	REQUIRE(vec.y == 0);
+
+	Math::Vector2<float> vec2(1, 5.7);
+	REQUIRE(vec2.x == 1);
+	REQUIRE(vec2.y == 5.7f);
 }
 
-//Test two argument constructor
-TEST_F(Vector2Fix, ConstructorDoubleArgument)
+//Test equality
+TEST_CASE("Math::Vector2::Equality")
 {
-	EXPECT_EQ(vec2.x, 12.0f);
-	EXPECT_EQ(vec2.y, 23.0f);
+	Math::Vector2<float> p1(100, 200);
+	Math::Vector2<float> p2(100, 200);
+	REQUIRE(p1 == p2);
+
+    Math::Vector2<float> p3(24.3, 57.8);
+    Math::Vector2<float> p4(24.3, 57.8);
+    REQUIRE(p3 == p4); 
 }
 
-//Test magnitude method
-TEST_F(Vector2Fix, magnitude)
+
+//Test addition
+TEST_CASE("Math::operator+")
 {
-	EXPECT_EQ(vec.magnitude(), 0);
+	Math::Vector2<float> p1(0, 0);
+	Math::Vector2<float> p2(0, 0);
+	REQUIRE(p1 + p2 == p1);
 
-    //Check range
-    EXPECT_LT(vec2.magnitude(), 26);
-    EXPECT_GT(vec2.magnitude(), 25);
-}
-
-//Test normalize method
-TEST_F(Vector2Fix, normalize)
-{
-    //Normalize the vector
-    vec2.normalize();
-
-    //Check range
-    EXPECT_LT(vec2.magnitude(), 1.1);
-    EXPECT_GT(vec2.magnitude(), 0.9);
-}
-
-//Test scalar multiplication
-TEST_F(Vector2Fix, scalarMultiplication)
-{
-    Math::Vector2<float> temp = vec2 * 10;
-
-    EXPECT_LT(temp.x, 120.1);
-    EXPECT_GT(temp.x, 119.9);
-}
-
-//Test vector subtraction
-TEST_F(Vector2Fix, vectorSubtraction)
-{
-    Math::Vector2<float> temp(2, 3);
-    Math::Vector2<float> result = vec2 - temp;
+    Math::Vector2<float> p3(24.3, 57.8);
+    Math::Vector2<float> p4(24.3, 57.8);
+    Math::Vector2<float> p5(48.6, 115.6);
+    REQUIRE(p3 + p4 == p5); 
     
-    EXPECT_EQ(result.x, 10);
-    EXPECT_EQ(result.y, 20);
 }
 
-//Test vector addition
-TEST_F(Vector2Fix, vectorAddition)
-{
-    Math::Vector2<float> temp(2, 3);
-    Math::Vector2<float> result = vec2 + temp;
 
-    EXPECT_EQ(result.x, 14);
-    EXPECT_EQ(result.y, 26);
+//Test subtraction
+TEST_CASE("Math::operator-")
+{
+	Math::Vector2<float> p1(0, 0);
+	Math::Vector2<float> p2(0, 0);
+	REQUIRE(p1 -  p2 == p1);
+
+    Math::Vector2<float> p3(24.3, 57.8);
+    Math::Vector2<float> p4(2.3, 157.8);
+    Math::Vector2<float> p5(22, -100);
+    REQUIRE(p3 - p4 == p5); 
+    
+}
+
+
+//Test multiplication scale
+TEST_CASE("Math::operator*")
+{
+    //Multiply by zero
+	Math::Vector2<float> p1(5, 5);
+    Math::Vector2<float> p2(0, 0);
+	REQUIRE(p1 *  0  == p2);
+
+    //Multiply positive numbers
+    Math::Vector2<float> p3(24.3, 57.8);
+    Math::Vector2<float> p4 = p3 * 13;
+    Math::Vector2<float> p5(315.9, 751.4);
+    REQUIRE(p4 == p5); 
+    std::cout << "p4 x = " << p4.x << " " << " p4 y " << p4.y << std::endl; 
+   
+    //Multiply negative numbers
+    Math::Vector2<float> p6(-24.3, -57.8);
+    Math::Vector2<float> p7 = p6 * 13;
+    Math::Vector2<float> p8(-315.9, -751.4);
+    REQUIRE(p7 == p8); 
 }
 
 //Test dot product
-TEST_F(Vector2Fix, dotProduct)
+TEST_CASE("Math::dot")
 {
-    Math::Vector2<float> temp(6, 18);
-    float result = vec2.dot(temp);
+    //Dot product with positive numbers
+	Math::Vector2<float> p1(5, 5);
+    Math::Vector2<float> p2(8, 3);
+	REQUIRE(p1.dot(p2)  == 55);
 
-    EXPECT_EQ(result, 486);
+   //Dot product with negative numbers
+	Math::Vector2<float> p3(-5, -5);
+    Math::Vector2<float> p4(-8, -3);
+	REQUIRE(p3.dot(p4)  == 55);
+     
+
+    //Dot product with negative and positive numbers
+	Math::Vector2<float> p5(-5, 5);
+    Math::Vector2<float> p6(8, -3);
+	REQUIRE(p5.dot(p6)  == -55);
+    
+}
+
+//Test Magnitude 
+TEST_CASE("Math::magnitude")
+{
+	Math::Vector2<int> p1(8, 5);
+	REQUIRE(p1.magnitude()  == 9);
 }

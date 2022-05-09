@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <cmath>
 #include <stdexcept>
+#include <iostream>
 
 namespace Math
 {
@@ -68,6 +69,7 @@ namespace Math
 		****************************************************************/
 		Vector2<T> operator + (const Vector2<T> param);
 
+		bool operator == (const Vector2<T> param) const;
 
 		/************************************************************//**
 		*	@brief	Calculate the dot product of two vectors.
@@ -183,6 +185,13 @@ namespace Math
 		return Vector2<T>(xAxis, yAxis);
 	}
 
+
+    template <class T>
+	bool Vector2<T>::operator == (const Vector2<T> param) const
+    {
+        return x == param.x && y == param.y; 
+
+    }
 
 	/************************************************************//**
 	*	@brief	Calculate the dot product of two vectors.

@@ -1,34 +1,24 @@
-#include <gtest/gtest.h>
+#include <catch2/catch_test_macros.hpp>
 #include <Math/Degree.h>
 #include <Math/Radian.h>
 
-class DegreeFix :
-	public ::testing::Test
-{
-protected:
-	DegreeFix():def(0), deg2(2), rad(0.349066), deg3(Math::Radian<float>(0.349066))
-	{
-
-	}
-
-	//void TearDown() override {}
-	Math::Degree<float> def;
-	Math::Degree<float> deg2;
-	Math::Radian<float> rad;
-	Math::Degree<float> deg3;
-
-
-	const float DIVIATION = 0.001f;
-};
 //Default constructor
-TEST_F(DegreeFix, DefaultConstructor)
+TEST_CASE(DegreeFix, DefaultConstructor)
 {
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
 	EXPECT_EQ(Math::Degree<float>(), 0);
 }
 
 //Test single argument constructor
-TEST_F(DegreeFix, SingleArgumentConstructor)
+TEST_CASE(DegreeFix, SingleArgumentConstructor)
 {
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
 	EXPECT_EQ(def, Math::Degree<float>(0));
 	EXPECT_EQ(deg2, Math::Degree<float>(2));
 	EXPECT_NE(deg3, rad);
@@ -36,16 +26,25 @@ TEST_F(DegreeFix, SingleArgumentConstructor)
 
 //Test constructor that converts Radina
 //to Degree.
-TEST_F(DegreeFix, RadianToDegreeConstructor)
+TEST_CASE(DegreeFix, RadianToDegreeConstructor)
 {
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
 	Math::Degree<float> degTest1(2);
 	EXPECT_EQ(Math::Degree<float>(Math::Radian<float>(degTest1)), degTest1);
 }
 
 //Test copy constructor
-TEST_F(DegreeFix, CopyConstructor)
+TEST_CASE(DegreeFix, CopyConstructor)
 {
-	//Equality
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    //Equality
 	Math::Degree<float> temp(def);
 	EXPECT_EQ(def, temp);
 
@@ -57,10 +56,15 @@ TEST_F(DegreeFix, CopyConstructor)
 }
 
 //Test multiplication operators
-TEST_F(DegreeFix, Multiplication)
+TEST_CASE(DegreeFix, Multiplication)
 {
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
 	Math::Degree<float> temp(def * 5);
-	EXPECT_EQ(temp, Math::Degree<float>(0));
+	
+    EXPECT_EQ(temp, Math::Degree<float>(0));
 
 	Math::Degree<float> temp2(1);
 	Math::Degree<float> temp3(temp2 * 5);
@@ -68,18 +72,28 @@ TEST_F(DegreeFix, Multiplication)
 }
 
 //Test equality operators
-TEST_F(DegreeFix, Equality)
+TEST_CASE(DegreeFix, Equality)
 {
-	//Equality
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    //Equality
 	EXPECT_EQ(def, Math::Degree<float>(0));
 	EXPECT_EQ(deg2, Math::Degree<float>(2));
 	EXPECT_EQ(deg3, Math::Degree<float>(rad));
 }
 
 //Test for inequality
-TEST_F(DegreeFix, NotEqual)
+TEST_CASE(DegreeFix, NotEqual)
 {
-	//Not Equal
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    //Not Equal
 	EXPECT_NE(def, Math::Degree<float>(200));
 	EXPECT_NE(deg2, def);
 	EXPECT_NE(deg3, def);
@@ -91,9 +105,14 @@ TEST_F(DegreeFix, NotEqual)
 }
 
 //Test lessthan equal to
-TEST_F(DegreeFix, LessThanEqualTo)
+TEST_CASE(DegreeFix, LessThanEqualTo)
 {
-	//Less than equal to
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    //Less than equal to
 	EXPECT_LE(def, def);
 	EXPECT_LE(def, deg2);
 	EXPECT_LE(deg2, deg3);
@@ -106,9 +125,14 @@ TEST_F(DegreeFix, LessThanEqualTo)
 }
 
 //Test less than operator
-TEST_F(DegreeFix, Lessthan)
+TEST_CASE(DegreeFix, Lessthan)
 {
-	//Equality
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    //Equality
 	EXPECT_LT(def, Math::Degree<float>(1));
 	EXPECT_LT(deg2, Math::Degree<float>(20));
 	EXPECT_LT(deg3, Math::Degree<float>(1000));
@@ -119,24 +143,39 @@ TEST_F(DegreeFix, Lessthan)
 }
 
 //Test greater than operator
-TEST_F(DegreeFix, Greaterthan)
+TEST_CASE(DegreeFix, Greaterthan)
 {
-	//Equality
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    //Equality
 	EXPECT_GT(def, Math::Degree<float>(-1));
 	EXPECT_GT(deg2, Math::Degree<float>(0));
 }
 
 //Test assignment operator
-TEST_F(DegreeFix, Assignment)
+TEST_CASE(DegreeFix, Assignment)
 {
-	Math::Degree<float> temp = def;
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+	
+    Math::Degree<float> temp = def;
 	EXPECT_EQ(temp, def);
 }
 
 
 //Test float
-TEST_F(DegreeFix, FloatTypecastOperator)
+TEST_CASE(DegreeFix, FloatTypecastOperator)
 {
+    DegreeFix def(0);
+    DegreeFix def2(2);
+    DegreeFix rad(0.349066);     
+    DegreeFix deg3(Math::Radian<float>(0.349066));
+    
     EXPECT_EQ(static_cast<float>(def), 0);
     EXPECT_EQ(static_cast<float>(deg2), 2);
 }
