@@ -1,6 +1,6 @@
 #list of tests
 set(TESTS 	"Vector2Test"
-			#"DegreeTest"
+			"DegreeTest"
 			#"FunctionsTest"
 			#"LineTest"
 			#"RadianTest"

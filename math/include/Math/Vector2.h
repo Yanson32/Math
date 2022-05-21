@@ -67,7 +67,7 @@ namespace Math
 		*	@return	A vector representing the sum of this
 		*			vector and the input vector (param)
 		****************************************************************/
-		Vector2<T> operator + (const Vector2<T> param);
+		Vector2<T> operator + (const Vector2<T> param) const;
 
 		bool operator == (const Vector2<T> param) const;
 
@@ -77,7 +77,7 @@ namespace Math
 		*			dot product against.
 		*	@return	The dot product of this vector and the input vector.
 		****************************************************************/
-		T dot(const Vector2<T> param);
+		T dot(const Vector2<T> &param) const;
 
 
 		/************************************************************//**
@@ -178,7 +178,7 @@ namespace Math
 	*			vector and the input vector (param)
 	****************************************************************/
     template <class T>
-	Vector2<T> Vector2<T>::operator + (const Vector2<T> param)
+	Vector2<T> Vector2<T>::operator + (const Vector2<T> param) const
 	{
 		T xAxis = x + param.x;
 		T yAxis = y + param.y;
@@ -200,7 +200,7 @@ namespace Math
 	*	@return	The dot product of this vector and the input vector.
 	****************************************************************/
     template <class T>
-	T Vector2<T>::dot(const Vector2<T> param)
+	T Vector2<T>::dot(const Vector2<T> &param) const
 	{
 		return x  * param.x + y * param.y;
 	}
