@@ -1,5 +1,5 @@
-#!/bin/bash
-
+#!/bin/sh
+#This script install dependencies using the pacman package manager.
 #Update the system
 sudo pacman -Syu --noconfirm
 
