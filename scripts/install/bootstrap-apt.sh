@@ -10,3 +10,6 @@ sudo apt autoclean -y
 #Install dependencies
 sudo apt install g++
 sudo apt install cmake
+
+#Update the gnu linker
+sudo ldconfig
