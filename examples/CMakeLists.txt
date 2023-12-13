@@ -1,5 +1,6 @@
 set(FILE "DegreeExample"
          "RadianExample"
+         "PointExample"
 )
 
 
